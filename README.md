@@ -20,10 +20,12 @@ Credits
 -------
 
 Many thaks to:
+
 - http://cogx.org/ by Vincent Spader for the most part of the audio engine and great icons
 - http://www.cybergarage.org/twiki/bin/view/ for upnp mac os framework
 - http://three20.info/ for UI components
 - http://browse.deviantart.com/customization/skins/media/foobar2000/?order=9#/d2hyapy for the design motivation
+- https://github.com/kstenerud/iOS-Universal-Framework - for iOS static framework template
 - https://github.com/sbooth/ for useful code examples
 
 License
