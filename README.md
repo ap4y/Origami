@@ -5,7 +5,6 @@ Lossless audio player for iOS with upnp support. Motivated by famous foobar play
 
 [![](http://ap4y.github.com/IMG_0022.PNG)](http://ap4y.github.com/IMG_0022.PNG)
 [![](http://ap4y.github.com/IMG_0023.PNG)](http://ap4y.github.com/IMG_0023.PNG)
-[![](http://ap4y.github.com/IMG_0024.PNG)](http://ap4y.github.com/IMG_0024.PNG)
 [![](http://ap4y.github.com/IMG_0025.PNG)](http://ap4y.github.com/IMG_0025.PNG)
 
 Main features
