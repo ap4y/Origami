@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		951727D513FD33800089AE61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951727D413FD33800089AE61 /* Foundation.framework */; };
+		951727DB13FD33800089AE61 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 951727D913FD33800089AE61 /* InfoPlist.strings */; };
+		951727F713FD33F80089AE61 /* AudioPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727E613FD33F80089AE61 /* AudioPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		951727F813FD33F80089AE61 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727E713FD33F80089AE61 /* AudioPlayer.m */; };
+		951727F913FD33F80089AE61 /* AudioContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727E813FD33F80089AE61 /* AudioContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		951727FA13FD33F80089AE61 /* AudioContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727E913FD33F80089AE61 /* AudioContainer.m */; };
+		951727FB13FD33F80089AE61 /* AudioDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727EA13FD33F80089AE61 /* AudioDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		951727FC13FD33F80089AE61 /* AudioDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727EB13FD33F80089AE61 /* AudioDecoder.m */; };
+		951727FD13FD33F80089AE61 /* AudioMetadataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727EC13FD33F80089AE61 /* AudioMetadataReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		951727FE13FD33F80089AE61 /* AudioMetadataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727ED13FD33F80089AE61 /* AudioMetadataReader.m */; };
+		951727FF13FD33F80089AE61 /* AudioMetadataWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727EE13FD33F80089AE61 /* AudioMetadataWriter.h */; };
+		9517280013FD33F80089AE61 /* AudioMetadataWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727EF13FD33F80089AE61 /* AudioMetadataWriter.m */; };
+		9517280113FD33F80089AE61 /* AudioPropertiesReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727F013FD33F80089AE61 /* AudioPropertiesReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517280213FD33F80089AE61 /* AudioPropertiesReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727F113FD33F80089AE61 /* AudioPropertiesReader.m */; };
+		9517280313FD33F80089AE61 /* AudioSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727F213FD33F80089AE61 /* AudioSource.h */; };
+		9517280413FD33F80089AE61 /* AudioSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727F313FD33F80089AE61 /* AudioSource.m */; };
+		9517280513FD33F80089AE61 /* PluginController.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727F413FD33F80089AE61 /* PluginController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517280613FD33F80089AE61 /* PluginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727F513FD33F80089AE61 /* PluginController.m */; };
+		9517280A13FD34120089AE61 /* Status.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517280713FD34120089AE61 /* Status.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517280B13FD34120089AE61 /* Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517280813FD34120089AE61 /* Helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517280C13FD34120089AE61 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517280913FD34120089AE61 /* Helper.m */; };
+		9517281813FD344E0089AE61 /* BufferChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517280E13FD344E0089AE61 /* BufferChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517281913FD344E0089AE61 /* BufferChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517280F13FD344E0089AE61 /* BufferChain.m */; };
+		9517281A13FD344E0089AE61 /* ConverterNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517281013FD344E0089AE61 /* ConverterNode.h */; };
+		9517281B13FD344E0089AE61 /* ConverterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517281113FD344E0089AE61 /* ConverterNode.m */; };
+		9517281C13FD344E0089AE61 /* InputNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517281213FD344E0089AE61 /* InputNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517281D13FD344E0089AE61 /* InputNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517281313FD344E0089AE61 /* InputNode.m */; };
+		9517281E13FD344E0089AE61 /* Node.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517281413FD344E0089AE61 /* Node.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517281F13FD344E0089AE61 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517281513FD344E0089AE61 /* Node.m */; };
+		9517282013FD344E0089AE61 /* OutputNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517281613FD344E0089AE61 /* OutputNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517282113FD344E0089AE61 /* OutputNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517281713FD344E0089AE61 /* OutputNode.m */; };
+		9517282F13FD345E0089AE61 /* OutputCoreAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517282313FD345E0089AE61 /* OutputCoreAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517283013FD345E0089AE61 /* OutputCoreAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517282413FD345E0089AE61 /* OutputCoreAudio.m */; };
+		9517283113FD345E0089AE61 /* CoreAudioUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517282713FD345E0089AE61 /* CoreAudioUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517283213FD345E0089AE61 /* CoreAudioUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517282813FD345E0089AE61 /* CoreAudioUtils.m */; };
+		9517283313FD345E0089AE61 /* VirtualRingBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517282A13FD345E0089AE61 /* VirtualRingBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517283413FD345E0089AE61 /* VirtualRingBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517282B13FD345E0089AE61 /* VirtualRingBuffer.m */; };
+		9517283513FD345E0089AE61 /* Semaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517282D13FD345E0089AE61 /* Semaphore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9517283613FD345E0089AE61 /* Semaphore.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517282E13FD345E0089AE61 /* Semaphore.m */; };
+		9517283A13FD34880089AE61 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9517283713FD34880089AE61 /* AudioToolbox.framework */; };
+		9517283B13FD34880089AE61 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9517283813FD34880089AE61 /* AudioUnit.framework */; };
+		9517283C13FD34880089AE61 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9517283913FD34880089AE61 /* CoreAudio.framework */; };
+		9517283E13FD34BE0089AE61 /* Plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517283D13FD34BE0089AE61 /* Plugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		951727D113FD33800089AE61 /* Audio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = Audio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		951727D413FD33800089AE61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		951727D813FD33800089AE61 /* Audio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Audio-Info.plist"; sourceTree = "<group>"; };
+		951727DA13FD33800089AE61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		951727DC13FD33800089AE61 /* Audio-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Audio-Prefix.pch"; sourceTree = "<group>"; };
+		951727E613FD33F80089AE61 /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
+		951727E713FD33F80089AE61 /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
+		951727E813FD33F80089AE61 /* AudioContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioContainer.h; sourceTree = "<group>"; };
+		951727E913FD33F80089AE61 /* AudioContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioContainer.m; sourceTree = "<group>"; };
+		951727EA13FD33F80089AE61 /* AudioDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDecoder.h; sourceTree = "<group>"; };
+		951727EB13FD33F80089AE61 /* AudioDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioDecoder.m; sourceTree = "<group>"; };
+		951727EC13FD33F80089AE61 /* AudioMetadataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioMetadataReader.h; sourceTree = "<group>"; };
+		951727ED13FD33F80089AE61 /* AudioMetadataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioMetadataReader.m; sourceTree = "<group>"; };
+		951727EE13FD33F80089AE61 /* AudioMetadataWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioMetadataWriter.h; sourceTree = "<group>"; };
+		951727EF13FD33F80089AE61 /* AudioMetadataWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioMetadataWriter.m; sourceTree = "<group>"; };
+		951727F013FD33F80089AE61 /* AudioPropertiesReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPropertiesReader.h; sourceTree = "<group>"; };
+		951727F113FD33F80089AE61 /* AudioPropertiesReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPropertiesReader.m; sourceTree = "<group>"; };
+		951727F213FD33F80089AE61 /* AudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSource.h; sourceTree = "<group>"; };
+		951727F313FD33F80089AE61 /* AudioSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioSource.m; sourceTree = "<group>"; };
+		951727F413FD33F80089AE61 /* PluginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginController.h; sourceTree = "<group>"; };
+		951727F513FD33F80089AE61 /* PluginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginController.m; sourceTree = "<group>"; };
+		9517280713FD34120089AE61 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		9517280813FD34120089AE61 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		9517280913FD34120089AE61 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		9517280E13FD344E0089AE61 /* BufferChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferChain.h; sourceTree = "<group>"; };
+		9517280F13FD344E0089AE61 /* BufferChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BufferChain.m; sourceTree = "<group>"; };
+		9517281013FD344E0089AE61 /* ConverterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConverterNode.h; sourceTree = "<group>"; };
+		9517281113FD344E0089AE61 /* ConverterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConverterNode.m; sourceTree = "<group>"; };
+		9517281213FD344E0089AE61 /* InputNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputNode.h; sourceTree = "<group>"; };
+		9517281313FD344E0089AE61 /* InputNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputNode.m; sourceTree = "<group>"; };
+		9517281413FD344E0089AE61 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		9517281513FD344E0089AE61 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		9517281613FD344E0089AE61 /* OutputNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputNode.h; sourceTree = "<group>"; };
+		9517281713FD344E0089AE61 /* OutputNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputNode.m; sourceTree = "<group>"; };
+		9517282313FD345E0089AE61 /* OutputCoreAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutputCoreAudio.h; sourceTree = "<group>"; };
+		9517282413FD345E0089AE61 /* OutputCoreAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutputCoreAudio.m; sourceTree = "<group>"; };
+		9517282713FD345E0089AE61 /* CoreAudioUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAudioUtils.h; sourceTree = "<group>"; };
+		9517282813FD345E0089AE61 /* CoreAudioUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAudioUtils.m; sourceTree = "<group>"; };
+		9517282A13FD345E0089AE61 /* VirtualRingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtualRingBuffer.h; sourceTree = "<group>"; };
+		9517282B13FD345E0089AE61 /* VirtualRingBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtualRingBuffer.m; sourceTree = "<group>"; };
+		9517282D13FD345E0089AE61 /* Semaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Semaphore.h; sourceTree = "<group>"; };
+		9517282E13FD345E0089AE61 /* Semaphore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Semaphore.m; sourceTree = "<group>"; };
+		9517283713FD34880089AE61 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9517283813FD34880089AE61 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		9517283913FD34880089AE61 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		9517283D13FD34BE0089AE61 /* Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plugin.h; path = ../../Plugin.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		951727CC13FD33800089AE61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9517283A13FD34880089AE61 /* AudioToolbox.framework in Frameworks */,
+				9517283B13FD34880089AE61 /* AudioUnit.framework in Frameworks */,
+				9517283C13FD34880089AE61 /* CoreAudio.framework in Frameworks */,
+				951727D513FD33800089AE61 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		951727C313FD337F0089AE61 = {
+			isa = PBXGroup;
+			children = (
+				951727D613FD33800089AE61 /* Audio */,
+				951727D313FD33800089AE61 /* Frameworks */,
+				951727D213FD33800089AE61 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		951727D213FD33800089AE61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				951727D113FD33800089AE61 /* Audio.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		951727D313FD33800089AE61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9517283713FD34880089AE61 /* AudioToolbox.framework */,
+				9517283813FD34880089AE61 /* AudioUnit.framework */,
+				9517283913FD34880089AE61 /* CoreAudio.framework */,
+				951727D413FD33800089AE61 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		951727D613FD33800089AE61 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				9517283D13FD34BE0089AE61 /* Plugin.h */,
+				951727E613FD33F80089AE61 /* AudioPlayer.h */,
+				951727E713FD33F80089AE61 /* AudioPlayer.m */,
+				951727E813FD33F80089AE61 /* AudioContainer.h */,
+				951727E913FD33F80089AE61 /* AudioContainer.m */,
+				951727EA13FD33F80089AE61 /* AudioDecoder.h */,
+				951727EB13FD33F80089AE61 /* AudioDecoder.m */,
+				951727EC13FD33F80089AE61 /* AudioMetadataReader.h */,
+				951727ED13FD33F80089AE61 /* AudioMetadataReader.m */,
+				951727EE13FD33F80089AE61 /* AudioMetadataWriter.h */,
+				951727EF13FD33F80089AE61 /* AudioMetadataWriter.m */,
+				951727F013FD33F80089AE61 /* AudioPropertiesReader.h */,
+				951727F113FD33F80089AE61 /* AudioPropertiesReader.m */,
+				951727F213FD33F80089AE61 /* AudioSource.h */,
+				951727F313FD33F80089AE61 /* AudioSource.m */,
+				951727F413FD33F80089AE61 /* PluginController.h */,
+				951727F513FD33F80089AE61 /* PluginController.m */,
+				9517280713FD34120089AE61 /* Status.h */,
+				9517280813FD34120089AE61 /* Helper.h */,
+				9517280913FD34120089AE61 /* Helper.m */,
+				9517282213FD345E0089AE61 /* Output */,
+				9517282513FD345E0089AE61 /* ThirdParty */,
+				9517282C13FD345E0089AE61 /* Utils */,
+				9517280D13FD344E0089AE61 /* Chain */,
+				951727D713FD33800089AE61 /* Supporting Files */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		951727D713FD33800089AE61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				951727D813FD33800089AE61 /* Audio-Info.plist */,
+				951727D913FD33800089AE61 /* InfoPlist.strings */,
+				951727DC13FD33800089AE61 /* Audio-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9517280D13FD344E0089AE61 /* Chain */ = {
+			isa = PBXGroup;
+			children = (
+				9517280E13FD344E0089AE61 /* BufferChain.h */,
+				9517280F13FD344E0089AE61 /* BufferChain.m */,
+				9517281013FD344E0089AE61 /* ConverterNode.h */,
+				9517281113FD344E0089AE61 /* ConverterNode.m */,
+				9517281213FD344E0089AE61 /* InputNode.h */,
+				9517281313FD344E0089AE61 /* InputNode.m */,
+				9517281413FD344E0089AE61 /* Node.h */,
+				9517281513FD344E0089AE61 /* Node.m */,
+				9517281613FD344E0089AE61 /* OutputNode.h */,
+				9517281713FD344E0089AE61 /* OutputNode.m */,
+			);
+			path = Chain;
+			sourceTree = "<group>";
+		};
+		9517282213FD345E0089AE61 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				9517282313FD345E0089AE61 /* OutputCoreAudio.h */,
+				9517282413FD345E0089AE61 /* OutputCoreAudio.m */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		9517282513FD345E0089AE61 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				9517282613FD345E0089AE61 /* CoreAudioUtils */,
+				9517282913FD345E0089AE61 /* VirtualRingBuffer */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		9517282613FD345E0089AE61 /* CoreAudioUtils */ = {
+			isa = PBXGroup;
+			children = (
+				9517282713FD345E0089AE61 /* CoreAudioUtils.h */,
+				9517282813FD345E0089AE61 /* CoreAudioUtils.m */,
+			);
+			path = CoreAudioUtils;
+			sourceTree = "<group>";
+		};
+		9517282913FD345E0089AE61 /* VirtualRingBuffer */ = {
+			isa = PBXGroup;
+			children = (
+				9517282A13FD345E0089AE61 /* VirtualRingBuffer.h */,
+				9517282B13FD345E0089AE61 /* VirtualRingBuffer.m */,
+			);
+			path = VirtualRingBuffer;
+			sourceTree = "<group>";
+		};
+		9517282C13FD345E0089AE61 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9517282D13FD345E0089AE61 /* Semaphore.h */,
+				9517282E13FD345E0089AE61 /* Semaphore.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		951727CD13FD33800089AE61 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				951727F713FD33F80089AE61 /* AudioPlayer.h in Headers */,
+				951727F913FD33F80089AE61 /* AudioContainer.h in Headers */,
+				951727FB13FD33F80089AE61 /* AudioDecoder.h in Headers */,
+				951727FD13FD33F80089AE61 /* AudioMetadataReader.h in Headers */,
+				9517280113FD33F80089AE61 /* AudioPropertiesReader.h in Headers */,
+				9517280513FD33F80089AE61 /* PluginController.h in Headers */,
+				9517280A13FD34120089AE61 /* Status.h in Headers */,
+				9517280B13FD34120089AE61 /* Helper.h in Headers */,
+				9517281813FD344E0089AE61 /* BufferChain.h in Headers */,
+				9517281C13FD344E0089AE61 /* InputNode.h in Headers */,
+				9517281E13FD344E0089AE61 /* Node.h in Headers */,
+				9517282013FD344E0089AE61 /* OutputNode.h in Headers */,
+				9517282F13FD345E0089AE61 /* OutputCoreAudio.h in Headers */,
+				9517283113FD345E0089AE61 /* CoreAudioUtils.h in Headers */,
+				9517283313FD345E0089AE61 /* VirtualRingBuffer.h in Headers */,
+				9517283513FD345E0089AE61 /* Semaphore.h in Headers */,
+				9517283E13FD34BE0089AE61 /* Plugin.h in Headers */,
+				951727FF13FD33F80089AE61 /* AudioMetadataWriter.h in Headers */,
+				9517280313FD33F80089AE61 /* AudioSource.h in Headers */,
+				9517281A13FD344E0089AE61 /* ConverterNode.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		951727D013FD33800089AE61 /* Audio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 951727DF13FD33800089AE61 /* Build configuration list for PBXNativeTarget "Audio" */;
+			buildPhases = (
+				951727CA13FD33800089AE61 /* ShellScript */,
+				951727CD13FD33800089AE61 /* Headers */,
+				951727CB13FD33800089AE61 /* Sources */,
+				951727CC13FD33800089AE61 /* Frameworks */,
+				951727CE13FD33800089AE61 /* Resources */,
+				951727CF13FD33800089AE61 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Audio;
+			productName = Audio;
+			productReference = 951727D113FD33800089AE61 /* Audio.framework */;
+			productType = "com.apple.product-type.framework.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		951727C513FD337F0089AE61 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 951727C813FD337F0089AE61 /* Build configuration list for PBXProject "Audio" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 951727C313FD337F0089AE61;
+			productRefGroup = 951727D213FD33800089AE61 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				951727D013FD33800089AE61 /* Audio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		951727CE13FD33800089AE61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				951727DB13FD33800089AE61 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		951727CA13FD33800089AE61 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
+		};
+		951727CF13FD33800089AE61 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		951727CB13FD33800089AE61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				951727F813FD33F80089AE61 /* AudioPlayer.m in Sources */,
+				951727FA13FD33F80089AE61 /* AudioContainer.m in Sources */,
+				951727FC13FD33F80089AE61 /* AudioDecoder.m in Sources */,
+				951727FE13FD33F80089AE61 /* AudioMetadataReader.m in Sources */,
+				9517280013FD33F80089AE61 /* AudioMetadataWriter.m in Sources */,
+				9517280213FD33F80089AE61 /* AudioPropertiesReader.m in Sources */,
+				9517280413FD33F80089AE61 /* AudioSource.m in Sources */,
+				9517280613FD33F80089AE61 /* PluginController.m in Sources */,
+				9517280C13FD34120089AE61 /* Helper.m in Sources */,
+				9517281913FD344E0089AE61 /* BufferChain.m in Sources */,
+				9517281B13FD344E0089AE61 /* ConverterNode.m in Sources */,
+				9517281D13FD344E0089AE61 /* InputNode.m in Sources */,
+				9517281F13FD344E0089AE61 /* Node.m in Sources */,
+				9517282113FD344E0089AE61 /* OutputNode.m in Sources */,
+				9517283013FD345E0089AE61 /* OutputCoreAudio.m in Sources */,
+				9517283213FD345E0089AE61 /* CoreAudioUtils.m in Sources */,
+				9517283413FD345E0089AE61 /* VirtualRingBuffer.m in Sources */,
+				9517283613FD345E0089AE61 /* Semaphore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		951727D913FD33800089AE61 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				951727DA13FD33800089AE61 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		951727DD13FD33800089AE61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		951727DE13FD33800089AE61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		951727E013FD33800089AE61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Audio/Audio-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
+				INFOPLIST_FILE = "Audio/Audio-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		951727E113FD33800089AE61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Audio/Audio-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
+				INFOPLIST_FILE = "Audio/Audio-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		951727C813FD337F0089AE61 /* Build configuration list for PBXProject "Audio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				951727DD13FD33800089AE61 /* Debug */,
+				951727DE13FD33800089AE61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		951727DF13FD33800089AE61 /* Build configuration list for PBXNativeTarget "Audio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				951727E013FD33800089AE61 /* Debug */,
+				951727E113FD33800089AE61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 951727C513FD337F0089AE61 /* Project object */;
+}

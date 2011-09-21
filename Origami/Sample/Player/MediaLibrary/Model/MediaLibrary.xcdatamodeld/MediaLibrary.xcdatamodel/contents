@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="11B26" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MediaLibrary" representedClassName="MediaLibrary">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Track" inverseName="library" inverseEntity="Track"/>
+    </entity>
+    <entity name="Track" representedClassName="Track">
+        <attribute name="album" optional="YES" attributeType="String"/>
+        <attribute name="artist" optional="YES" attributeType="String"/>
+        <attribute name="cover" optional="YES" attributeType="Binary"/>
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="trackNo" optional="YES" attributeType="Integer 32" defaultValueString="0"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0"/>
+        <relationship name="library" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MediaLibrary" inverseName="tracks" inverseEntity="MediaLibrary"/>
+    </entity>
+    <elements>
+        <element name="MediaLibrary" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="Track" positionX="369" positionY="69" width="128" height="195"/>
+    </elements>
+</model>

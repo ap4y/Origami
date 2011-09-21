@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9522C4C3140A8E90007FC3F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9522C4C1140A8E90007FC3F7 /* InfoPlist.strings */; };
+		9522C4CB140A8ECE007FC3F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9522C4CA140A8ECE007FC3F7 /* Foundation.framework */; };
+		9522C4D1140A8EE0007FC3F7 /* HTTPSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9522C4D0140A8EE0007FC3F7 /* HTTPSource.m */; };
+		9522C4DB140A8F50007FC3F7 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9522C4D8140A8F50007FC3F7 /* HTTPConnection.m */; };
+		9522C4DC140A8F50007FC3F7 /* Socket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9522C4DA140A8F50007FC3F7 /* Socket.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9522C4B5140A8E90007FC3F7 /* HTTPSource.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTTPSource.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		9522C4C0140A8E90007FC3F7 /* HTTPSource-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HTTPSource-Info.plist"; sourceTree = "<group>"; };
+		9522C4C2140A8E90007FC3F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9522C4C4140A8E90007FC3F7 /* HTTPSource-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTTPSource-Prefix.pch"; sourceTree = "<group>"; };
+		9522C4CA140A8ECE007FC3F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9522C4CF140A8EE0007FC3F7 /* HTTPSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPSource.h; sourceTree = "<group>"; };
+		9522C4D0140A8EE0007FC3F7 /* HTTPSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPSource.m; sourceTree = "<group>"; };
+		9522C4D2140A8EFD007FC3F7 /* Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plugin.h; path = ../../../Plugin.h; sourceTree = "<group>"; };
+		9522C4D7140A8F50007FC3F7 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnection.h; sourceTree = "<group>"; };
+		9522C4D8140A8F50007FC3F7 /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnection.m; sourceTree = "<group>"; };
+		9522C4D9140A8F50007FC3F7 /* Socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Socket.h; sourceTree = "<group>"; };
+		9522C4DA140A8F50007FC3F7 /* Socket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Socket.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9522C4B2140A8E90007FC3F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9522C4CB140A8ECE007FC3F7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9522C4AA140A8E8F007FC3F7 = {
+			isa = PBXGroup;
+			children = (
+				9522C4CA140A8ECE007FC3F7 /* Foundation.framework */,
+				9522C4BE140A8E90007FC3F7 /* HTTPSource */,
+				9522C4B7140A8E90007FC3F7 /* Frameworks */,
+				9522C4B6140A8E90007FC3F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9522C4B6140A8E90007FC3F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9522C4B5140A8E90007FC3F7 /* HTTPSource.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9522C4B7140A8E90007FC3F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9522C4BA140A8E90007FC3F7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9522C4BA140A8E90007FC3F7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9522C4BE140A8E90007FC3F7 /* HTTPSource */ = {
+			isa = PBXGroup;
+			children = (
+				9522C4D6140A8F4F007FC3F7 /* Utils */,
+				9522C4D2140A8EFD007FC3F7 /* Plugin.h */,
+				9522C4CF140A8EE0007FC3F7 /* HTTPSource.h */,
+				9522C4D0140A8EE0007FC3F7 /* HTTPSource.m */,
+				9522C4BF140A8E90007FC3F7 /* Supporting Files */,
+			);
+			path = HTTPSource;
+			sourceTree = "<group>";
+		};
+		9522C4BF140A8E90007FC3F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9522C4C0140A8E90007FC3F7 /* HTTPSource-Info.plist */,
+				9522C4C1140A8E90007FC3F7 /* InfoPlist.strings */,
+				9522C4C4140A8E90007FC3F7 /* HTTPSource-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9522C4D6140A8F4F007FC3F7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9522C4D7140A8F50007FC3F7 /* HTTPConnection.h */,
+				9522C4D8140A8F50007FC3F7 /* HTTPConnection.m */,
+				9522C4D9140A8F50007FC3F7 /* Socket.h */,
+				9522C4DA140A8F50007FC3F7 /* Socket.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9522C4B4140A8E90007FC3F7 /* HTTPSource */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9522C4C7140A8E90007FC3F7 /* Build configuration list for PBXNativeTarget "HTTPSource" */;
+			buildPhases = (
+				9522C4B1140A8E90007FC3F7 /* Sources */,
+				9522C4B2140A8E90007FC3F7 /* Frameworks */,
+				9522C4B3140A8E90007FC3F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HTTPSource;
+			productName = HTTPSource;
+			productReference = 9522C4B5140A8E90007FC3F7 /* HTTPSource.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9522C4AC140A8E8F007FC3F7 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 9522C4AF140A8E8F007FC3F7 /* Build configuration list for PBXProject "HTTPSource" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9522C4AA140A8E8F007FC3F7;
+			productRefGroup = 9522C4B6140A8E90007FC3F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9522C4B4140A8E90007FC3F7 /* HTTPSource */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9522C4B3140A8E90007FC3F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9522C4C3140A8E90007FC3F7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9522C4B1140A8E90007FC3F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9522C4D1140A8EE0007FC3F7 /* HTTPSource.m in Sources */,
+				9522C4DB140A8F50007FC3F7 /* HTTPConnection.m in Sources */,
+				9522C4DC140A8F50007FC3F7 /* Socket.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9522C4C1140A8E90007FC3F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9522C4C2140A8E90007FC3F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9522C4C5140A8E90007FC3F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9522C4C6140A8E90007FC3F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		9522C4C8140A8E90007FC3F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTTPSource/HTTPSource-Prefix.pch";
+				INFOPLIST_FILE = "HTTPSource/HTTPSource-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		9522C4C9140A8E90007FC3F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTTPSource/HTTPSource-Prefix.pch";
+				INFOPLIST_FILE = "HTTPSource/HTTPSource-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9522C4AF140A8E8F007FC3F7 /* Build configuration list for PBXProject "HTTPSource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9522C4C5140A8E90007FC3F7 /* Debug */,
+				9522C4C6140A8E90007FC3F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9522C4C7140A8E90007FC3F7 /* Build configuration list for PBXNativeTarget "HTTPSource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9522C4C8140A8E90007FC3F7 /* Debug */,
+				9522C4C9140A8E90007FC3F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9522C4AC140A8E8F007FC3F7 /* Project object */;
+}
