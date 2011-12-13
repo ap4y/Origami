@@ -102,9 +102,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95BB3B5114029FE200B64788 /* Pls */ = {
+		95BB3B5114029FE200B64788 /* PlsContainer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95BB3B6414029FE200B64788 /* Build configuration list for PBXNativeTarget "Pls" */;
+			buildConfigurationList = 95BB3B6414029FE200B64788 /* Build configuration list for PBXNativeTarget "PlsContainer" */;
 			buildPhases = (
 				95BB3B4E14029FE200B64788 /* Sources */,
 				95BB3B4F14029FE200B64788 /* Frameworks */,
@@ -114,7 +114,7 @@
 			);
 			dependencies = (
 			);
-			name = Pls;
+			name = PlsContainer;
 			productName = Pls;
 			productReference = 95BB3B5214029FE200B64788 /* Pls.bundle */;
 			productType = "com.apple.product-type.bundle";
@@ -124,6 +124,9 @@
 /* Begin PBXProject section */
 		95BB3B4914029FE200B64788 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 95BB3B4C14029FE200B64788 /* Build configuration list for PBXProject "Pls" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -136,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95BB3B5114029FE200B64788 /* Pls */,
+				95BB3B5114029FE200B64788 /* PlsContainer */,
 			);
 		};
 /* End PBXProject section */
@@ -256,13 +259,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95BB3B6414029FE200B64788 /* Build configuration list for PBXNativeTarget "Pls" */ = {
+		95BB3B6414029FE200B64788 /* Build configuration list for PBXNativeTarget "PlsContainer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95BB3B6514029FE200B64788 /* Debug */,
 				95BB3B6614029FE200B64788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

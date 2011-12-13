@@ -1,5 +1,6 @@
 #import "OrigamiAppDelegate.h"
 #import "StyleSheet.h"
+#import "OOAudioPlayer.h"
 
 @implementation OrigamiAppDelegate
 @synthesize window = _window;
@@ -30,6 +31,8 @@
             NSLog(@"Unable to create cache directory: %@", error.localizedDescription);
         }        
 	}
+    
+    //[AudioPlayer containerTypes];
 }
 
 -(void)applicationWillTerminate:(UIApplication *)application {

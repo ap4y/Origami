@@ -100,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95BB3B991402A18D00B64788 /* M3U */ = {
+		95BB3B991402A18D00B64788 /* M3uContainer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95BB3BAC1402A18D00B64788 /* Build configuration list for PBXNativeTarget "M3U" */;
+			buildConfigurationList = 95BB3BAC1402A18D00B64788 /* Build configuration list for PBXNativeTarget "M3uContainer" */;
 			buildPhases = (
 				95BB3B961402A18D00B64788 /* Sources */,
 				95BB3B971402A18D00B64788 /* Frameworks */,
@@ -112,7 +112,7 @@
 			);
 			dependencies = (
 			);
-			name = M3U;
+			name = M3uContainer;
 			productName = M3U;
 			productReference = 95BB3B9A1402A18D00B64788 /* M3U.bundle */;
 			productType = "com.apple.product-type.bundle";
@@ -122,6 +122,9 @@
 /* Begin PBXProject section */
 		95BB3B911402A18C00B64788 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 95BB3B941402A18C00B64788 /* Build configuration list for PBXProject "M3U" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -134,7 +137,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95BB3B991402A18D00B64788 /* M3U */,
+				95BB3B991402A18D00B64788 /* M3uContainer */,
 			);
 		};
 /* End PBXProject section */
@@ -254,7 +257,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95BB3BAC1402A18D00B64788 /* Build configuration list for PBXNativeTarget "M3U" */ = {
+		95BB3BAC1402A18D00B64788 /* Build configuration list for PBXNativeTarget "M3uContainer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95BB3BAD1402A18D00B64788 /* Debug */,

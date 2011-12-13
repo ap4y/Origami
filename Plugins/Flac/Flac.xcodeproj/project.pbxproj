@@ -100,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		95E3417F13FC53B000D2D7A5 /* Flac */ = {
+		95E3417F13FC53B000D2D7A5 /* FlacDecoder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95E3419213FC53B000D2D7A5 /* Build configuration list for PBXNativeTarget "Flac" */;
+			buildConfigurationList = 95E3419213FC53B000D2D7A5 /* Build configuration list for PBXNativeTarget "FlacDecoder" */;
 			buildPhases = (
 				95E3417C13FC53B000D2D7A5 /* Sources */,
 				95E3417D13FC53B000D2D7A5 /* Frameworks */,
@@ -112,7 +112,7 @@
 			);
 			dependencies = (
 			);
-			name = Flac;
+			name = FlacDecoder;
 			productName = Flac;
 			productReference = 95E3418013FC53B000D2D7A5 /* Flac.bundle */;
 			productType = "com.apple.product-type.bundle";
@@ -122,6 +122,9 @@
 /* Begin PBXProject section */
 		95E3417713FC53B000D2D7A5 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 95E3417A13FC53B000D2D7A5 /* Build configuration list for PBXProject "Flac" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -134,7 +137,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95E3417F13FC53B000D2D7A5 /* Flac */,
+				95E3417F13FC53B000D2D7A5 /* FlacDecoder */,
 			);
 		};
 /* End PBXProject section */
@@ -272,7 +275,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95E3419213FC53B000D2D7A5 /* Build configuration list for PBXNativeTarget "Flac" */ = {
+		95E3419213FC53B000D2D7A5 /* Build configuration list for PBXNativeTarget "FlacDecoder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				95E3419313FC53B000D2D7A5 /* Debug */,

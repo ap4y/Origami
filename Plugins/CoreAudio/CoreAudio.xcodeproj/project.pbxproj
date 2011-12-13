@@ -100,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9579AE8B141639960021CB01 /* CoreAudio */ = {
+		9579AE8B141639960021CB01 /* CoreAudioDecoder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9579AE9E141639960021CB01 /* Build configuration list for PBXNativeTarget "CoreAudio" */;
+			buildConfigurationList = 9579AE9E141639960021CB01 /* Build configuration list for PBXNativeTarget "CoreAudioDecoder" */;
 			buildPhases = (
 				9579AE88141639960021CB01 /* Sources */,
 				9579AE89141639960021CB01 /* Frameworks */,
@@ -112,7 +112,7 @@
 			);
 			dependencies = (
 			);
-			name = CoreAudio;
+			name = CoreAudioDecoder;
 			productName = CoreAudio;
 			productReference = 9579AE8C141639960021CB01 /* CoreAudio.bundle */;
 			productType = "com.apple.product-type.bundle";
@@ -122,6 +122,9 @@
 /* Begin PBXProject section */
 		9579AE83141639960021CB01 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 9579AE86141639960021CB01 /* Build configuration list for PBXProject "CoreAudio" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -134,7 +137,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9579AE8B141639960021CB01 /* CoreAudio */,
+				9579AE8B141639960021CB01 /* CoreAudioDecoder */,
 			);
 		};
 /* End PBXProject section */
@@ -251,7 +254,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9579AE9E141639960021CB01 /* Build configuration list for PBXNativeTarget "CoreAudio" */ = {
+		9579AE9E141639960021CB01 /* Build configuration list for PBXNativeTarget "CoreAudioDecoder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9579AE9F141639960021CB01 /* Debug */,

@@ -144,6 +144,9 @@
 /* Begin PBXProject section */
 		95BB3AB61402959300B64788 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 95BB3AB91402959300B64788 /* Build configuration list for PBXProject "CueSheet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -287,6 +290,7 @@
 				95BB3AD31402959300B64788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

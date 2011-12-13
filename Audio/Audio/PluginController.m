@@ -89,16 +89,27 @@ static PluginController *sharedPluginController = nil;
 - (void)loadPluginsAtPath:(NSString *)path
 {
 	NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
-
+    
 	for (NSString *pname in dirContents)
 	{
 		NSString *ppath;
-		ppath = [NSString pathWithComponents:[NSArray arrayWithObjects:path,pname,nil]];
-		
+		ppath = [NSString pathWithComponents:[NSArray arrayWithObjects:path,pname,nil]];        
+        
 		if ([[pname pathExtension] isEqualToString:@"bundle"])
 		{
-			NSBundle *b = [NSBundle bundleWithPath:ppath];
-			[b load];
+			//NSBundle *b = [NSBundle bundleWithPath:ppath];
+            //[b load];
+            NSString* bundleName = [ppath.lastPathComponent stringByReplacingOccurrencesOfString:@".bundle" withString:@""];
+            NSArray* classArray = [NSArray arrayWithObject:bundleName];
+            
+            if ([bundleName isEqualToString:@"CueSheet"]) {
+                classArray = [NSArray arrayWithObjects:@"CueSheetContainer", @"CueSheetDecoder", @"CueSheetMetadataReader", nil];
+            }
+            
+            //NSLog(@"Trying to load %@", bundleName);                    
+            NSNotification* notification = [NSNotification notificationWithName:NSBundleDidLoadNotification object:nil userInfo:[NSDictionary dictionaryWithObject:classArray forKey:@"NSLoadedClasses"]];
+            [[NSNotificationCenter defaultCenter] postNotification:notification];            
+            //NSLog(@"Loaded");
 		}
 	}
 }
@@ -106,7 +117,7 @@ static PluginController *sharedPluginController = nil;
 - (void)loadPlugins
 {
 	[self loadPluginsAtPath:[[NSBundle mainBundle] builtInPlugInsPath]];
-	[self loadPluginsAtPath:[@"~/Library/Application Support/Cog/Plugins" stringByExpandingTildeInPath]];
+	//[self loadPluginsAtPath:[@"~/Library/Application Support/Cog/Plugins" stringByExpandingTildeInPath]];
 }
 
 - (void)setupContainer:(NSString *)className

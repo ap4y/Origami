@@ -703,9 +703,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9521E23813FD536700C7D5B2 /* TagLib */ = {
+		9521E23813FD536700C7D5B2 /* TagLibMetadataReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9521E24713FD536700C7D5B2 /* Build configuration list for PBXNativeTarget "TagLib" */;
+			buildConfigurationList = 9521E24713FD536700C7D5B2 /* Build configuration list for PBXNativeTarget "TagLibMetadataReader" */;
 			buildPhases = (
 				9521E23513FD536700C7D5B2 /* Sources */,
 				9521E23613FD536700C7D5B2 /* Frameworks */,
@@ -715,7 +715,7 @@
 			);
 			dependencies = (
 			);
-			name = TagLib;
+			name = TagLibMetadataReader;
 			productName = TagLib;
 			productReference = 9521E23913FD536700C7D5B2 /* TagLib.bundle */;
 			productType = "com.apple.product-type.bundle";
@@ -725,6 +725,9 @@
 /* Begin PBXProject section */
 		9521E23013FD536700C7D5B2 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 9521E23313FD536700C7D5B2 /* Build configuration list for PBXProject "TagLib" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -737,7 +740,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9521E23813FD536700C7D5B2 /* TagLib */,
+				9521E23813FD536700C7D5B2 /* TagLibMetadataReader */,
 			);
 		};
 /* End PBXProject section */
@@ -970,7 +973,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9521E24713FD536700C7D5B2 /* Build configuration list for PBXNativeTarget "TagLib" */ = {
+		9521E24713FD536700C7D5B2 /* Build configuration list for PBXNativeTarget "TagLibMetadataReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9521E24813FD536700C7D5B2 /* Debug */,
