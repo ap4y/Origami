@@ -88,7 +88,7 @@ static PluginController *sharedPluginController = nil;
 
 - (void)loadPluginsAtPath:(NSString *)path
 {
-	NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
+	/*NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];    
     
 	for (NSString *pname in dirContents)
 	{
@@ -106,12 +106,16 @@ static PluginController *sharedPluginController = nil;
                 classArray = [NSArray arrayWithObjects:@"CueSheetContainer", @"CueSheetDecoder", @"CueSheetMetadataReader", nil];
             }
             
-            //NSLog(@"Trying to load %@", bundleName);                    
+            NSLog(@"Trying to load %@", bundleName);                    
             NSNotification* notification = [NSNotification notificationWithName:NSBundleDidLoadNotification object:nil userInfo:[NSDictionary dictionaryWithObject:classArray forKey:@"NSLoadedClasses"]];
             [[NSNotificationCenter defaultCenter] postNotification:notification];            
             //NSLog(@"Loaded");
 		}
-	}
+	}*/
+    
+    NSArray* classArray = [NSArray arrayWithObjects:@"TagLibMetadataReader", @"FileSource", @"CueSheetContainer", @"CueSheetDecoder", @"CueSheetMetadataReader", @"PlsContainer", @"M3uContainer", @"HTTPSource", @"CoreAudioDecoder", @"FlacDecoder", nil];
+    NSNotification* notification = [NSNotification notificationWithName:NSBundleDidLoadNotification object:nil userInfo:[NSDictionary dictionaryWithObject:classArray forKey:@"NSLoadedClasses"]];
+    [[NSNotificationCenter defaultCenter] postNotification:notification]; 
 }
 
 - (void)loadPlugins

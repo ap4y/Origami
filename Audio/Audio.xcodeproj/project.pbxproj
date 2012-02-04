@@ -17,11 +17,11 @@
 		951727FC13FD33F80089AE61 /* AudioDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727EB13FD33F80089AE61 /* AudioDecoder.m */; };
 		951727FD13FD33F80089AE61 /* AudioMetadataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727EC13FD33F80089AE61 /* AudioMetadataReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		951727FE13FD33F80089AE61 /* AudioMetadataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727ED13FD33F80089AE61 /* AudioMetadataReader.m */; };
-		951727FF13FD33F80089AE61 /* AudioMetadataWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727EE13FD33F80089AE61 /* AudioMetadataWriter.h */; };
+		951727FF13FD33F80089AE61 /* AudioMetadataWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727EE13FD33F80089AE61 /* AudioMetadataWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9517280013FD33F80089AE61 /* AudioMetadataWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727EF13FD33F80089AE61 /* AudioMetadataWriter.m */; };
 		9517280113FD33F80089AE61 /* AudioPropertiesReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727F013FD33F80089AE61 /* AudioPropertiesReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9517280213FD33F80089AE61 /* AudioPropertiesReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727F113FD33F80089AE61 /* AudioPropertiesReader.m */; };
-		9517280313FD33F80089AE61 /* AudioSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727F213FD33F80089AE61 /* AudioSource.h */; };
+		9517280313FD33F80089AE61 /* AudioSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727F213FD33F80089AE61 /* AudioSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9517280413FD33F80089AE61 /* AudioSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727F313FD33F80089AE61 /* AudioSource.m */; };
 		9517280513FD33F80089AE61 /* PluginController.h in Headers */ = {isa = PBXBuildFile; fileRef = 951727F413FD33F80089AE61 /* PluginController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9517280613FD33F80089AE61 /* PluginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 951727F513FD33F80089AE61 /* PluginController.m */; };
@@ -30,7 +30,7 @@
 		9517280C13FD34120089AE61 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517280913FD34120089AE61 /* Helper.m */; };
 		9517281813FD344E0089AE61 /* BufferChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517280E13FD344E0089AE61 /* BufferChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9517281913FD344E0089AE61 /* BufferChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517280F13FD344E0089AE61 /* BufferChain.m */; };
-		9517281A13FD344E0089AE61 /* ConverterNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517281013FD344E0089AE61 /* ConverterNode.h */; };
+		9517281A13FD344E0089AE61 /* ConverterNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517281013FD344E0089AE61 /* ConverterNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9517281B13FD344E0089AE61 /* ConverterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517281113FD344E0089AE61 /* ConverterNode.m */; };
 		9517281C13FD344E0089AE61 /* InputNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517281213FD344E0089AE61 /* InputNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9517281D13FD344E0089AE61 /* InputNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9517281313FD344E0089AE61 /* InputNode.m */; };
@@ -51,30 +51,31 @@
 		9517283C13FD34880089AE61 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9517283913FD34880089AE61 /* CoreAudio.framework */; };
 		9517283E13FD34BE0089AE61 /* Plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 9517283D13FD34BE0089AE61 /* Plugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		959DA4971497C6B1004F6479 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 959DA4961497C6B1004F6479 /* libz.dylib */; };
+		95ADE23414DD35FB00F65A91 /* TagLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95ADE23314DD35FB00F65A91 /* TagLib.framework */; };
 		95E8EA3D1497B88800E68D77 /* FLAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E8EA3A1497B88800E68D77 /* FLAC.framework */; };
-		95E8EA3E1497B88800E68D77 /* FlacDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EA3B1497B88800E68D77 /* FlacDecoder.h */; };
+		95E8EA3E1497B88800E68D77 /* FlacDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EA3B1497B88800E68D77 /* FlacDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EA3F1497B88800E68D77 /* FlacDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EA3C1497B88800E68D77 /* FlacDecoder.m */; };
-		95E8EB071497BDC200E68D77 /* CoreAudioDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EAFF1497BDC200E68D77 /* CoreAudioDecoder.h */; };
+		95E8EB071497BDC200E68D77 /* CoreAudioDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EAFF1497BDC200E68D77 /* CoreAudioDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB081497BDC200E68D77 /* CoreAudioDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB001497BDC200E68D77 /* CoreAudioDecoder.m */; };
-		95E8EB211497BDE500E68D77 /* HTTPSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB111497BDE400E68D77 /* HTTPSource.h */; };
+		95E8EB211497BDE500E68D77 /* HTTPSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB111497BDE400E68D77 /* HTTPSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB221497BDE500E68D77 /* HTTPSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB121497BDE400E68D77 /* HTTPSource.m */; };
-		95E8EB311497BE0D00E68D77 /* M3uContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB291497BE0D00E68D77 /* M3uContainer.h */; };
+		95E8EB311497BE0D00E68D77 /* M3uContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB291497BE0D00E68D77 /* M3uContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB321497BE0D00E68D77 /* M3uContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB2A1497BE0D00E68D77 /* M3uContainer.m */; };
-		95E8EB411497BE2500E68D77 /* PlsContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB391497BE2500E68D77 /* PlsContainer.h */; };
+		95E8EB411497BE2500E68D77 /* PlsContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB391497BE2500E68D77 /* PlsContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB421497BE2500E68D77 /* PlsContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB3A1497BE2500E68D77 /* PlsContainer.m */; };
-		95E8EB581497BE4D00E68D77 /* CueSheetContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB481497BE4D00E68D77 /* CueSheetContainer.h */; };
+		95E8EB581497BE4D00E68D77 /* CueSheetContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB481497BE4D00E68D77 /* CueSheetContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB591497BE4D00E68D77 /* CueSheetContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB491497BE4D00E68D77 /* CueSheetContainer.m */; };
-		95E8EB5A1497BE4D00E68D77 /* CueSheetDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB4A1497BE4D00E68D77 /* CueSheetDecoder.h */; };
+		95E8EB5A1497BE4D00E68D77 /* CueSheetDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB4A1497BE4D00E68D77 /* CueSheetDecoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB5B1497BE4D00E68D77 /* CueSheetDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB4B1497BE4D00E68D77 /* CueSheetDecoder.m */; };
-		95E8EB5C1497BE4D00E68D77 /* CueSheetMetadataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB4C1497BE4D00E68D77 /* CueSheetMetadataReader.h */; };
+		95E8EB5C1497BE4D00E68D77 /* CueSheetMetadataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB4C1497BE4D00E68D77 /* CueSheetMetadataReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB5D1497BE4D00E68D77 /* CueSheetMetadataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB4D1497BE4D00E68D77 /* CueSheetMetadataReader.m */; };
-		95E8EB5E1497BE4D00E68D77 /* CueSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB4E1497BE4D00E68D77 /* CueSheet.h */; };
+		95E8EB5E1497BE4D00E68D77 /* CueSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB4E1497BE4D00E68D77 /* CueSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB5F1497BE4D00E68D77 /* CueSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB4F1497BE4D00E68D77 /* CueSheet.m */; };
-		95E8EB601497BE4D00E68D77 /* CueSheetTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB501497BE4D00E68D77 /* CueSheetTrack.h */; };
+		95E8EB601497BE4D00E68D77 /* CueSheetTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB501497BE4D00E68D77 /* CueSheetTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB611497BE4D00E68D77 /* CueSheetTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB511497BE4D00E68D77 /* CueSheetTrack.m */; };
-		95E8EB6F1497BE8E00E68D77 /* FileSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB671497BE8E00E68D77 /* FileSource.h */; };
+		95E8EB6F1497BE8E00E68D77 /* FileSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB671497BE8E00E68D77 /* FileSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8EB701497BE8E00E68D77 /* FileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB681497BE8E00E68D77 /* FileSource.m */; };
-		95E8ED111497BFFE00E68D77 /* TagLibMetadataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB7B1497BFFC00E68D77 /* TagLibMetadataReader.h */; };
+		95E8ED111497BFFE00E68D77 /* TagLibMetadataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E8EB7B1497BFFC00E68D77 /* TagLibMetadataReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95E8ED121497BFFE00E68D77 /* TagLibMetadataReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 95E8EB7C1497BFFC00E68D77 /* TagLibMetadataReader.mm */; };
 /* End PBXBuildFile section */
 
@@ -126,7 +127,8 @@
 		9517283913FD34880089AE61 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		9517283D13FD34BE0089AE61 /* Plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Plugin.h; path = ../../Plugin.h; sourceTree = "<group>"; };
 		959DA4961497C6B1004F6479 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		95E8EA3A1497B88800E68D77 /* FLAC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAC.framework; path = "../../../../Audio Frameworks/FLAC/FLAC.framework"; sourceTree = "<group>"; };
+		95ADE23314DD35FB00F65A91 /* TagLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TagLib.framework; path = "../../Audio Frameworks/taglib_source/TagLib.framework"; sourceTree = "<group>"; };
+		95E8EA3A1497B88800E68D77 /* FLAC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAC.framework; path = "../../Audio Frameworks/FLAC/FLAC.framework"; sourceTree = "<group>"; };
 		95E8EA3B1497B88800E68D77 /* FlacDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlacDecoder.h; sourceTree = "<group>"; };
 		95E8EA3C1497B88800E68D77 /* FlacDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlacDecoder.m; sourceTree = "<group>"; };
 		95E8EAFF1497BDC200E68D77 /* CoreAudioDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAudioDecoder.h; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95ADE23414DD35FB00F65A91 /* TagLib.framework in Frameworks */,
 				959DA4971497C6B1004F6479 /* libz.dylib in Frameworks */,
 				95E8EA3D1497B88800E68D77 /* FLAC.framework in Frameworks */,
 				9517283A13FD34880089AE61 /* AudioToolbox.framework in Frameworks */,
@@ -190,6 +193,9 @@
 		951727D313FD33800089AE61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95ADE23314DD35FB00F65A91 /* TagLib.framework */,
+				95E8EA3A1497B88800E68D77 /* FLAC.framework */,
+				959DA4961497C6B1004F6479 /* libz.dylib */,
 				9517283713FD34880089AE61 /* AudioToolbox.framework */,
 				9517283813FD34880089AE61 /* AudioUnit.framework */,
 				9517283913FD34880089AE61 /* CoreAudio.framework */,
@@ -313,7 +319,6 @@
 		95E8EA391497B88700E68D77 /* Flac */ = {
 			isa = PBXGroup;
 			children = (
-				95E8EA3A1497B88800E68D77 /* FLAC.framework */,
 				95E8EA3B1497B88800E68D77 /* FlacDecoder.h */,
 				95E8EA3C1497B88800E68D77 /* FlacDecoder.m */,
 			);
@@ -392,7 +397,6 @@
 		95E8EB751497BFFC00E68D77 /* TagLib */ = {
 			isa = PBXGroup;
 			children = (
-				959DA4961497C6B1004F6479 /* libz.dylib */,
 				95E8EB7B1497BFFC00E68D77 /* TagLibMetadataReader.h */,
 				95E8EB7C1497BFFC00E68D77 /* TagLibMetadataReader.mm */,
 			);
@@ -629,7 +633,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Audio Frameworks/FLAC\"",
+					"\"../../Audio Frameworks/FLAC\"",
+					"\"../../Audio Frameworks/taglib_source\"",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -637,10 +642,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
-				HEADER_SEARCH_PATHS = (
-					"/Users/ap4y/github/Audio\\ Frameworks/taglib_source/**",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Audio/Audio-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -654,7 +658,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Audio Frameworks/FLAC\"",
+					"\"../../Audio Frameworks/FLAC\"",
+					"\"../../Audio Frameworks/taglib_source\"",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -662,10 +667,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_ABOUT_POINTER_SIGNEDNESS = YES;
-				HEADER_SEARCH_PATHS = (
-					"/Users/ap4y/github/Audio\\ Frameworks/taglib_source/**",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Audio/Audio-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;

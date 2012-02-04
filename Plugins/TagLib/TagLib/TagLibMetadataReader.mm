@@ -9,9 +9,9 @@
 #import "TagLibMetadataReader.h"
 #import <TagLib/fileref.h>
 #import <TagLib/tag.h>
-#import <mpegfile.h>
-#import <id3v2tag.h>
-#import <attachedpictureframe.h>
+#import <TagLib/mpegfile.h>
+#import <TagLib/id3v2tag.h>
+#import <TagLib/attachedpictureframe.h>
 
 @implementation TagLibMetadataReader
 

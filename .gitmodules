@@ -1,0 +1,6 @@
+[submodule "three20"]
+	path = three20
+	url = git://github.com/facebook/three20.git
+[submodule "Audio-Frameworks"]
+	path = Audio-Frameworks
+	url = git://github.com/ap4y/Audio-Frameworks.git
