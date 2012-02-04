@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Audio/AudioPlayer.h"
-#import "Audio/Status.h"
+#import "AudioPlayer.h"
+#import "Status.h"
 #import "Track.h"
 
 //@protocol OOAudioPlayerDelegate;

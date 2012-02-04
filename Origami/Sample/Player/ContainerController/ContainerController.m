@@ -7,7 +7,7 @@
 //
 
 #import "ContainerController.h"
-#import "Audio/AudioContainer.h"
+#import "AudioContainer.h"
 #import "OOAudioPlayer.h"
 #import "TableTrackItem.h"
 #import "NSString+URLEncode.h"

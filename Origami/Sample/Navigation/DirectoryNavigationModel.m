@@ -7,7 +7,7 @@
 //
 
 #import "DirectoryNavigationModel.h"
-#import "Audio/AudioPlayer.h"
+#import "AudioPlayer.h"
 #import "LibraryModelCommon.h"
 #import "TableTrackItem.h"
 //#import "TableUrlItem.h"

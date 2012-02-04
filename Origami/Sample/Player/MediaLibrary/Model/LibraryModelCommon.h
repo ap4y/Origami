@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "MediaLibrary.h"
 #import "Track.h"
-#import "Audio/AudioMetadataReader.h"
+#import "AudioMetadataReader.h"
 
 @interface LibraryModelCommon : NSObject
 
