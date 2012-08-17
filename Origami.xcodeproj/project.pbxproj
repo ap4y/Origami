@@ -42,6 +42,7 @@
 		95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95522AAA15DE9A9C002CFB1F /* DataModel.xcdatamodeld */; };
 		95522AB315DE9C67002CFB1F /* ORGMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB215DE9C67002CFB1F /* ORGMAlbum.m */; };
 		95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB515DE9C68002CFB1F /* ORGMEntity.m */; };
+		95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		95522AB215DE9C67002CFB1F /* ORGMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbum.m; path = Models/ORGMAlbum.m; sourceTree = "<group>"; };
 		95522AB415DE9C68002CFB1F /* ORGMEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMEntity.h; path = Models/ORGMEntity.h; sourceTree = "<group>"; };
 		95522AB515DE9C68002CFB1F /* ORGMEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMEntity.m; path = Models/ORGMEntity.m; sourceTree = "<group>"; };
+		95522AB715DE9E13002CFB1F /* ORGMHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMHTTPClient.h; path = Common/ORGMHTTPClient.h; sourceTree = "<group>"; };
+		95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMHTTPClient.m; path = Common/ORGMHTTPClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +236,8 @@
 			children = (
 				95522A7015DE5495002CFB1F /* ORGMCustomization.h */,
 				95522A7115DE5495002CFB1F /* ORGMCustomization.m */,
+				95522AB715DE9E13002CFB1F /* ORGMHTTPClient.h */,
+				95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 				95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */,
 				95522AB315DE9C67002CFB1F /* ORGMAlbum.m in Sources */,
 				95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */,
+				95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
