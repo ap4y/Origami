@@ -8,7 +8,7 @@
 
 #import "ORGMLibraryViewController.h"
 
-@interface ORGMLibraryViewController ()
+@interface ORGMLibraryViewController () <UITableViewDataSource>
 
 @end
 
@@ -25,8 +25,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [super viewDidLoad];	
 }
 
 - (void)viewDidUnload
@@ -38,6 +37,16 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"albumCell"];
+    return cell;
 }
 
 @end
