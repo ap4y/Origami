@@ -21,7 +21,7 @@
 		95522A2A15DC40C3002CFB1F /* OrigamiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A2915DC40C3002CFB1F /* OrigamiTests.m */; };
 		95522A6215DD667A002CFB1F /* ORGMSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A6115DD667A002CFB1F /* ORGMSideMenuViewController.m */; };
 		95522A6515DD66A0002CFB1F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95522A6415DD66A0002CFB1F /* MainStoryboard.storyboard */; };
-		95522A6C15DD6E33002CFB1F /* ORGMLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */; };
+		95522A6C15DD6E33002CFB1F /* ORGMAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A6B15DD6E33002CFB1F /* ORGMAlbumsViewController.m */; };
 		95522A7215DE5495002CFB1F /* ORGMCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A7115DE5495002CFB1F /* ORGMCustomization.m */; };
 		95522A7515DE5500002CFB1F /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A7415DE5500002CFB1F /* back@2x.png */; };
 		95522A7715DE5547002CFB1F /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A7615DE5547002CFB1F /* back.png */; };
@@ -76,8 +76,8 @@
 		95522A6015DD667A002CFB1F /* ORGMSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMSideMenuViewController.h; path = ViewControllers/ORGMSideMenuViewController.h; sourceTree = "<group>"; };
 		95522A6115DD667A002CFB1F /* ORGMSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMSideMenuViewController.m; path = ViewControllers/ORGMSideMenuViewController.m; sourceTree = "<group>"; };
 		95522A6415DD66A0002CFB1F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = Storyboards/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		95522A6A15DD6E33002CFB1F /* ORGMLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMLibraryViewController.h; path = ViewControllers/ORGMLibraryViewController.h; sourceTree = "<group>"; };
-		95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMLibraryViewController.m; path = ViewControllers/ORGMLibraryViewController.m; sourceTree = "<group>"; };
+		95522A6A15DD6E33002CFB1F /* ORGMAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbumsViewController.h; path = ViewControllers/ORGMAlbumsViewController.h; sourceTree = "<group>"; };
+		95522A6B15DD6E33002CFB1F /* ORGMAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbumsViewController.m; path = ViewControllers/ORGMAlbumsViewController.m; sourceTree = "<group>"; };
 		95522A7015DE5495002CFB1F /* ORGMCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMCustomization.h; path = Common/ORGMCustomization.h; sourceTree = "<group>"; };
 		95522A7115DE5495002CFB1F /* ORGMCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMCustomization.m; path = Common/ORGMCustomization.m; sourceTree = "<group>"; };
 		95522A7415DE5500002CFB1F /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -222,8 +222,8 @@
 			children = (
 				95522A6015DD667A002CFB1F /* ORGMSideMenuViewController.h */,
 				95522A6115DD667A002CFB1F /* ORGMSideMenuViewController.m */,
-				95522A6A15DD6E33002CFB1F /* ORGMLibraryViewController.h */,
-				95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */,
+				95522A6A15DD6E33002CFB1F /* ORGMAlbumsViewController.h */,
+				95522A6B15DD6E33002CFB1F /* ORGMAlbumsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -409,7 +409,7 @@
 				95522A1115DC40C2002CFB1F /* main.m in Sources */,
 				95522A1515DC40C2002CFB1F /* ORGMAppDelegate.m in Sources */,
 				95522A6215DD667A002CFB1F /* ORGMSideMenuViewController.m in Sources */,
-				95522A6C15DD6E33002CFB1F /* ORGMLibraryViewController.m in Sources */,
+				95522A6C15DD6E33002CFB1F /* ORGMAlbumsViewController.m in Sources */,
 				95522A7215DE5495002CFB1F /* ORGMCustomization.m in Sources */,
 				95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */,
 				95522AB315DE9C67002CFB1F /* ORGMAlbum.m in Sources */,

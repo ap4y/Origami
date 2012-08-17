@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ORGMLibraryViewController : UIViewController
+@interface ORGMAlbumsViewController : UIViewController
 
 @end

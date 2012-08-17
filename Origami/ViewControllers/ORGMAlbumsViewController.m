@@ -6,13 +6,13 @@
 //
 //
 
-#import "ORGMLibraryViewController.h"
+#import "ORGMAlbumsViewController.h"
 
-@interface ORGMLibraryViewController () <UITableViewDataSource>
+@interface ORGMAlbumsViewController () <UITableViewDataSource>
 
 @end
 
-@implementation ORGMLibraryViewController
+@implementation ORGMAlbumsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
