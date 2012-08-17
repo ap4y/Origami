@@ -40,6 +40,8 @@
 		95522A9C15DE971E002CFB1F /* clear_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A9A15DE971E002CFB1F /* clear_image@2x.png */; };
 		95522AA815DE9A35002CFB1F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522AA715DE9A35002CFB1F /* CoreData.framework */; };
 		95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95522AAA15DE9A9C002CFB1F /* DataModel.xcdatamodeld */; };
+		95522AB315DE9C67002CFB1F /* ORGMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB215DE9C67002CFB1F /* ORGMAlbum.m */; };
+		95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB515DE9C68002CFB1F /* ORGMEntity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,10 @@
 		95522A9A15DE971E002CFB1F /* clear_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear_image@2x.png"; sourceTree = "<group>"; };
 		95522AA715DE9A35002CFB1F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		95522AAB15DE9A9C002CFB1F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		95522AB115DE9C67002CFB1F /* ORGMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbum.h; path = Models/ORGMAlbum.h; sourceTree = "<group>"; };
+		95522AB215DE9C67002CFB1F /* ORGMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbum.m; path = Models/ORGMAlbum.m; sourceTree = "<group>"; };
+		95522AB415DE9C68002CFB1F /* ORGMEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMEntity.h; path = Models/ORGMEntity.h; sourceTree = "<group>"; };
+		95522AB515DE9C68002CFB1F /* ORGMEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMEntity.m; path = Models/ORGMEntity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				95522A9715DE7C9D002CFB1F /* cover.jpg */,
-				95522AAD15DE9B70002CFB1F /* Model */,
+				95522AAD15DE9B70002CFB1F /* Models */,
 				95522A6F15DE547B002CFB1F /* Common */,
 				95522A6315DD6684002CFB1F /* ViewControllers */,
 				95522A5E15DD664C002CFB1F /* StoryBoards */,
@@ -252,11 +258,15 @@
 			path = images;
 			sourceTree = "<group>";
 		};
-		95522AAD15DE9B70002CFB1F /* Model */ = {
+		95522AAD15DE9B70002CFB1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95522AB115DE9C67002CFB1F /* ORGMAlbum.h */,
+				95522AB215DE9C67002CFB1F /* ORGMAlbum.m */,
+				95522AB415DE9C68002CFB1F /* ORGMEntity.h */,
+				95522AB515DE9C68002CFB1F /* ORGMEntity.m */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +412,8 @@
 				95522A6C15DD6E33002CFB1F /* ORGMLibraryViewController.m in Sources */,
 				95522A7215DE5495002CFB1F /* ORGMCustomization.m in Sources */,
 				95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */,
+				95522AB315DE9C67002CFB1F /* ORGMAlbum.m in Sources */,
+				95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
