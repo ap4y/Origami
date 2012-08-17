@@ -10,11 +10,11 @@
 
 #import "ORGMSideMenuViewController.h"
 #import "ORGMLibraryViewController.h"
+#import "ORGMCustomization.h"
 
 @implementation ORGMAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
                                                          bundle:nil];
     UINavigationController *navController =
@@ -24,6 +24,7 @@
         (ORGMSideMenuViewController *)self.window.rootViewController;
     [menuController setTopViewController:navController];
     
+    [ORGMCustomization prepareTheme];
     return YES;
 }
 

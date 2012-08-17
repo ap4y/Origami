@@ -22,6 +22,7 @@
 		95522A6215DD667A002CFB1F /* ORGMSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A6115DD667A002CFB1F /* ORGMSideMenuViewController.m */; };
 		95522A6515DD66A0002CFB1F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95522A6415DD66A0002CFB1F /* MainStoryboard.storyboard */; };
 		95522A6C15DD6E33002CFB1F /* ORGMLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */; };
+		95522A7215DE5495002CFB1F /* ORGMCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A7115DE5495002CFB1F /* ORGMCustomization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		95522A6415DD66A0002CFB1F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = Storyboards/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		95522A6A15DD6E33002CFB1F /* ORGMLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMLibraryViewController.h; path = ViewControllers/ORGMLibraryViewController.h; sourceTree = "<group>"; };
 		95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMLibraryViewController.m; path = ViewControllers/ORGMLibraryViewController.m; sourceTree = "<group>"; };
+		95522A7015DE5495002CFB1F /* ORGMCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMCustomization.h; path = Common/ORGMCustomization.h; sourceTree = "<group>"; };
+		95522A7115DE5495002CFB1F /* ORGMCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMCustomization.m; path = Common/ORGMCustomization.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,7 @@
 		95522A0A15DC40C2002CFB1F /* Origami */ = {
 			isa = PBXGroup;
 			children = (
+				95522A6F15DE547B002CFB1F /* Common */,
 				95522A6315DD6684002CFB1F /* ViewControllers */,
 				95522A5E15DD664C002CFB1F /* StoryBoards */,
 				95522A1315DC40C2002CFB1F /* ORGMAppDelegate.h */,
@@ -176,6 +180,15 @@
 				95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		95522A6F15DE547B002CFB1F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				95522A7015DE5495002CFB1F /* ORGMCustomization.h */,
+				95522A7115DE5495002CFB1F /* ORGMCustomization.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +317,7 @@
 				95522A1515DC40C2002CFB1F /* ORGMAppDelegate.m in Sources */,
 				95522A6215DD667A002CFB1F /* ORGMSideMenuViewController.m in Sources */,
 				95522A6C15DD6E33002CFB1F /* ORGMLibraryViewController.m in Sources */,
+				95522A7215DE5495002CFB1F /* ORGMCustomization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
