@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ORGMAlbumCell : UITableViewCell
-
+- (void)setAlbums:(NSArray *)albums;
 @end
