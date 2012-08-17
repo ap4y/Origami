@@ -14,17 +14,21 @@
 + (void)prepareTheme {
     [self navigationBar];
     
-    UIImageView* imageView =
-        [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"back"]];
+    UIImage *backImage =
+        [[UIImage imageNamed:@"back"] resizableImageWithCapInsets:UIEdgeInsetsZero];
+    UIImageView *imageView =
+        [[UIImageView alloc] initWithImage:backImage];
     [[UITableView appearance] setBackgroundView:imageView];
 }
 
 #pragma mark - private
 + (void)navigationBar {
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_back"]
+    UIImage *backImage =
+        [[UIImage imageNamed:@"nav_back"] resizableImageWithCapInsets:UIEdgeInsetsZero];
+    [[UINavigationBar appearance] setBackgroundImage:backImage
                                        forBarMetrics:UIBarMetricsDefault];
     
-    UIImage* barButton = [[UIImage imageNamed:@"barbutton_back"] resizableImageWithCapInsets:UIEdgeInsetsMake(3.0, 3.0, 3.0, 3.0)];
+    UIImage *barButton = [[UIImage imageNamed:@"clear_image"] resizableImageWithCapInsets:UIEdgeInsetsZero];
     [[UIBarButtonItem appearance] setBackgroundImage:barButton
                                             forState:UIControlStateNormal
                                           barMetrics:UIBarMetricsDefault];
