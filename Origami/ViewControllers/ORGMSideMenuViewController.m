@@ -9,7 +9,6 @@
 #import "ORGMSideMenuViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
-#import "ORGMLibraryViewController.h"
 
 const CGFloat screenWidth = 320.0;
 const CGFloat resettedCenter = 160.0;

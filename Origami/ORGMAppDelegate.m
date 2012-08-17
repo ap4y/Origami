@@ -9,7 +9,7 @@
 #import "ORGMAppDelegate.h"
 
 #import "ORGMSideMenuViewController.h"
-#import "ORGMLibraryViewController.h"
+#import "ORGMAlbumsViewController.h"
 #import "ORGMCustomization.h"
 
 @implementation ORGMAppDelegate
