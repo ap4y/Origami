@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12A269" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Album" syncable="YES">
+    <entity name="ORGMAlbum" parentEntity="ORGMEntity" syncable="YES">
         <attribute name="album_artist" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="random_cover" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tracks_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="ORGMEntity" isAbstract="YES" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Album" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="ORGMAlbum" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="ORGMEntity" positionX="160" positionY="192" width="128" height="60"/>
     </elements>
 </model>

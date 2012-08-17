@@ -160,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				95522A9715DE7C9D002CFB1F /* cover.jpg */,
+				95522AAD15DE9B70002CFB1F /* Model */,
 				95522A6F15DE547B002CFB1F /* Common */,
 				95522A6315DD6684002CFB1F /* ViewControllers */,
 				95522A5E15DD664C002CFB1F /* StoryBoards */,
@@ -249,6 +250,13 @@
 				95522A7415DE5500002CFB1F /* back@2x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		95522AAD15DE9B70002CFB1F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
