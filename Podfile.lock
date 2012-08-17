@@ -1,5 +1,11 @@
 PODS:
+  - AEHelpers/REST (0.0.1):
+    - AFNetworking (~> 0.10.0)
+    - JSONKit (~> 1.4)
+  - AFNetworking (0.10.0)
+  - JSONKit (1.5pre)
   - OrigamiEngine (1.0.1)
 
 DEPENDENCIES:
+  - AEHelpers/REST
   - OrigamiEngine
