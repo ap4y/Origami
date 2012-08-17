@@ -14,4 +14,7 @@
 @property (nonatomic, retain) NSNumber *tracks_count;
 @property (nonatomic, retain) NSString *random_cover;
 
++ (void)fetchAlbumsWithOffset:(NSInteger)offset
+                      success:(void (^)(NSArray *entities))success
+                      failure:(void (^)(NSError *error))failure;
 @end
