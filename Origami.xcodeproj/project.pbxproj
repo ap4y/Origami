@@ -39,6 +39,7 @@
 		95522A9B15DE971E002CFB1F /* clear_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A9915DE971E002CFB1F /* clear_image.png */; };
 		95522A9C15DE971E002CFB1F /* clear_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A9A15DE971E002CFB1F /* clear_image@2x.png */; };
 		95522AA815DE9A35002CFB1F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522AA715DE9A35002CFB1F /* CoreData.framework */; };
+		95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95522AAA15DE9A9C002CFB1F /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		95522A9915DE971E002CFB1F /* clear_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_image.png; sourceTree = "<group>"; };
 		95522A9A15DE971E002CFB1F /* clear_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear_image@2x.png"; sourceTree = "<group>"; };
 		95522AA715DE9A35002CFB1F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		95522AAB15DE9A9C002CFB1F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				95522A5E15DD664C002CFB1F /* StoryBoards */,
 				95522A1315DC40C2002CFB1F /* ORGMAppDelegate.h */,
 				95522A1415DC40C2002CFB1F /* ORGMAppDelegate.m */,
+				95522AAA15DE9A9C002CFB1F /* DataModel.xcdatamodeld */,
 				95522A0B15DC40C2002CFB1F /* Supporting Files */,
 			);
 			path = Origami;
@@ -390,6 +393,7 @@
 				95522A6215DD667A002CFB1F /* ORGMSideMenuViewController.m in Sources */,
 				95522A6C15DD6E33002CFB1F /* ORGMLibraryViewController.m in Sources */,
 				95522A7215DE5495002CFB1F /* ORGMCustomization.m in Sources */,
+				95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +573,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		95522AAA15DE9A9C002CFB1F /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				95522AAB15DE9A9C002CFB1F /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 95522AAB15DE9A9C002CFB1F /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 955229F715DC40C2002CFB1F /* Project object */;
 }
