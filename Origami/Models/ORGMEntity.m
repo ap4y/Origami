@@ -11,4 +11,8 @@
 @implementation ORGMEntity
 @dynamic id;
 
++ (NSString *)jsonRoot {
+    return nil;
+}
+
 @end

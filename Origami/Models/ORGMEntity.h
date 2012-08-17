@@ -8,6 +8,8 @@
 
 #import "ORManagedObject.h"
 
+#import "ORGMHTTPClient.h"
+
 @interface ORGMEntity : ORManagedObject
 @property (nonatomic, retain) NSNumber *id;
 @end
