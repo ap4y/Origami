@@ -9,6 +9,7 @@
 #import "AFHTTPClient.h"
 
 #define kTTBaseURLString @"http://loon.herokuapp.com/api/v0/"
+#define kMissingImageUrl @"/cover_arts/normal/missing.png"
 
 @interface ORGMHTTPClient : AFHTTPClient
 + (ORGMHTTPClient*)sharedClient;
