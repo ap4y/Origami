@@ -43,6 +43,7 @@
 		95522AB315DE9C67002CFB1F /* ORGMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB215DE9C67002CFB1F /* ORGMAlbum.m */; };
 		95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB515DE9C68002CFB1F /* ORGMEntity.m */; };
 		95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */; };
+		95522AC415DEA57A002CFB1F /* ORGMAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		95522AB515DE9C68002CFB1F /* ORGMEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMEntity.m; path = Models/ORGMEntity.m; sourceTree = "<group>"; };
 		95522AB715DE9E13002CFB1F /* ORGMHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMHTTPClient.h; path = Common/ORGMHTTPClient.h; sourceTree = "<group>"; };
 		95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMHTTPClient.m; path = Common/ORGMHTTPClient.m; sourceTree = "<group>"; };
+		95522AC215DEA57A002CFB1F /* ORGMAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbumCell.h; path = Views/ORGMAlbumCell.h; sourceTree = "<group>"; };
+		95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbumCell.m; path = Views/ORGMAlbumCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				95522A9715DE7C9D002CFB1F /* cover.jpg */,
+				95522AC115DEA53F002CFB1F /* Views */,
 				95522AAD15DE9B70002CFB1F /* Models */,
 				95522A6F15DE547B002CFB1F /* Common */,
 				95522A6315DD6684002CFB1F /* ViewControllers */,
@@ -272,6 +276,15 @@
 				95522AB515DE9C68002CFB1F /* ORGMEntity.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		95522AC115DEA53F002CFB1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95522AC215DEA57A002CFB1F /* ORGMAlbumCell.h */,
+				95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +433,7 @@
 				95522AB315DE9C67002CFB1F /* ORGMAlbum.m in Sources */,
 				95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */,
 				95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */,
+				95522AC415DEA57A002CFB1F /* ORGMAlbumCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
