@@ -6,21 +6,21 @@
 //
 //
 
-#import "ORGMAlbumsViewController.h"
+#import "ORGMLibraryViewController.h"
 
 #import "ORGMEntityWithCoverCell.h"
 #import "ORGMCustomization.h"
 
 const NSInteger loadMoreThreshold = 100;
 
-@interface ORGMAlbumsViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface ORGMLibraryViewController () <UITableViewDataSource, UITableViewDelegate> {
     BOOL _isLoading;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableViewOutlet;
 @property (strong, nonatomic) NSMutableArray *entities;
 @end
 
-@implementation ORGMAlbumsViewController
+@implementation ORGMLibraryViewController
 @synthesize tableViewOutlet = _tableViewOutlet;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

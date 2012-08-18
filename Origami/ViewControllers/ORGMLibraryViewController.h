@@ -15,6 +15,6 @@ typedef enum : NSInteger {
     ORGMLibraryControllerGenre
 } ORGMLibraryControllerType;
 
-@interface ORGMAlbumsViewController : UIViewController
+@interface ORGMLibraryViewController : UIViewController
 @property (assign, nonatomic) ORGMLibraryControllerType controllerType;
 @end

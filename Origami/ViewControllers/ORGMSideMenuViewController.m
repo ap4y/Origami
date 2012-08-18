@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ORGMCustomization.h"
 #import "ORGMMenuDataSource.h"
-#import "ORGMAlbumsViewController.h"
+#import "ORGMLibraryViewController.h"
 
 const CGFloat screenWidth = 320.0;
 const CGFloat resettedCenter = 160.0;
@@ -66,7 +66,7 @@ const CGFloat anchorRightPeekAmount = 100.0;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"headerTap"]) {
         UIButton *button = sender;
-        ORGMAlbumsViewController *albumsController = segue.destinationViewController;
+        ORGMLibraryViewController *albumsController = segue.destinationViewController;
         albumsController.controllerType = button.titleLabel.tag;
         UINavigationController *navController =
             (UINavigationController *)_topViewController;
