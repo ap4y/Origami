@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ORGMAlbumsViewController : UIViewController
+typedef enum : NSInteger {
+    ORGMLibraryControllerTrack,
+    ORGMLibraryControllerArtist,    
+    ORGMLibraryControllerAlbum,
+    ORGMLibraryControllerGenre
+} ORGMLibraryControllerType;
 
+@interface ORGMAlbumsViewController : UIViewController
+@property (assign, nonatomic) ORGMLibraryControllerType controllerType;
 @end

@@ -7,8 +7,9 @@
 //
 
 #import "ORGMAlbumsViewController.h"
-#import "ORGMAlbum.h"
+
 #import "ORGMAlbumCell.h"
+#import "ORGMCustomization.h"
 
 const NSInteger loadMoreThreshold = 100;
 
@@ -16,7 +17,7 @@ const NSInteger loadMoreThreshold = 100;
     BOOL _isLoading;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableViewOutlet;
-@property (strong, nonatomic) NSMutableArray *albums;
+@property (strong, nonatomic) NSMutableArray *entities;
 @end
 
 @implementation ORGMAlbumsViewController
@@ -25,7 +26,7 @@ const NSInteger loadMoreThreshold = 100;
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.albums = [[NSMutableArray alloc] init];
+        self.entities = [[NSMutableArray alloc] init];
         _isLoading = NO;
     }
     return self;
@@ -33,24 +34,43 @@ const NSInteger loadMoreThreshold = 100;
 
 - (void)loadNext {
     _isLoading = YES;
-    [ORGMAlbum fetchAlbumsWithOffset:_albums.count success:^(NSArray *entities) {
+    void (^success)(NSArray *entities) = ^(NSArray *entities) {
         if (entities.count <= 0) {
             [_tableViewOutlet setTableFooterView:nil];
             return;
         }
         [_tableViewOutlet.tableFooterView setHidden:NO];
         _isLoading = NO;
-        [_albums addObjectsFromArray:entities];
+        [_entities addObjectsFromArray:entities];
         [_tableViewOutlet reloadData];
-    } failure:^(NSError *error) {
+    };
+    void (^failure)(NSError *error) = ^(NSError *error) {
         _isLoading = NO;
         NSLog(@"%@", error);
-    }];
+    };
+    switch (_controllerType) {
+        case ORGMLibraryControllerTrack:
+            [ORGMTrack fetchTracksWithOffset:_entities.count
+                                     success:success failure:failure];
+            break;
+        case ORGMLibraryControllerArtist:
+            [ORGMArtist fetchArtistsWithOffset:_entities.count
+                                       success:success failure:failure];
+            break;
+        case ORGMLibraryControllerAlbum:
+            [ORGMAlbum fetchAlbumsWithOffset:_entities.count
+                                     success:success failure:failure];
+            break;
+        case ORGMLibraryControllerGenre:
+            [ORGMGenre fetchGenresWithOffset:_entities.count
+                                     success:success failure:failure];
+            break;
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_tableViewOutlet.tableFooterView setHidden:YES];
+    [_tableViewOutlet setBackgroundView:[ORGMCustomization backgroundImage]];
     [self loadNext];
 }
 
@@ -65,13 +85,14 @@ const NSInteger loadMoreThreshold = 100;
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _albums.count/2;
+    return _entities.count/2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	ORGMAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:@"albumCell"];
     NSInteger index = indexPath.row * 2;
-    [cell setAlbums:@[[_albums objectAtIndex:index], [_albums objectAtIndex:index + 1]]];
+    [cell setEntities:@[[_entities objectAtIndex:index],
+                        [_entities objectAtIndex:index + 1]]];
     return cell;
 }
 
@@ -80,9 +101,8 @@ const NSInteger loadMoreThreshold = 100;
     if (_isLoading) return;
     NSArray *indexes = [_tableViewOutlet indexPathsForVisibleRows];
     NSIndexPath *lastIndex = [indexes objectAtIndex:indexes.count - 1];
-    if ([lastIndex isEqual:[NSIndexPath indexPathForRow:(_albums.count/2 - 1)
+    if ([lastIndex isEqual:[NSIndexPath indexPathForRow:(_entities.count/2 - 1)
                                               inSection:0]]) {
-        NSLog(@"loading!!!");
         [self loadNext];
     }
 }
