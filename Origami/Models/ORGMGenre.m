@@ -13,14 +13,20 @@
 @dynamic tracks_count;
 @dynamic random_cover;
 
-#pragma mark - ORGMRemoteEntity
-+ (void)fetchEntitesWithOffset:(NSInteger)offset
-                       success:(void (^)(NSArray *))success
-                       failure:(void (^)(NSError *))failure {
-    [self fetchEntitesWithPath:@"genres"
-                        offset:offset
-                       success:success
-                       failure:failure];
++ (void)fetchGenresWithOffset:(NSInteger)offset
+                      success:(void (^)(NSArray *))success
+                      failure:(void (^)(NSError *))failure {
+    [self fetchEntitiesWithPath:@"genres"
+                         offset:offset
+                        success:success
+                        failure:failure];
+}
+
+- (NSURL *)getCoverArtUrl {
+    if ([self.random_cover isEqualToString:kMissingImageUrl]) {
+        return nil;
+    }
+    return [NSURL URLWithString:self.random_cover];
 }
 
 @end

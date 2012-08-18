@@ -15,10 +15,10 @@
     return nil;
 }
 
-+ (void)fetchEntitesWithPath:(NSString*)path
-                      offset:(NSInteger)offset
-                      success:(void (^)(NSArray *entities))success
-                      failure:(void (^)(NSError *error))failure {
++ (void)fetchEntitiesWithPath:(NSString*)path
+                       offset:(NSInteger)offset
+                        success:(void (^)(NSArray *entities))success
+                        failure:(void (^)(NSError *error))failure {
     [self fetchWithClient:[ORGMHTTPClient sharedClient]
                      path:path
                parameters:@{@"from": [NSNumber numberWithInteger:offset]}

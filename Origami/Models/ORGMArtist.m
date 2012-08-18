@@ -13,14 +13,20 @@
 @dynamic albums_count;
 @dynamic random_cover;
 
-#pragma mark - ORGMRemoteEntity
-+ (void)fetchEntitesWithOffset:(NSInteger)offset
++ (void)fetchArtistsWithOffset:(NSInteger)offset
                        success:(void (^)(NSArray *))success
                        failure:(void (^)(NSError *))failure {
-    [self fetchEntitesWithPath:@"artists"
-                        offset:offset
-                       success:success
-                       failure:failure];
+    [self fetchEntitiesWithPath:@"artists"
+                         offset:offset
+                        success:success
+                        failure:failure];
+}
+
+- (NSURL *)getCoverArtUrl {
+    if ([self.random_cover isEqualToString:kMissingImageUrl]) {
+        return nil;
+    }
+    return [NSURL URLWithString:self.random_cover];
 }
 
 @end

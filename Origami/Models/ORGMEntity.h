@@ -13,13 +13,8 @@
 @interface ORGMEntity : ORManagedObject
 @property (nonatomic, retain) NSNumber *id;
 
-+ (void)fetchEntitesWithPath:(NSString*)path
-                      offset:(NSInteger)offset
-                     success:(void (^)(NSArray *entities))success
-                     failure:(void (^)(NSError *error))failure;
-@end
-@protocol ORGMRemoteEntity <NSObject>
-+ (void)fetchEntitesWithOffset:(NSInteger)offset
-                     success:(void (^)(NSArray *entities))success
-                     failure:(void (^)(NSError *error))failure;
++ (void)fetchEntitiesWithPath:(NSString*)path
+                       offset:(NSInteger)offset
+                      success:(void (^)(NSArray *entities))success
+                      failure:(void (^)(NSError *error))failure;
 @end

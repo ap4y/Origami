@@ -8,9 +8,15 @@
 
 #import "ORGMEntity.h"
 
-@interface ORGMAlbum : ORGMEntity <ORGMRemoteEntity>
+@interface ORGMAlbum : ORGMEntity
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *album_artist;
 @property (nonatomic, retain) NSNumber *tracks_count;
 @property (nonatomic, retain) NSString *random_cover;
+
++ (void)fetchAlbumsWithOffset:(NSInteger)offset
+                      success:(void (^)(NSArray *))success
+                      failure:(void (^)(NSError *))failure;
+
+- (NSURL *)getCoverArtUrl;
 @end
