@@ -13,12 +13,12 @@
 #pragma mark - public
 + (void)prepareTheme {
     [self navigationBar];
-    
+}
+
++ (UIImageView *)backgroundImage {
     UIImage *backImage =
         [[UIImage imageNamed:@"back"] resizableImageWithCapInsets:UIEdgeInsetsZero];
-    UIImageView *imageView =
-        [[UIImageView alloc] initWithImage:backImage];
-    [[UITableView appearance] setBackgroundView:imageView];
+    return [[UIImageView alloc] initWithImage:backImage];
 }
 
 #pragma mark - private

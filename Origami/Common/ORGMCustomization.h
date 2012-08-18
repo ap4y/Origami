@@ -10,4 +10,5 @@
 
 @interface ORGMCustomization : NSObject
 + (void)prepareTheme;
++ (UIImageView *)backgroundImage;
 @end
