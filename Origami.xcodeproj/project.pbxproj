@@ -45,6 +45,8 @@
 		95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */; };
 		95522AC415DEA57A002CFB1F /* ORGMAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */; };
 		95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */; };
+		95522ACA15DF9A3A002CFB1F /* lastfm_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC815DF9A3A002CFB1F /* lastfm_red.png */; };
+		95522ACB15DF9A3A002CFB1F /* lastfm_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbumCell.m; path = Views/ORGMAlbumCell.m; sourceTree = "<group>"; };
 		95522AC515DF924D002CFB1F /* ORGMLastfmProxyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMLastfmProxyClient.h; path = Common/ORGMLastfmProxyClient.h; sourceTree = "<group>"; };
 		95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMLastfmProxyClient.m; path = Common/ORGMLastfmProxyClient.m; sourceTree = "<group>"; };
+		95522AC815DF9A3A002CFB1F /* lastfm_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastfm_red.png; sourceTree = "<group>"; };
+		95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lastfm_red@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,8 @@
 		95522A7315DE5500002CFB1F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				95522AC815DF9A3A002CFB1F /* lastfm_red.png */,
+				95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */,
 				95522A9915DE971E002CFB1F /* clear_image.png */,
 				95522A9A15DE971E002CFB1F /* clear_image@2x.png */,
 				95522A9315DE76F7002CFB1F /* btn_add.png */,
@@ -381,6 +387,8 @@
 				95522A9815DE7C9D002CFB1F /* cover.jpg in Resources */,
 				95522A9B15DE971E002CFB1F /* clear_image.png in Resources */,
 				95522A9C15DE971E002CFB1F /* clear_image@2x.png in Resources */,
+				95522ACA15DF9A3A002CFB1F /* lastfm_red.png in Resources */,
+				95522ACB15DF9A3A002CFB1F /* lastfm_red@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
