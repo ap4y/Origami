@@ -9,6 +9,9 @@
 #import "ORGMSideMenuViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
+#import "ORGMCustomization.h"
+#import "ORGMMenuDataSource.h"
+#import "ORGMAlbumsViewController.h"
 
 const CGFloat screenWidth = 320.0;
 const CGFloat resettedCenter = 160.0;
@@ -19,10 +22,13 @@ const CGFloat anchorRightPeekAmount = 100.0;
     CGFloat _initialHoizontalCenter;
     BOOL _underLeftShowing;
 }
+@property (weak, nonatomic) IBOutlet UITableView *tableViewOutlet;
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
+@property (strong, nonatomic) ORGMMenuDataSource *menuDataSource;
 @end
 
 @implementation ORGMSideMenuViewController
+@synthesize tableViewOutlet = _tableViewOutlet;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {        
@@ -57,14 +63,36 @@ const CGFloat anchorRightPeekAmount = 100.0;
 }
 
 #pragma mark - lifecycle
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"headerTap"]) {
+        UIButton *button = sender;
+        ORGMAlbumsViewController *albumsController = segue.destinationViewController;
+        albumsController.controllerType = button.titleLabel.tag;
+        UINavigationController *navController =
+            (UINavigationController *)_topViewController;
+        [navController setViewControllers:@[albumsController]];
+        [self resetTopViewWithComplete:nil];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                           action:@selector(panGesture:)];
     [self.view addGestureRecognizer:_panGesture];
+    
+    self.menuDataSource = [[ORGMMenuDataSource alloc] init];
+    _tableViewOutlet.dataSource = _menuDataSource;
+    _tableViewOutlet.delegate = _menuDataSource;
+    
+    UIImageView *backView = [ORGMCustomization backgroundImage];
+    backView.frame = self.view.bounds;
+    [self.view insertSubview:backView
+                belowSubview:_tableViewOutlet];
 }
 
 - (void)viewDidUnload {
+    [self setTableViewOutlet:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
