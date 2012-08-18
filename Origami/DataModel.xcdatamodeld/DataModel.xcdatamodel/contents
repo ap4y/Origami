@@ -6,11 +6,31 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tracks_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="ORGMArtist" parentEntity="ORGMEntity" syncable="YES">
+        <attribute name="albums_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="random_cover" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="ORGMEntity" representedClassName="ORGMEntity" isAbstract="YES" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="ORGMGenre" parentEntity="ORGMEntity" syncable="YES">
+        <attribute name="random_cover" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tracks_count" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="ORGMTrack" parentEntity="ORGMEntity" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="track_album" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="track_artist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="track_genre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="track_num" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="ORGMAlbum" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="ORGMEntity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ORGMAlbum" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="ORGMEntity" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="ORGMTrack" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="ORGMArtist" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="ORGMGenre" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>
