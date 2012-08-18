@@ -47,6 +47,7 @@
 		95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */; };
 		95522ACA15DF9A3A002CFB1F /* lastfm_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC815DF9A3A002CFB1F /* lastfm_red.png */; };
 		95522ACB15DF9A3A002CFB1F /* lastfm_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */; };
+		95522AD215DFC047002CFB1F /* ORGMMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMLastfmProxyClient.m; path = Common/ORGMLastfmProxyClient.m; sourceTree = "<group>"; };
 		95522AC815DF9A3A002CFB1F /* lastfm_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastfm_red.png; sourceTree = "<group>"; };
 		95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lastfm_red@2x.png"; sourceTree = "<group>"; };
+		95522AD015DFC046002CFB1F /* ORGMMenuDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMMenuDataSource.h; path = Common/ORGMMenuDataSource.h; sourceTree = "<group>"; };
+		95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMMenuDataSource.m; path = Common/ORGMMenuDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +254,8 @@
 				95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */,
 				95522AC515DF924D002CFB1F /* ORGMLastfmProxyClient.h */,
 				95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */,
+				95522AD015DFC046002CFB1F /* ORGMMenuDataSource.h */,
+				95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 				95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */,
 				95522AC415DEA57A002CFB1F /* ORGMAlbumCell.m in Sources */,
 				95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */,
+				95522AD215DFC047002CFB1F /* ORGMMenuDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
