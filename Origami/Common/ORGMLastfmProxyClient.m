@@ -45,4 +45,16 @@
     return [NSURL URLWithString:urlString relativeToURL:self.baseURL];
 }
 
+- (NSURL*)artistImageUrlForArtist:(NSString *)artist {
+    NSString *urlString = [NSString stringWithFormat:@"artist_image/%@/extralarge",
+                           [artist stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    return [NSURL URLWithString:urlString relativeToURL:self.baseURL];
+}
+
+- (NSURL*)genreImageUrlForGenre:(NSString *)genre {
+    NSString *urlString = [NSString stringWithFormat:@"genre_image/%@/extralarge",
+                           [genre stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    return [NSURL URLWithString:urlString relativeToURL:self.baseURL];
+}
+
 @end

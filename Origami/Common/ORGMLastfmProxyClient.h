@@ -12,5 +12,8 @@
 
 @interface ORGMLastfmProxyClient : AFHTTPClient
 + (ORGMLastfmProxyClient*)sharedClient;
+
 - (NSURL*)albumImageUrlForArtist:(NSString *)artist albumTitle:(NSString *)title;
+- (NSURL*)artistImageUrlForArtist:(NSString *)artist;
+- (NSURL*)genreImageUrlForGenre:(NSString *)genre;
 @end
