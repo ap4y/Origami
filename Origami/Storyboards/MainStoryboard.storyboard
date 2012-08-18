@@ -62,7 +62,7 @@
                                                     <rect key="frame" x="10" y="5" width="145" height="185"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="7ab-6T-ufS">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" id="7ab-6T-ufS">
                                                             <rect key="frame" x="5" y="5" width="135" height="135"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" red="0.93333339691162109" green="0.93333339691162109" blue="0.93333339691162109" alpha="1" colorSpace="deviceRGB"/>
@@ -88,6 +88,10 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="lastfm_red.png" id="oI2-UO-7gZ">
+                                                            <rect key="frame" x="68" y="118" width="72" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
@@ -95,10 +99,14 @@
                                                     <rect key="frame" x="165" y="5" width="145" height="185"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="uuf-by-zDu">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" id="uuf-by-zDu">
                                                             <rect key="frame" x="5" y="5" width="135" height="135"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" red="0.93333339689999995" green="0.93333339689999995" blue="0.93333339689999995" alpha="1" colorSpace="deviceRGB"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="lastfm_red.png" id="O0x-5B-3V6">
+                                                            <rect key="frame" x="68" y="118" width="72" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" id="AS7-Op-7XK">
                                                             <rect key="frame" x="5" y="140" width="135" height="40"/>
@@ -131,9 +139,11 @@
                                             <outlet property="leftAlbumView" destination="fwr-E9-NAo" id="fvu-Pf-bKf"/>
                                             <outlet property="leftDetailsLabel" destination="ygZ-qe-F4r" id="qhr-aO-4CU"/>
                                             <outlet property="leftImageView" destination="7ab-6T-ufS" id="GnM-LW-HJD"/>
+                                            <outlet property="leftLastfmLogo" destination="oI2-UO-7gZ" id="NvV-8j-Pw7"/>
                                             <outlet property="leftTitleLabel" destination="MBm-Kh-FPI" id="xSn-uP-OWq"/>
                                             <outlet property="rightDetailsLabel" destination="m3i-Eu-r07" id="DJX-Eb-IBC"/>
                                             <outlet property="rightImageView" destination="uuf-by-zDu" id="6K0-XG-P21"/>
+                                            <outlet property="rightLastfmLogo" destination="O0x-5B-3V6" id="1v9-P8-ryb"/>
                                             <outlet property="rightTitleLabel" destination="tHg-jA-aia" id="3me-tI-3hZ"/>
                                             <outlet property="rigthAlbumView" destination="QEW-br-Uu2" id="Mfs-QX-2Yy"/>
                                         </connections>
@@ -149,7 +159,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="xyf-BR-aKf">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="btn_add.png" id="gcN-Yw-ukR"/>
+                        <barButtonItem key="leftBarButtonItem" image="btn_add.png" id="gcN-Yw-ukR">
+                            <connections>
+                                <segue destination="6LA-RF-llR" kind="push" id="X3R-e1-Oa2"/>
+                            </connections>
+                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="cqq-8a-HJx">
                             <rect key="frame" x="67" y="0.0" width="150" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -235,6 +249,28 @@
             </objects>
             <point key="canvasLocation" x="781" y="-2"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="XFC-Zt-u56">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Okx-G9-lKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="6LA-RF-llR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vk0-bk-Gc2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VXB-sm-5MJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CDr-Lb-w1x"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1246" y="-2"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="QeD-t4-VrA">
             <objects>
@@ -257,6 +293,7 @@
         <image name="btn_play.png" width="11" height="15"/>
         <image name="btn_prev.png" width="19" height="15"/>
         <image name="cover.jpg" width="500" height="493"/>
+        <image name="lastfm_red.png" width="72" height="22"/>
     </resources>
     <classes>
         <class className="ORGMAlbumCell" superclassName="UITableViewCell">
@@ -265,9 +302,11 @@
                 <relationship kind="outlet" name="leftAlbumView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="leftDetailsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="leftImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="leftLastfmLogo" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="leftTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightDetailsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rightImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="rightLastfmLogo" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="rightTitleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rigthAlbumView" candidateClass="UIView"/>
             </relationships>
