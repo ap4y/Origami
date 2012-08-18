@@ -14,14 +14,14 @@
 @dynamic tracks_count;
 @dynamic random_cover;
 
-+ (void)fetchAlbumsWithOffset:(NSInteger)offset
-                      success:(void (^)(NSArray *entities))success
-                       failure:(void (^)(NSError *error))failure {
-    [self fetchWithClient:[ORGMHTTPClient sharedClient]
-                     path:@"albums"
-               parameters:@{@"from": [NSNumber numberWithInteger:offset]}
-                  success:success
-                  failure:failure];
+#pragma mark - ORGMRemoteEntity
++ (void)fetchEntitesWithOffset:(NSInteger)offset
+                       success:(void (^)(NSArray *))success
+                       failure:(void (^)(NSError *))failure {
+    [self fetchEntitesWithPath:@"albums"
+                        offset:offset
+                       success:success
+                       failure:failure];
 }
 
 @end

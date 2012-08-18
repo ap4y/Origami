@@ -8,7 +8,7 @@
 
 #import "ORGMEntity.h"
 
-@interface ORGMTrack : ORGMEntity
+@interface ORGMTrack : ORGMEntity <ORGMRemoteEntity>
 @property (nonatomic, retain) NSNumber *track_num;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *track_album;

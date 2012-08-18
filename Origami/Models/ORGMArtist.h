@@ -8,8 +8,7 @@
 
 #import "ORGMEntity.h"
 
-@interface ORGMArtist : ORGMEntity
-
+@interface ORGMArtist : ORGMEntity <ORGMRemoteEntity>
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSNumber *albums_count;
 @property (nonatomic, retain) NSString *random_cover;
