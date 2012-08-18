@@ -44,6 +44,7 @@
 		95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB515DE9C68002CFB1F /* ORGMEntity.m */; };
 		95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */; };
 		95522AC415DEA57A002CFB1F /* ORGMAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */; };
+		95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMHTTPClient.m; path = Common/ORGMHTTPClient.m; sourceTree = "<group>"; };
 		95522AC215DEA57A002CFB1F /* ORGMAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbumCell.h; path = Views/ORGMAlbumCell.h; sourceTree = "<group>"; };
 		95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbumCell.m; path = Views/ORGMAlbumCell.m; sourceTree = "<group>"; };
+		95522AC515DF924D002CFB1F /* ORGMLastfmProxyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMLastfmProxyClient.h; path = Common/ORGMLastfmProxyClient.h; sourceTree = "<group>"; };
+		95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMLastfmProxyClient.m; path = Common/ORGMLastfmProxyClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 				95522A7115DE5495002CFB1F /* ORGMCustomization.m */,
 				95522AB715DE9E13002CFB1F /* ORGMHTTPClient.h */,
 				95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */,
+				95522AC515DF924D002CFB1F /* ORGMLastfmProxyClient.h */,
+				95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */,
 				95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */,
 				95522AC415DEA57A002CFB1F /* ORGMAlbumCell.m in Sources */,
+				95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
