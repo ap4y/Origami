@@ -42,7 +42,7 @@
 		95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95522AAA15DE9A9C002CFB1F /* DataModel.xcdatamodeld */; };
 		95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB515DE9C68002CFB1F /* ORGMEntity.m */; };
 		95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */; };
-		95522AC415DEA57A002CFB1F /* ORGMAlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */; };
+		95522AC415DEA57A002CFB1F /* ORGMEntityWithCoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC315DEA57A002CFB1F /* ORGMEntityWithCoverCell.m */; };
 		95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */; };
 		95522ACA15DF9A3A002CFB1F /* lastfm_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC815DF9A3A002CFB1F /* lastfm_red.png */; };
 		95522ACB15DF9A3A002CFB1F /* lastfm_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */; };
@@ -110,8 +110,8 @@
 		95522AB515DE9C68002CFB1F /* ORGMEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMEntity.m; path = Models/ORGMEntity.m; sourceTree = "<group>"; };
 		95522AB715DE9E13002CFB1F /* ORGMHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMHTTPClient.h; path = Common/ORGMHTTPClient.h; sourceTree = "<group>"; };
 		95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMHTTPClient.m; path = Common/ORGMHTTPClient.m; sourceTree = "<group>"; };
-		95522AC215DEA57A002CFB1F /* ORGMAlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbumCell.h; path = Views/ORGMAlbumCell.h; sourceTree = "<group>"; };
-		95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbumCell.m; path = Views/ORGMAlbumCell.m; sourceTree = "<group>"; };
+		95522AC215DEA57A002CFB1F /* ORGMEntityWithCoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMEntityWithCoverCell.h; path = Views/ORGMEntityWithCoverCell.h; sourceTree = "<group>"; };
+		95522AC315DEA57A002CFB1F /* ORGMEntityWithCoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMEntityWithCoverCell.m; path = Views/ORGMEntityWithCoverCell.m; sourceTree = "<group>"; };
 		95522AC515DF924D002CFB1F /* ORGMLastfmProxyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMLastfmProxyClient.h; path = Common/ORGMLastfmProxyClient.h; sourceTree = "<group>"; };
 		95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMLastfmProxyClient.m; path = Common/ORGMLastfmProxyClient.m; sourceTree = "<group>"; };
 		95522AC815DF9A3A002CFB1F /* lastfm_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastfm_red.png; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 		95522AC115DEA53F002CFB1F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				95522AC215DEA57A002CFB1F /* ORGMAlbumCell.h */,
-				95522AC315DEA57A002CFB1F /* ORGMAlbumCell.m */,
+				95522AC215DEA57A002CFB1F /* ORGMEntityWithCoverCell.h */,
+				95522AC315DEA57A002CFB1F /* ORGMEntityWithCoverCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -465,7 +465,7 @@
 				95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */,
 				95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */,
 				95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */,
-				95522AC415DEA57A002CFB1F /* ORGMAlbumCell.m in Sources */,
+				95522AC415DEA57A002CFB1F /* ORGMEntityWithCoverCell.m in Sources */,
 				95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */,
 				95522AD215DFC047002CFB1F /* ORGMMenuDataSource.m in Sources */,
 				95522ADC15DFFDD0002CFB1F /* ORGMAlbum.m in Sources */,

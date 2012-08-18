@@ -121,7 +121,7 @@
                                     <rect key="frame" x="0.0" y="217" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="iC6-rg-4EU">
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="gray" id="iC6-rg-4EU">
                                             <rect key="frame" x="20" y="12" width="20" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </activityIndicatorView>
@@ -136,7 +136,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="albumCell" id="4TC-Hh-bgz" customClass="ORGMAlbumCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="albumCell" id="4TC-Hh-bgz" customClass="ORGMEntityWithCoverCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="195"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -356,21 +356,6 @@
         <image name="lastfm_red.png" width="72" height="22"/>
     </resources>
     <classes>
-        <class className="ORGMAlbumCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ORGMAlbumCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="leftAlbumView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="leftDetailsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="leftLastfmLogo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="leftTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightDetailsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rightImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="rightLastfmLogo" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="rightTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rigthAlbumView" candidateClass="UIView"/>
-            </relationships>
-        </class>
         <class className="ORGMAlbumsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ORGMAlbumsViewController.h"/>
             <relationships>

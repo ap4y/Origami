@@ -8,7 +8,7 @@
 
 #import "ORGMAlbumsViewController.h"
 
-#import "ORGMAlbumCell.h"
+#import "ORGMEntityWithCoverCell.h"
 #import "ORGMCustomization.h"
 
 const NSInteger loadMoreThreshold = 100;
@@ -89,7 +89,7 @@ const NSInteger loadMoreThreshold = 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	ORGMAlbumCell *cell = [tableView dequeueReusableCellWithIdentifier:@"albumCell"];
+	ORGMEntityWithCoverCell *cell = [tableView dequeueReusableCellWithIdentifier:@"albumCell"];
     NSInteger index = indexPath.row * 2;
     [cell setEntities:@[[_entities objectAtIndex:index],
                         [_entities objectAtIndex:index + 1]]];

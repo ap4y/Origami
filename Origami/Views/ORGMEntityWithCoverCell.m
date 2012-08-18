@@ -6,7 +6,7 @@
 //
 //
 
-#import "ORGMAlbumCell.h"
+#import "ORGMEntityWithCoverCell.h"
 
 #import "UIImageView+AFNetworking.h"
 #import "ORGMLastfmProxyClient.h"
@@ -16,7 +16,7 @@ typedef enum : NSInteger {
     ORGMEntityCellViewPositionRight
 } ORGMEntityCellViewPosition;
 
-@interface ORGMAlbumCell ()
+@interface ORGMEntityWithCoverCell ()
 @property (weak, nonatomic) IBOutlet UIView *leftAlbumView;
 @property (weak, nonatomic) IBOutlet UIView *rigthAlbumView;
 @property (weak, nonatomic) IBOutlet UIImageView *leftImageView;
@@ -30,7 +30,7 @@ typedef enum : NSInteger {
 
 @end
 
-@implementation ORGMAlbumCell
+@implementation ORGMEntityWithCoverCell
 @synthesize leftAlbumView;
 @synthesize rigthAlbumView;
 @synthesize leftImageView;
@@ -113,7 +113,7 @@ typedef enum : NSInteger {
             leftTitleLabel.text = artist.title;
             NSNumber* amount = artist.albums_count;
             leftDetailsLabel.text = [NSString stringWithFormat:@"%@ %@", amount,
-                                     [ORGMAlbumCell pluralizedString:@"album"
+                                     [ORGMEntityWithCoverCell pluralizedString:@"album"
                                                            forAmount:amount.intValue]];
             break;
         }
@@ -121,7 +121,7 @@ typedef enum : NSInteger {
             rightTitleLabel.text = artist.title;
             NSNumber* amount = artist.albums_count;            
             rightDetailsLabel.text = [NSString stringWithFormat:@"%@ %@", amount,
-                                      [ORGMAlbumCell pluralizedString:@"album"
+                                      [ORGMEntityWithCoverCell pluralizedString:@"album"
                                                             forAmount:amount.intValue]];
             break;
         }
@@ -141,7 +141,7 @@ typedef enum : NSInteger {
             leftTitleLabel.text = genre.title;
             NSNumber* amount = genre.tracks_count;
             leftDetailsLabel.text = [NSString stringWithFormat:@"%@ %@", amount,
-                                     [ORGMAlbumCell pluralizedString:@"track"
+                                     [ORGMEntityWithCoverCell pluralizedString:@"track"
                                                            forAmount:amount.intValue]];
             break;
         }
@@ -149,7 +149,7 @@ typedef enum : NSInteger {
             rightTitleLabel.text = genre.title;
             NSNumber* amount = genre.tracks_count;
             rightDetailsLabel.text = [NSString stringWithFormat:@"%@ %@", amount,
-                                      [ORGMAlbumCell pluralizedString:@"track"
+                                      [ORGMEntityWithCoverCell pluralizedString:@"track"
                                                             forAmount:amount.intValue]];
             break;
         }

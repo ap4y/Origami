@@ -13,6 +13,6 @@
 #import "ORGMAlbum.h"
 #import "ORGMGenre.h"
 
-@interface ORGMAlbumCell : UITableViewCell
+@interface ORGMEntityWithCoverCell : UITableViewCell
 - (void)setEntities:(NSArray *)entities;
 @end
