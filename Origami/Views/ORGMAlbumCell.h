@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ORGMTrack.h"
+#import "ORGMArtist.h"
+#import "ORGMAlbum.h"
+#import "ORGMGenre.h"
+
 @interface ORGMAlbumCell : UITableViewCell
-- (void)setAlbums:(NSArray *)albums;
+- (void)setEntities:(NSArray *)entities;
 @end
