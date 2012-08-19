@@ -10,6 +10,7 @@
 
 #import "ORGMTrackCell.h"
 #import "ORGMCustomization.h"
+#import "ORGMPlayerView.h"
 
 @interface ORGMTracksViewController () {
     BOOL _isLoading;    
@@ -48,12 +49,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     UIImageView *backView = [ORGMCustomization backgroundImage];
     backView.frame = self.view.bounds;
     [self.view insertSubview:backView belowSubview:_tableViewOutlet];
-
     [self loadNext];
+    
+    ORGMPlayerView *playerView = [[ORGMPlayerView alloc] initWithFrame:CGRectNull];
+    [playerView addShortControlsForNavItem:self.navigationItem];
+    [playerView setViewStateChangeBlock:^(ORGMPlayerViewState newState) {
+        if (newState == ORGMPlayerViewStatePresented) {
+            self.sideMenuController.panGesture.enabled = NO;
+        } else {
+            self.sideMenuController.panGesture.enabled = YES;
+        }
+    }];
+    [playerView presentInView:self.view
+                   uponNavBar:self.navigationController.navigationBar];
+    
+    UIView *stripeView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 2.0)];
+    stripeView.backgroundColor =
+        [ORGMCustomization colorForColoredEntityType:ORGMColoredEntitiesTypeTrack];
+    [self.navigationController.navigationBar addSubview:stripeView];
 }
 
 - (void)viewDidUnload {

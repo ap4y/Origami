@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef enum : NSInteger {
-    ORGMLibraryControllerTrack,
-    ORGMLibraryControllerArtist,    
+    ORGMLibraryControllerArtist = 1,
     ORGMLibraryControllerAlbum,
     ORGMLibraryControllerGenre
 } ORGMLibraryControllerType;

@@ -10,8 +10,7 @@
 
 #import "ORGMEntityWithCoverCell.h"
 #import "ORGMCustomization.h"
-
-const NSInteger loadMoreThreshold = 100;
+#import "ORGMPlayerView.h"
 
 @interface ORGMLibraryViewController () <UITableViewDataSource, UITableViewDelegate> {
     BOOL _isLoading;
@@ -49,10 +48,6 @@ const NSInteger loadMoreThreshold = 100;
         NSLog(@"%@", error);
     };
     switch (_controllerType) {
-        case ORGMLibraryControllerTrack:
-            [ORGMTrack fetchTracksWithOffset:_entities.count
-                                     success:success failure:failure];
-            break;
         case ORGMLibraryControllerArtist:
             [ORGMArtist fetchArtistsWithOffset:_entities.count
                                        success:success failure:failure];
@@ -72,6 +67,23 @@ const NSInteger loadMoreThreshold = 100;
     [super viewDidLoad];
     [_tableViewOutlet setBackgroundView:[ORGMCustomization backgroundImage]];
     [self loadNext];
+    
+    ORGMPlayerView *playerView = [[ORGMPlayerView alloc] initWithFrame:CGRectNull];
+    [playerView addShortControlsForNavItem:self.navigationItem];
+    [playerView setViewStateChangeBlock:^(ORGMPlayerViewState newState) {
+        if (newState == ORGMPlayerViewStatePresented) {
+            self.sideMenuController.panGesture.enabled = NO;
+        } else {
+            self.sideMenuController.panGesture.enabled = YES;
+        }
+    }];
+    [playerView presentInView:self.view
+                   uponNavBar:self.navigationController.navigationBar];
+    
+    UIView *stripeView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 2.0)];
+    stripeView.backgroundColor =
+        [ORGMCustomization colorForColoredEntityType:_controllerType];
+    [self.navigationController.navigationBar addSubview:stripeView];
 }
 
 - (void)viewDidUnload {
@@ -89,7 +101,8 @@ const NSInteger loadMoreThreshold = 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	ORGMEntityWithCoverCell *cell = [tableView dequeueReusableCellWithIdentifier:@"albumCell"];
+    ORGMEntityWithCoverCell *cell =
+        [tableView dequeueReusableCellWithIdentifier:@"coverCell"];
     NSInteger index = indexPath.row * 2;
     [cell setEntities:@[[_entities objectAtIndex:index],
                         [_entities objectAtIndex:index + 1]]];
