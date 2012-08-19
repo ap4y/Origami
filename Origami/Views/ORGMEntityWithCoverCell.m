@@ -68,7 +68,7 @@ typedef enum : NSInteger {
 
 #pragma mark - private
 + (NSString *)pluralizedString:(NSString *)string forAmount:(int)amount {
-    return [NSString stringWithFormat:@"%@%@", string, amount == 1 ? @"s" : @""];
+    return [NSString stringWithFormat:@"%@%@", string, amount != 1 ? @"s" : @""];
 }
 
 - (void)refreshCellAtPosition:(ORGMEntityCellViewPosition)position
