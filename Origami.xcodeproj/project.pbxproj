@@ -51,6 +51,8 @@
 		95522ADF15DFFDE8002CFB1F /* ORGMGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522ADE15DFFDE8002CFB1F /* ORGMGenre.m */; };
 		95522AE215DFFDEA002CFB1F /* ORGMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AE115DFFDEA002CFB1F /* ORGMTrack.m */; };
 		95522AE515DFFDEB002CFB1F /* ORGMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AE415DFFDEA002CFB1F /* ORGMArtist.m */; };
+		95522AF915E12C76002CFB1F /* ORGMTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AF815E12C76002CFB1F /* ORGMTrackCell.m */; };
+		95522AFD15E12F2F002CFB1F /* ORGMTracksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AFC15E12F2F002CFB1F /* ORGMTracksViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,10 @@
 		95522AE115DFFDEA002CFB1F /* ORGMTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTrack.m; path = Models/ORGMTrack.m; sourceTree = "<group>"; };
 		95522AE315DFFDEA002CFB1F /* ORGMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMArtist.h; path = Models/ORGMArtist.h; sourceTree = "<group>"; };
 		95522AE415DFFDEA002CFB1F /* ORGMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMArtist.m; path = Models/ORGMArtist.m; sourceTree = "<group>"; };
+		95522AF715E12C76002CFB1F /* ORGMTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMTrackCell.h; path = Views/ORGMTrackCell.h; sourceTree = "<group>"; };
+		95522AF815E12C76002CFB1F /* ORGMTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTrackCell.m; path = Views/ORGMTrackCell.m; sourceTree = "<group>"; };
+		95522AFB15E12F2F002CFB1F /* ORGMTracksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMTracksViewController.h; path = ViewControllers/ORGMTracksViewController.h; sourceTree = "<group>"; };
+		95522AFC15E12F2F002CFB1F /* ORGMTracksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTracksViewController.m; path = ViewControllers/ORGMTracksViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +256,8 @@
 				95522A6115DD667A002CFB1F /* ORGMSideMenuViewController.m */,
 				95522A6A15DD6E33002CFB1F /* ORGMLibraryViewController.h */,
 				95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */,
+				95522AFB15E12F2F002CFB1F /* ORGMTracksViewController.h */,
+				95522AFC15E12F2F002CFB1F /* ORGMTracksViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -314,6 +322,8 @@
 			children = (
 				95522AC215DEA57A002CFB1F /* ORGMEntityWithCoverCell.h */,
 				95522AC315DEA57A002CFB1F /* ORGMEntityWithCoverCell.m */,
+				95522AF715E12C76002CFB1F /* ORGMTrackCell.h */,
+				95522AF815E12C76002CFB1F /* ORGMTrackCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -472,6 +482,8 @@
 				95522ADF15DFFDE8002CFB1F /* ORGMGenre.m in Sources */,
 				95522AE215DFFDEA002CFB1F /* ORGMTrack.m in Sources */,
 				95522AE515DFFDEB002CFB1F /* ORGMArtist.m in Sources */,
+				95522AF915E12C76002CFB1F /* ORGMTrackCell.m in Sources */,
+				95522AFD15E12F2F002CFB1F /* ORGMTracksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
