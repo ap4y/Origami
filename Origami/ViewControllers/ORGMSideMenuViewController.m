@@ -18,6 +18,16 @@ const CGFloat screenWidth = 320.0;
 const CGFloat resettedCenter = 160.0;
 const CGFloat anchorRightPeekAmount = 100.0;
 
+@implementation UIViewController (ORGMSideMenuViewController)
+- (ORGMSideMenuViewController *)sideMenuController {
+    UIWindow *mainWindow = [[UIApplication sharedApplication].windows objectAtIndex:0];
+    if ([mainWindow.rootViewController isKindOfClass:ORGMSideMenuViewController.class]) {
+        return (ORGMSideMenuViewController *)mainWindow.rootViewController;
+    }
+    return nil;
+}
+@end
+
 @interface ORGMSideMenuViewController () {
     CGFloat _initialTouchPositionX;
     CGFloat _initialHoizontalCenter;
@@ -105,7 +115,6 @@ const CGFloat anchorRightPeekAmount = 100.0;
 - (void)viewDidUnload {
     [self setTableViewOutlet:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
