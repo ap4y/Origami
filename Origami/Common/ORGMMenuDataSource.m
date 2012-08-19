@@ -39,6 +39,11 @@
     UIView *stripeView = [cell viewWithTag:2];
     UIButton *tapButton = (UIButton *)[cell viewWithTag:3];
     
+    UIImage *backImage =
+        [[UIImage imageNamed:@"nav_back"] resizableImageWithCapInsets:UIEdgeInsetsZero];
+    [cell setBackgroundView:[[UIImageView alloc] initWithImage:backImage]];
+
+    
     switch (section) {
         case 0: {
             titleLabel.text = NSLocalizedString(@"Tracks", nil);
