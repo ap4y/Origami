@@ -12,6 +12,7 @@
 #import "ORGMCustomization.h"
 #import "ORGMMenuDataSource.h"
 #import "ORGMLibraryViewController.h"
+#import "ORGMTracksViewController.h"
 
 const CGFloat screenWidth = 320.0;
 const CGFloat resettedCenter = 160.0;
@@ -63,16 +64,26 @@ const CGFloat anchorRightPeekAmount = 100.0;
 }
 
 #pragma mark - lifecycle
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"headerTap"]) {
-        UIButton *button = sender;
-        ORGMLibraryViewController *albumsController = segue.destinationViewController;
-        albumsController.controllerType = button.titleLabel.tag;
-        UINavigationController *navController =
-            (UINavigationController *)_topViewController;
-        [navController setViewControllers:@[albumsController]];
-        [self resetTopViewWithComplete:nil];
+- (IBAction)didClickedMenuHeader:(id)sender {
+    UIButton *button = sender;
+    UIViewController *controller;
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard"
+                                                         bundle:nil];
+    
+    if (button.titleLabel.tag == 0) {
+        controller =
+            [storyBoard instantiateViewControllerWithIdentifier:@"trackController"];
+    } else {
+        controller =
+            [storyBoard instantiateViewControllerWithIdentifier:@"libraryController"];
+        ((ORGMLibraryViewController *)controller).controllerType =
+        button.titleLabel.tag;
     }
+    
+    UINavigationController *navController =
+    (UINavigationController *)_topViewController;
+    [navController setViewControllers:@[controller]];
+    [self resetTopViewWithComplete:nil];
 }
 
 - (void)viewDidLoad {
