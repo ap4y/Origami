@@ -21,6 +21,20 @@
     return [[UIImageView alloc] initWithImage:backImage];
 }
 
++ (UIColor *)colorForColoredEntityType:(ORGMColoredEntitiesType)entityType {
+    switch (entityType) {
+        case ORGMColoredEntitiesTypeTrack:
+            return RGB(0, 204, 238);
+        case ORGMColoredEntitiesTypeArtist:
+            return RGB(204, 0, 238);
+        case ORGMColoredEntitiesTypeAlbum:
+            return RGB(238, 0, 204);
+        case ORGMColoredEntitiesTypeGenre:
+            return RGB(238, 204, 0);
+    }
+    return RGB(0, 204, 238);
+}
+
 #pragma mark - private
 + (void)navigationBar {
     UIImage *backImage =
