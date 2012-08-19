@@ -10,6 +10,7 @@
 
 #import "UIImageView+AFNetworking.h"
 #import "ORGMLastfmProxyClient.h"
+#import "ORGMCustomization.h"
 
 typedef enum : NSInteger {
     ORGMEntityCellViewPositionLeft,
@@ -180,6 +181,10 @@ typedef enum : NSInteger {
             break;
         }
     }
+    
+    UIColor *random = [ORGMCustomization colorForColoredEntityType:arc4random()%4];
+    [imageView setBackgroundColor:random];
+    
     if (url) {
         [imageView setImageWithURL:url];
     } else {
