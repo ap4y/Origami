@@ -806,8 +806,8 @@
 				95ADE33614DD467100F65A91 /* FlacDecoder.m */,
 			);
 			name = Flac;
-			path = /Users/ap4y/github/Origami/Origami/Sample/../../Plugins/Flac/Flac;
-			sourceTree = "<absolute>";
+			path = ../../Plugins/Flac/Flac;
+			sourceTree = "<group>";
 		};
 		95ADE31A14DD467100F65A91 /* Output */ = {
 			isa = PBXGroup;
