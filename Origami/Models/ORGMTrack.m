@@ -6,7 +6,7 @@
 //
 //
 
-NSString * const errorDomain = @"com.origami.errors.track";
+NSString * const trackErrorDomain = @"com.origami.errors.track";
 
 @implementation ORGMTrack
 @dynamic title;
@@ -21,7 +21,7 @@ NSString * const errorDomain = @"com.origami.errors.track";
         if (outError != NULL) {
             NSString *errorStr = NSLocalizedString(@"Invalid title", nil);
             NSDictionary *userInfoDict = @{ NSLocalizedDescriptionKey: errorStr };
-            *outError = [[NSError alloc] initWithDomain:errorDomain
+            *outError = [[NSError alloc] initWithDomain:trackErrorDomain
                                                    code:0
                                                userInfo:userInfoDict];
         }
@@ -36,7 +36,7 @@ NSString * const errorDomain = @"com.origami.errors.track";
         if (outError != NULL) {
             NSString *errorStr = NSLocalizedString(@"Invalid track path", nil);
             NSDictionary *userInfoDict = @{ NSLocalizedDescriptionKey: errorStr };
-            *outError = [[NSError alloc] initWithDomain:errorDomain
+            *outError = [[NSError alloc] initWithDomain:trackErrorDomain
                                                    code:1
                                                userInfo:userInfoDict];
         }

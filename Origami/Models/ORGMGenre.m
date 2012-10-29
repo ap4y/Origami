@@ -6,7 +6,7 @@
 //
 //
 
-NSString * const errorDomain = @"com.origami.errors.genre";
+NSString * const genreErrorDomain = @"com.origami.errors.genre";
 
 @implementation ORGMGenre
 @dynamic title;
@@ -18,7 +18,7 @@ NSString * const errorDomain = @"com.origami.errors.genre";
         if (outError != NULL) {
             NSString *errorStr = NSLocalizedString(@"Invalid title", nil);
             NSDictionary *userInfoDict = @{ NSLocalizedDescriptionKey: errorStr };
-            *outError = [[NSError alloc] initWithDomain:errorDomain
+            *outError = [[NSError alloc] initWithDomain:genreErrorDomain
                                                    code:0
                                                userInfo:userInfoDict];
         }
