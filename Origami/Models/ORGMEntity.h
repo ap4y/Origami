@@ -13,8 +13,6 @@
 @interface ORGMEntity : ORManagedObject
 @property (nonatomic, retain) NSNumber *id;
 
-+ (void)fetchEntitiesWithPath:(NSString*)path
-                       offset:(NSInteger)offset
-                      success:(void (^)(NSArray *entities))success
-                      failure:(void (^)(NSError *error))failure;
++ (id)createOrFindByTitle:(NSString *)title
+         inManagedContext:(NSManagedObjectContext*)context;
 @end

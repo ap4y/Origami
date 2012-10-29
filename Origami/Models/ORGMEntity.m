@@ -15,15 +15,20 @@
     return nil;
 }
 
-+ (void)fetchEntitiesWithPath:(NSString*)path
-                       offset:(NSInteger)offset
-                        success:(void (^)(NSArray *entities))success
-                        failure:(void (^)(NSError *error))failure {
-    [self fetchWithClient:[ORGMHTTPClient sharedClient]
-                     path:path
-               parameters:@{@"from": [NSNumber numberWithInteger:offset]}
-                  success:success
-                  failure:failure];
++ (id)createOrFindByTitle:(NSString *)title
+         inManagedContext:(NSManagedObjectContext*)context {
+    if (!title || !context) return nil;
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title = %@", title];
+    ORGMEntity *entity = [self requestFirstResult:[self where:predicate]
+                             managedObjectContext:context];
+    if (!entity) {
+        entity = [[ORGMEntity alloc] initWithEntity:[self enityDescriptionInContext:context]
+                     insertIntoManagedObjectContext:context];
+        [entity setValue:title forKey:@"title"];
+    }
+    
+    return entity;
 }
 
 @end
