@@ -2,21 +2,22 @@
 //  ORGMAlbum.h
 //  Origami
 //
-//  Created by ap4y on 8/17/12.
+//  Created by ap4y on 10/29/12.
 //
 //
 
 #import "ORGMEntity.h"
 
+@class ORGMArtist, ORGMTrack;
 @interface ORGMAlbum : ORGMEntity
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *album_artist;
-@property (nonatomic, retain) NSNumber *tracks_count;
-@property (nonatomic, retain) NSString *random_cover;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSSet *tracks;
+@property (strong, nonatomic) ORGMArtist *artist;
+@end
 
-+ (void)fetchAlbumsWithOffset:(NSInteger)offset
-                      success:(void (^)(NSArray *))success
-                      failure:(void (^)(NSError *))failure;
-
-- (NSURL *)getCoverArtUrl;
+@interface ORGMAlbum (CoreDataGeneratedAccessors)
+- (void)addTracksObject:(ORGMTrack *)value;
+- (void)removeTracksObject:(ORGMTrack *)value;
+- (void)addTracks:(NSSet *)values;
+- (void)removeTracks:(NSSet *)values;
 @end

@@ -89,21 +89,21 @@ typedef enum : NSInteger {
     switch (position) {
         case ORGMEntityCellViewPositionLeft: {
             leftTitleLabel.text = album.title;
-            leftDetailsLabel.text = album.album_artist;
+            leftDetailsLabel.text = album.artist.title;
             break;
         }
         case ORGMEntityCellViewPositionRight: {
             rightTitleLabel.text = album.title;
-            rightDetailsLabel.text = album.album_artist;
+            rightDetailsLabel.text = album.artist.title;
             break;
         }
     }
     
     NSURL *imageUrl =
-        [[ORGMLastfmProxyClient sharedClient] albumImageUrlForArtist:album.album_artist
+        [[ORGMLastfmProxyClient sharedClient] albumImageUrlForArtist:album.artist.title
                                                           albumTitle:album.title];
     [self setImageAtPosition:position
-              withPrimaryUrl:[album getCoverArtUrl]
+              withPrimaryUrl:nil
                 andLastfmUrl:imageUrl];
 }
 
@@ -112,18 +112,18 @@ typedef enum : NSInteger {
     switch (position) {
         case ORGMEntityCellViewPositionLeft: {
             leftTitleLabel.text = artist.title;
-            NSNumber* amount = artist.albums_count;
-            leftDetailsLabel.text = [NSString stringWithFormat:@"%@ %@", amount,
+            NSUInteger amount = [artist.albums count];
+            leftDetailsLabel.text = [NSString stringWithFormat:@"%i %@", amount,
                                      [ORGMEntityWithCoverCell pluralizedString:@"album"
-                                                           forAmount:amount.intValue]];
+                                                           forAmount:amount]];
             break;
         }
         case ORGMEntityCellViewPositionRight: {
             rightTitleLabel.text = artist.title;
-            NSNumber* amount = artist.albums_count;            
-            rightDetailsLabel.text = [NSString stringWithFormat:@"%@ %@", amount,
+            NSUInteger amount = [artist.albums count];
+            rightDetailsLabel.text = [NSString stringWithFormat:@"%i %@", amount,
                                       [ORGMEntityWithCoverCell pluralizedString:@"album"
-                                                            forAmount:amount.intValue]];
+                                                            forAmount:amount]];
             break;
         }
     }
@@ -131,7 +131,7 @@ typedef enum : NSInteger {
     NSURL *imageUrl =
         [[ORGMLastfmProxyClient sharedClient] artistImageUrlForArtist:artist.title];
     [self setImageAtPosition:position
-              withPrimaryUrl:[artist getCoverArtUrl]
+              withPrimaryUrl:nil
                 andLastfmUrl:imageUrl];
 }
 
@@ -140,18 +140,18 @@ typedef enum : NSInteger {
     switch (position) {
         case ORGMEntityCellViewPositionLeft: {
             leftTitleLabel.text = genre.title;
-            NSNumber* amount = genre.tracks_count;
-            leftDetailsLabel.text = [NSString stringWithFormat:@"%@ %@", amount,
+            NSUInteger amount = [genre.tracks count];
+            leftDetailsLabel.text = [NSString stringWithFormat:@"%i %@", amount,
                                      [ORGMEntityWithCoverCell pluralizedString:@"track"
-                                                           forAmount:amount.intValue]];
+                                                           forAmount:amount]];
             break;
         }
         case ORGMEntityCellViewPositionRight: {
             rightTitleLabel.text = genre.title;
-            NSNumber* amount = genre.tracks_count;
-            rightDetailsLabel.text = [NSString stringWithFormat:@"%@ %@", amount,
+            NSUInteger amount = [genre.tracks count];
+            rightDetailsLabel.text = [NSString stringWithFormat:@"%i %@", amount,
                                       [ORGMEntityWithCoverCell pluralizedString:@"track"
-                                                            forAmount:amount.intValue]];
+                                                            forAmount:amount]];
             break;
         }
     }
@@ -159,7 +159,7 @@ typedef enum : NSInteger {
     NSURL *imageUrl =
         [[ORGMLastfmProxyClient sharedClient] genreImageUrlForGenre:genre.title];
     [self setImageAtPosition:position
-              withPrimaryUrl:[genre getCoverArtUrl]
+              withPrimaryUrl:nil
                 andLastfmUrl:imageUrl];
 }
 

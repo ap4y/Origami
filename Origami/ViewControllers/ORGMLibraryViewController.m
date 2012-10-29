@@ -47,20 +47,20 @@
         _isLoading = NO;
         NSLog(@"%@", error);
     };
-    switch (_controllerType) {
-        case ORGMLibraryControllerArtist:
-            [ORGMArtist fetchArtistsWithOffset:_entities.count
-                                       success:success failure:failure];
-            break;
-        case ORGMLibraryControllerAlbum:
-            [ORGMAlbum fetchAlbumsWithOffset:_entities.count
-                                     success:success failure:failure];
-            break;
-        case ORGMLibraryControllerGenre:
-            [ORGMGenre fetchGenresWithOffset:_entities.count
-                                     success:success failure:failure];
-            break;
-    }
+//    switch (_controllerType) {
+//        case ORGMLibraryControllerArtist:
+//            [ORGMArtist fetchArtistsWithOffset:_entities.count
+//                                       success:success failure:failure];
+//            break;
+//        case ORGMLibraryControllerAlbum:
+//            [ORGMAlbum fetchAlbumsWithOffset:_entities.count
+//                                     success:success failure:failure];
+//            break;
+//        case ORGMLibraryControllerGenre:
+//            [ORGMGenre fetchGenresWithOffset:_entities.count
+//                                     success:success failure:failure];
+//            break;
+//    }
 }
 
 - (void)viewDidLoad {

@@ -32,7 +32,7 @@
 - (void)setTrack:(ORGMTrack *)track {
     trackNumberLabel.text = track.track_num.stringValue;
     titleLabel.text = track.title;
-    artistLabel.text = track.track_artist;
-    albumLabel.text = track.track_album;
+    artistLabel.text = track.album.artist.title;
+    albumLabel.text = track.album.title;
 }
 @end

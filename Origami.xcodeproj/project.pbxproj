@@ -47,14 +47,14 @@
 		95522ACA15DF9A3A002CFB1F /* lastfm_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC815DF9A3A002CFB1F /* lastfm_red.png */; };
 		95522ACB15DF9A3A002CFB1F /* lastfm_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */; };
 		95522AD215DFC047002CFB1F /* ORGMMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */; };
-		95522ADC15DFFDD0002CFB1F /* ORGMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522ADB15DFFDD0002CFB1F /* ORGMAlbum.m */; };
-		95522ADF15DFFDE8002CFB1F /* ORGMGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522ADE15DFFDE8002CFB1F /* ORGMGenre.m */; };
-		95522AE215DFFDEA002CFB1F /* ORGMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AE115DFFDEA002CFB1F /* ORGMTrack.m */; };
-		95522AE515DFFDEB002CFB1F /* ORGMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AE415DFFDEA002CFB1F /* ORGMArtist.m */; };
 		95522AF915E12C76002CFB1F /* ORGMTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AF815E12C76002CFB1F /* ORGMTrackCell.m */; };
 		95522AFD15E12F2F002CFB1F /* ORGMTracksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AFC15E12F2F002CFB1F /* ORGMTracksViewController.m */; };
 		95522B0315E13FEB002CFB1F /* ORGMPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95522B0215E13FEB002CFB1F /* ORGMPlayerView.xib */; };
 		95522B0615E14AB9002CFB1F /* ORGMPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522B0515E14AB8002CFB1F /* ORGMPlayerView.m */; };
+		959EB7F6163E960200CEC22C /* ORGMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7F5163E960200CEC22C /* ORGMAlbum.m */; };
+		959EB7F9163E960600CEC22C /* ORGMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7F8163E960500CEC22C /* ORGMArtist.m */; };
+		959EB7FC163E960800CEC22C /* ORGMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7FB163E960700CEC22C /* ORGMTrack.m */; };
+		959EB802163E991F00CEC22C /* ORGMGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB801163E991F00CEC22C /* ORGMGenre.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,14 +122,6 @@
 		95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lastfm_red@2x.png"; sourceTree = "<group>"; };
 		95522AD015DFC046002CFB1F /* ORGMMenuDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMMenuDataSource.h; path = Common/ORGMMenuDataSource.h; sourceTree = "<group>"; };
 		95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMMenuDataSource.m; path = Common/ORGMMenuDataSource.m; sourceTree = "<group>"; };
-		95522ADA15DFFDD0002CFB1F /* ORGMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbum.h; path = Models/ORGMAlbum.h; sourceTree = "<group>"; };
-		95522ADB15DFFDD0002CFB1F /* ORGMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbum.m; path = Models/ORGMAlbum.m; sourceTree = "<group>"; };
-		95522ADD15DFFDE8002CFB1F /* ORGMGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMGenre.h; path = Models/ORGMGenre.h; sourceTree = "<group>"; };
-		95522ADE15DFFDE8002CFB1F /* ORGMGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMGenre.m; path = Models/ORGMGenre.m; sourceTree = "<group>"; };
-		95522AE015DFFDEA002CFB1F /* ORGMTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMTrack.h; path = Models/ORGMTrack.h; sourceTree = "<group>"; };
-		95522AE115DFFDEA002CFB1F /* ORGMTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTrack.m; path = Models/ORGMTrack.m; sourceTree = "<group>"; };
-		95522AE315DFFDEA002CFB1F /* ORGMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMArtist.h; path = Models/ORGMArtist.h; sourceTree = "<group>"; };
-		95522AE415DFFDEA002CFB1F /* ORGMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMArtist.m; path = Models/ORGMArtist.m; sourceTree = "<group>"; };
 		95522AF715E12C76002CFB1F /* ORGMTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMTrackCell.h; path = Views/ORGMTrackCell.h; sourceTree = "<group>"; };
 		95522AF815E12C76002CFB1F /* ORGMTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTrackCell.m; path = Views/ORGMTrackCell.m; sourceTree = "<group>"; };
 		95522AFB15E12F2F002CFB1F /* ORGMTracksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMTracksViewController.h; path = ViewControllers/ORGMTracksViewController.h; sourceTree = "<group>"; };
@@ -137,6 +129,14 @@
 		95522B0215E13FEB002CFB1F /* ORGMPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORGMPlayerView.xib; path = Views/ORGMPlayerView.xib; sourceTree = "<group>"; };
 		95522B0415E14AB8002CFB1F /* ORGMPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMPlayerView.h; path = Views/ORGMPlayerView.h; sourceTree = "<group>"; };
 		95522B0515E14AB8002CFB1F /* ORGMPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMPlayerView.m; path = Views/ORGMPlayerView.m; sourceTree = "<group>"; };
+		959EB7F4163E960200CEC22C /* ORGMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbum.h; path = Models/ORGMAlbum.h; sourceTree = "<group>"; };
+		959EB7F5163E960200CEC22C /* ORGMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbum.m; path = Models/ORGMAlbum.m; sourceTree = "<group>"; };
+		959EB7F7163E960400CEC22C /* ORGMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMArtist.h; path = Models/ORGMArtist.h; sourceTree = "<group>"; };
+		959EB7F8163E960500CEC22C /* ORGMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMArtist.m; path = Models/ORGMArtist.m; sourceTree = "<group>"; };
+		959EB7FA163E960700CEC22C /* ORGMTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMTrack.h; path = Models/ORGMTrack.h; sourceTree = "<group>"; };
+		959EB7FB163E960700CEC22C /* ORGMTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTrack.m; path = Models/ORGMTrack.m; sourceTree = "<group>"; };
+		959EB800163E991E00CEC22C /* ORGMGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMGenre.h; path = Models/ORGMGenre.h; sourceTree = "<group>"; };
+		959EB801163E991F00CEC22C /* ORGMGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMGenre.m; path = Models/ORGMGenre.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,14 +310,14 @@
 			children = (
 				95522AB415DE9C68002CFB1F /* ORGMEntity.h */,
 				95522AB515DE9C68002CFB1F /* ORGMEntity.m */,
-				95522ADA15DFFDD0002CFB1F /* ORGMAlbum.h */,
-				95522ADB15DFFDD0002CFB1F /* ORGMAlbum.m */,
-				95522AE315DFFDEA002CFB1F /* ORGMArtist.h */,
-				95522AE415DFFDEA002CFB1F /* ORGMArtist.m */,
-				95522AE015DFFDEA002CFB1F /* ORGMTrack.h */,
-				95522AE115DFFDEA002CFB1F /* ORGMTrack.m */,
-				95522ADD15DFFDE8002CFB1F /* ORGMGenre.h */,
-				95522ADE15DFFDE8002CFB1F /* ORGMGenre.m */,
+				959EB7F4163E960200CEC22C /* ORGMAlbum.h */,
+				959EB7F5163E960200CEC22C /* ORGMAlbum.m */,
+				959EB7F7163E960400CEC22C /* ORGMArtist.h */,
+				959EB7F8163E960500CEC22C /* ORGMArtist.m */,
+				959EB7FA163E960700CEC22C /* ORGMTrack.h */,
+				959EB7FB163E960700CEC22C /* ORGMTrack.m */,
+				959EB800163E991E00CEC22C /* ORGMGenre.h */,
+				959EB801163E991F00CEC22C /* ORGMGenre.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -487,13 +487,13 @@
 				95522AC415DEA57A002CFB1F /* ORGMEntityWithCoverCell.m in Sources */,
 				95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */,
 				95522AD215DFC047002CFB1F /* ORGMMenuDataSource.m in Sources */,
-				95522ADC15DFFDD0002CFB1F /* ORGMAlbum.m in Sources */,
-				95522ADF15DFFDE8002CFB1F /* ORGMGenre.m in Sources */,
-				95522AE215DFFDEA002CFB1F /* ORGMTrack.m in Sources */,
-				95522AE515DFFDEB002CFB1F /* ORGMArtist.m in Sources */,
 				95522AF915E12C76002CFB1F /* ORGMTrackCell.m in Sources */,
 				95522AFD15E12F2F002CFB1F /* ORGMTracksViewController.m in Sources */,
 				95522B0615E14AB9002CFB1F /* ORGMPlayerView.m in Sources */,
+				959EB7F6163E960200CEC22C /* ORGMAlbum.m in Sources */,
+				959EB7F9163E960600CEC22C /* ORGMArtist.m in Sources */,
+				959EB7FC163E960800CEC22C /* ORGMTrack.m in Sources */,
+				959EB802163E991F00CEC22C /* ORGMGenre.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
