@@ -51,6 +51,7 @@
 		95522AFD15E12F2F002CFB1F /* ORGMTracksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AFC15E12F2F002CFB1F /* ORGMTracksViewController.m */; };
 		95522B0315E13FEB002CFB1F /* ORGMPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95522B0215E13FEB002CFB1F /* ORGMPlayerView.xib */; };
 		95522B0615E14AB9002CFB1F /* ORGMPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522B0515E14AB8002CFB1F /* ORGMPlayerView.m */; };
+		959EB7EF163E7D5D00CEC22C /* ORGMItunesImportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7EE163E7D5D00CEC22C /* ORGMItunesImportManager.m */; };
 		959EB7F6163E960200CEC22C /* ORGMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7F5163E960200CEC22C /* ORGMAlbum.m */; };
 		959EB7F9163E960600CEC22C /* ORGMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7F8163E960500CEC22C /* ORGMArtist.m */; };
 		959EB7FC163E960800CEC22C /* ORGMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7FB163E960700CEC22C /* ORGMTrack.m */; };
@@ -129,6 +130,8 @@
 		95522B0215E13FEB002CFB1F /* ORGMPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORGMPlayerView.xib; path = Views/ORGMPlayerView.xib; sourceTree = "<group>"; };
 		95522B0415E14AB8002CFB1F /* ORGMPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMPlayerView.h; path = Views/ORGMPlayerView.h; sourceTree = "<group>"; };
 		95522B0515E14AB8002CFB1F /* ORGMPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMPlayerView.m; path = Views/ORGMPlayerView.m; sourceTree = "<group>"; };
+		959EB7ED163E7D5D00CEC22C /* ORGMItunesImportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMItunesImportManager.h; path = Common/ORGMItunesImportManager.h; sourceTree = "<group>"; };
+		959EB7EE163E7D5D00CEC22C /* ORGMItunesImportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMItunesImportManager.m; path = Common/ORGMItunesImportManager.m; sourceTree = "<group>"; };
 		959EB7F0163E824000CEC22C /* ORGMModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMModels.h; path = Models/ORGMModels.h; sourceTree = "<group>"; };
 		959EB7F4163E960200CEC22C /* ORGMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbum.h; path = Models/ORGMAlbum.h; sourceTree = "<group>"; };
 		959EB7F5163E960200CEC22C /* ORGMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbum.m; path = Models/ORGMAlbum.m; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */,
 				95522AD015DFC046002CFB1F /* ORGMMenuDataSource.h */,
 				95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */,
+				959EB7ED163E7D5D00CEC22C /* ORGMItunesImportManager.h */,
+				959EB7EE163E7D5D00CEC22C /* ORGMItunesImportManager.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				95522AF915E12C76002CFB1F /* ORGMTrackCell.m in Sources */,
 				95522AFD15E12F2F002CFB1F /* ORGMTracksViewController.m in Sources */,
 				95522B0615E14AB9002CFB1F /* ORGMPlayerView.m in Sources */,
+				959EB7EF163E7D5D00CEC22C /* ORGMItunesImportManager.m in Sources */,
 				959EB7F6163E960200CEC22C /* ORGMAlbum.m in Sources */,
 				959EB7F9163E960600CEC22C /* ORGMArtist.m in Sources */,
 				959EB7FC163E960800CEC22C /* ORGMTrack.m in Sources */,
