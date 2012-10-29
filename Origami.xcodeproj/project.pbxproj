@@ -129,6 +129,7 @@
 		95522B0215E13FEB002CFB1F /* ORGMPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORGMPlayerView.xib; path = Views/ORGMPlayerView.xib; sourceTree = "<group>"; };
 		95522B0415E14AB8002CFB1F /* ORGMPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMPlayerView.h; path = Views/ORGMPlayerView.h; sourceTree = "<group>"; };
 		95522B0515E14AB8002CFB1F /* ORGMPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMPlayerView.m; path = Views/ORGMPlayerView.m; sourceTree = "<group>"; };
+		959EB7F0163E824000CEC22C /* ORGMModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMModels.h; path = Models/ORGMModels.h; sourceTree = "<group>"; };
 		959EB7F4163E960200CEC22C /* ORGMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbum.h; path = Models/ORGMAlbum.h; sourceTree = "<group>"; };
 		959EB7F5163E960200CEC22C /* ORGMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbum.m; path = Models/ORGMAlbum.m; sourceTree = "<group>"; };
 		959EB7F7163E960400CEC22C /* ORGMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMArtist.h; path = Models/ORGMArtist.h; sourceTree = "<group>"; };
@@ -308,6 +309,7 @@
 		95522AAD15DE9B70002CFB1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				959EB7F0163E824000CEC22C /* ORGMModels.h */,
 				95522AB415DE9C68002CFB1F /* ORGMEntity.h */,
 				95522AB515DE9C68002CFB1F /* ORGMEntity.m */,
 				959EB7F4163E960200CEC22C /* ORGMAlbum.h */,
