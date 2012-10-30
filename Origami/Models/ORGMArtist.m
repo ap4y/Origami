@@ -12,6 +12,14 @@ NSString * const artistErrorDomain = @"com.origami.errors.artist";
 @dynamic title;
 @dynamic albums;
 
++ (NSArray *)libraryArtists {
+    NSFetchRequest *request = [[ORGMArtist all] orderBy:@"title", nil];
+    [request setFetchBatchSize:20];
+    
+    return [ORGMArtist requestResult:request
+                managedObjectContext:mainThreadContext()];
+}
+
 - (BOOL)validateTitle:(id *)valueRef error:(NSError **)outError {
     NSString *title = *valueRef;
     if (!title || [title length] <= 0) {

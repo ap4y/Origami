@@ -13,6 +13,8 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSSet *tracks;
 @property (strong, nonatomic) ORGMArtist *artist;
+
++ (NSArray *)libraryAlbums;
 @end
 
 @interface ORGMAlbum (CoreDataGeneratedAccessors)

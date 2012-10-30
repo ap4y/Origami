@@ -15,6 +15,14 @@ NSString * const trackErrorDomain = @"com.origami.errors.track";
 @dynamic album;
 @dynamic genre;
 
++ (NSArray *)libraryTracks {
+    NSFetchRequest *request = [[ORGMTrack all] orderBy:@"track_num", @"title", nil];
+    [request setFetchBatchSize:20];
+    
+    return [ORGMTrack requestResult:request
+               managedObjectContext:mainThreadContext()];
+}
+
 - (BOOL)validateTitle:(id *)valueRef error:(NSError **)outError {
     NSString *title = *valueRef;
     if (!title || [title length] <= 0) {

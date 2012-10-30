@@ -12,6 +12,8 @@
 @interface ORGMArtist : ORGMEntity
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSSet *albums;
+
++ (NSArray *)libraryArtists;
 @end
 
 @interface ORGMArtist (CoreDataGeneratedAccessors)

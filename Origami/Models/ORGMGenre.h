@@ -12,6 +12,8 @@
 @interface ORGMGenre : ORGMEntity
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSSet *tracks;
+
++ (NSArray *)libraryGenres;
 @end
 
 @interface ORGMGenre (CoreDataGeneratedAccessors)

@@ -12,6 +12,14 @@ NSString * const genreErrorDomain = @"com.origami.errors.genre";
 @dynamic title;
 @dynamic tracks;
 
++ (NSArray *)libraryGenres {
+    NSFetchRequest *request = [[ORGMGenre all] orderBy:@"title", nil];
+    [request setFetchBatchSize:20];
+    
+    return [ORGMGenre requestResult:request
+               managedObjectContext:mainThreadContext()];
+}
+
 - (BOOL)validateTitle:(id *)valueRef error:(NSError **)outError {
     NSString *title = *valueRef;
     if (!title || [title length] <= 0) {

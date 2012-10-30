@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSString *track_path;
 @property (strong, nonatomic) ORGMAlbum *album;
 @property (strong, nonatomic) ORGMGenre *genre;
+
++ (NSArray *)libraryTracks;
 @end
