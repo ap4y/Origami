@@ -122,25 +122,42 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
     [newFiles enumerateKeysAndObjectsUsingBlock:^(NSNumber *hash, NSURL *url, BOOL *stop) {
         if ([[url pathExtension] isEqualToString:@"cue"]) {
             NSArray *fileUrls = [CueSheetContainer urlsForContainerURL:url];
-            [fileUrls enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                if (![input openWithUrl:obj]) return;
+            [fileUrls enumerateObjectsUsingBlock:^(NSURL *cueUrl, NSUInteger idx, BOOL *stop) {
+                if (![input openWithUrl:cueUrl]) return;
                 
-                NSDictionary *metadata = [input metadata];
-                NSLog(@"%@", metadata);
+                NSMutableDictionary *metadata = [self processCueMetadata:[input metadata]];
+                if (metadata) {
+                    NSString *absolutePath = [cueUrl absoluteString];
+                    [metadata setObject:[NSNumber numberWithInteger:[absolutePath hash]]
+                                 forKey:ORGMTrackId];
+                    [metadata setObject:absolutePath forKey:ORGMTrackPath];                    
+                    
+                    [self createObjectsFromMetadata:metadata inManagedContext:context];
+                }
             }];
         } else if ([[url pathExtension] isEqualToString:@"flac"]) {
             if (![input openWithUrl:url]) return;
             
             NSMutableDictionary *metadata = [self processFlacMetadata:[input metadata]];
-            [metadata setObject:hash forKey:ORGMTrackId];
-            [metadata setObject:[url absoluteString] forKey:ORGMTrackPath];
-            
-            [self createObjectsFromMetadata:metadata inManagedContext:context];
+            if (metadata) {
+                [metadata setObject:hash forKey:ORGMTrackId];
+                [metadata setObject:[url absoluteString] forKey:ORGMTrackPath];
+                
+                [self createObjectsFromMetadata:metadata inManagedContext:context];
+            }
         }
     }];
 }
 
-- (void)processCueFile:(NSURL *)cueUrl {
+- (NSMutableDictionary *)processCueMetadata:(NSDictionary *)metadata {
+    NSMutableDictionary *correctMetadata = [self processFlacMetadata:metadata];
+    if (!correctMetadata) return nil;
+    
+    NSString *tracknumber = [metadata objectForKey:@"track"];    
+    [correctMetadata setValue:[NSNumber numberWithInteger:[tracknumber integerValue]] ?: nil
+                       forKey:ORGMTrackNumber];
+    
+    return correctMetadata;
 }
 
 - (NSMutableDictionary *)processFlacMetadata:(NSDictionary *)metadata {
