@@ -12,6 +12,8 @@
 #import "ORGMCustomization.h"
 #import "ORGMPlayerView.h"
 
+#import "ORGMItunesImportManager.h"
+
 @interface ORGMTracksViewController () {
     BOOL _isLoading;    
 }
@@ -30,30 +32,20 @@
     return self;
 }
 
-- (void)loadNext {
-    _isLoading = YES;
-#warning remove
-//    [ORGMTrack fetchTracksWithOffset:_entities.count success:^(NSArray *entities) {
-//        if (entities.count <= 0) {
-//            [_tableViewOutlet setTableFooterView:nil];
-//            return;
-//        }
-//        [_tableViewOutlet.tableFooterView setHidden:NO];
-//        _isLoading = NO;
-//        [_entities addObjectsFromArray:entities];
-//        [_tableViewOutlet reloadData];
-//    } failure:^(NSError *error) {
-//        _isLoading = NO;
-//        NSLog(@"%@", error);
-//    }];
+- (void)reloadData {
+    NSArray *tracks = [ORGMTrack libraryTracks];
+    [_entities addObjectsFromArray:tracks];
+    [_tableViewOutlet reloadData];    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_tableViewOutlet setTableFooterView:nil];
+    
     UIImageView *backView = [ORGMCustomization backgroundImage];
     backView.frame = self.view.bounds;
     [self.view insertSubview:backView belowSubview:_tableViewOutlet];
-    [self loadNext];
+    [self reloadData];
     
     ORGMPlayerView *playerView = [[ORGMPlayerView alloc] initWithFrame:CGRectNull];
     [playerView addShortControlsForNavItem:self.navigationItem];
@@ -71,6 +63,12 @@
     stripeView.backgroundColor =
         [ORGMCustomization colorForColoredEntityType:ORGMColoredEntitiesTypeTrack];
     [self.navigationController.navigationBar addSubview:stripeView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [[ORGMItunesImportManager defaultManager] importFromDocumentsDirectoryWithSuccess:^{
+        NSLog(@"done");
+    }];
 }
 
 - (void)viewDidUnload {
@@ -95,13 +93,13 @@
 
 #pragma mark - UITableViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (_isLoading) return;
-    NSArray *indexes = [_tableViewOutlet indexPathsForVisibleRows];
-    NSIndexPath *lastIndex = [indexes objectAtIndex:indexes.count - 1];
-    if ([lastIndex isEqual:[NSIndexPath indexPathForRow:(_entities.count - 2)
-                                              inSection:0]]) {
-        [self loadNext];
-    }
+//    if (_isLoading) return;
+//    NSArray *indexes = [_tableViewOutlet indexPathsForVisibleRows];
+//    NSIndexPath *lastIndex = [indexes objectAtIndex:indexes.count - 1];
+//    if ([lastIndex isEqual:[NSIndexPath indexPathForRow:(_entities.count - 2)
+//                                              inSection:0]]) {
+//        [self loadNext];
+//    }
 }
 
 @end

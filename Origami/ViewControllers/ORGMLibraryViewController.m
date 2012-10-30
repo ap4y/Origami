@@ -31,42 +31,30 @@
     return self;
 }
 
-- (void)loadNext {
-    _isLoading = YES;
-    void (^success)(NSArray *entities) = ^(NSArray *entities) {
-        if (entities.count <= 0) {
-            [_tableViewOutlet setTableFooterView:nil];
-            return;
-        }
-        [_tableViewOutlet.tableFooterView setHidden:NO];
-        _isLoading = NO;
-        [_entities addObjectsFromArray:entities];
-        [_tableViewOutlet reloadData];
-    };
-    void (^failure)(NSError *error) = ^(NSError *error) {
-        _isLoading = NO;
-        NSLog(@"%@", error);
-    };
-//    switch (_controllerType) {
-//        case ORGMLibraryControllerArtist:
-//            [ORGMArtist fetchArtistsWithOffset:_entities.count
-//                                       success:success failure:failure];
-//            break;
-//        case ORGMLibraryControllerAlbum:
-//            [ORGMAlbum fetchAlbumsWithOffset:_entities.count
-//                                     success:success failure:failure];
-//            break;
-//        case ORGMLibraryControllerGenre:
-//            [ORGMGenre fetchGenresWithOffset:_entities.count
-//                                     success:success failure:failure];
-//            break;
-//    }
+- (void)reloadData {
+    NSArray *items = nil;
+    switch (_controllerType) {
+        case ORGMLibraryControllerArtist:
+            items = [ORGMArtist libraryArtists];
+            break;
+        case ORGMLibraryControllerAlbum:
+            items = [ORGMAlbum libraryAlbums];
+            break;
+        case ORGMLibraryControllerGenre:
+            items = [ORGMGenre libraryGenres];
+            break;
+    }
+    
+    [_entities addObjectsFromArray:items];
+    [_tableViewOutlet reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_tableViewOutlet setTableFooterView:nil];
+    
     [_tableViewOutlet setBackgroundView:[ORGMCustomization backgroundImage]];
-    [self loadNext];
+    [self reloadData];
     
     ORGMPlayerView *playerView = [[ORGMPlayerView alloc] initWithFrame:CGRectNull];
     [playerView addShortControlsForNavItem:self.navigationItem];
@@ -97,26 +85,30 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _entities.count/2;
+    return round(_entities.count/2.0f);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ORGMEntityWithCoverCell *cell =
         [tableView dequeueReusableCellWithIdentifier:@"coverCell"];
     NSInteger index = indexPath.row * 2;
-    [cell setEntities:@[[_entities objectAtIndex:index],
-                        [_entities objectAtIndex:index + 1]]];
+    NSMutableArray *items = [NSMutableArray array];
+    [items addObject:[_entities objectAtIndex:index]];
+    if (index + 1 < _entities.count) {
+        [items addObject:[_entities objectAtIndex:index + 1]];
+    }
+    [cell setEntities:items];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (_isLoading) return;
-    NSArray *indexes = [_tableViewOutlet indexPathsForVisibleRows];
-    NSIndexPath *lastIndex = [indexes objectAtIndex:indexes.count - 1];
-    if ([lastIndex isEqual:[NSIndexPath indexPathForRow:(_entities.count/2 - 1)
-                                              inSection:0]]) {
-        [self loadNext];
-    }
+//    if (_isLoading) return;
+//    NSArray *indexes = [_tableViewOutlet indexPathsForVisibleRows];
+//    NSIndexPath *lastIndex = [indexes objectAtIndex:indexes.count - 1];
+//    if ([lastIndex isEqual:[NSIndexPath indexPathForRow:(_entities.count/2 - 1)
+//                                              inSection:0]]) {
+//        [self loadNext];
+//    }
 }
 @end
