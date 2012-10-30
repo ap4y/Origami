@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ORGMItunesImportManager : NSObject
-+ (ORGMItunesImportManager *)defaultImportManager;
++ (ORGMItunesImportManager *)defaultManager;
 
-- (void)syncWithDocumentsDirectory;
+- (void)importFromDocumentsDirectoryWithSuccess:(void(^)())success;
 @end

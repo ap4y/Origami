@@ -19,16 +19,15 @@ NSString * const ORGMTrackNumber = @"ORGMTrackNumber";
 NSString * const ORGMTrackPath = @"ORGMTrackPath";
 NSString * const ORGMTrackId = @"ORGMTrackId";
 
-NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
-
 @interface ORGMItunesImportManager ()
-@property (strong, nonatomic) NSDictionary *localFiles;
 @property (strong, nonatomic) NSDate *changeDate;
+@property (nonatomic) dispatch_queue_t import_queue;
 @end
 
 @implementation ORGMItunesImportManager
+NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
 
-+ (ORGMItunesImportManager *)defaultImportManager {
++ (ORGMItunesImportManager *)defaultManager {
     static ORGMItunesImportManager *defaultImportManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -37,17 +36,35 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
     return defaultImportManager;
 }
 
-- (void)syncWithDocumentsDirectory {
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.import_queue = dispatch_queue_create("com.origami.itunes_import", NULL);
+    }
+    return self;
+}
+
+- (void)importFromDocumentsDirectoryWithSuccess:(void(^)())success {
+    dispatch_async(self.import_queue, ^{
+        [self process];
+        if (success) {
+            success();
+        }
+    });
+}
+
+#pragma mark - private
+- (void)process {
     if (![self documentsPath] || ![self shouldReSyncItems]) return;
     
-    NSManagedObjectContext *context = mainThreadContext();
+    NSManagedObjectContext *context = [CoreDataHelper createManagedObjectContext];
     
-    self.localFiles = [self getLocalFiles];
+    NSDictionary *localFiles = [self getLocalFiles];
     NSArray *savedTracks = [ORGMTrack requestResult:[ORGMTrack all]
                                managedObjectContext:context];
-
+    
     NSPredicate *removedPredicate = [NSPredicate predicateWithFormat:@"not (id in %@)",
-                                     [_localFiles allKeys]];
+                                     [localFiles allKeys]];
     NSArray *removedTracks = [savedTracks filteredArrayUsingPredicate:removedPredicate];
     for (id obj in removedTracks) {
         [context deleteObject:obj];
@@ -55,7 +72,7 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
     
     NSArray *savedIds = [savedTracks valueForKeyPath:@"@distinctUnionOfObjects.id"];
     NSMutableDictionary *newFiles = [NSMutableDictionary dictionary];
-    [_localFiles enumerateKeysAndObjectsUsingBlock:^(NSNumber *hash, NSURL *url, BOOL *stop) {
+    [localFiles enumerateKeysAndObjectsUsingBlock:^(NSNumber *hash, NSURL *url, BOOL *stop) {
         if (![savedIds containsObject:hash]) {
             [newFiles setObject:url forKey:hash];
         }
@@ -63,14 +80,13 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
     [self processNewFilesDictionary:newFiles inMangedContext:context];
     
     [CoreDataHelper save:context];
-        
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:_changeDate forKey:kSyncDateKey];
     [defaults synchronize];
     self.changeDate = nil;
 }
 
-#pragma mark - private
 - (NSString *)documentsPath {
     static NSString *documentsPath = nil;
     static dispatch_once_t onceToken;
@@ -127,10 +143,8 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
                 
                 NSMutableDictionary *metadata = [self processCueMetadata:[input metadata]];
                 if (metadata) {
-                    NSString *absolutePath = [cueUrl absoluteString];
-                    [metadata setObject:[NSNumber numberWithInteger:[absolutePath hash]]
-                                 forKey:ORGMTrackId];
-                    [metadata setObject:absolutePath forKey:ORGMTrackPath];                    
+                    [metadata setObject:hash forKey:ORGMTrackId];
+                    [metadata setObject:[cueUrl absoluteString] forKey:ORGMTrackPath];                    
                     
                     [self createObjectsFromMetadata:metadata inManagedContext:context];
                 }
