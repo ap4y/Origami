@@ -66,8 +66,8 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
     NSPredicate *removedPredicate = [NSPredicate predicateWithFormat:@"not (id in %@)",
                                      [localFiles allKeys]];
     NSArray *removedTracks = [savedTracks filteredArrayUsingPredicate:removedPredicate];
-    for (id obj in removedTracks) {
-        [context deleteObject:obj];
+    for (ORGMTrack *track in removedTracks) {
+        [context deleteObject:track.album.artist];
     }
     
     NSArray *savedIds = [savedTracks valueForKeyPath:@"@distinctUnionOfObjects.id"];
@@ -213,7 +213,7 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
     ORGMTrack *track = [[ORGMTrack alloc] initWithEntity:description
                           insertIntoManagedObjectContext:context];
     track.id = [metadata objectForKey:ORGMTrackId];
-    track.title = [metadata objectForKey:ORGMGenreTitle];
+    track.title = [metadata objectForKey:ORGMTrackTitle];
     track.track_num = [metadata objectForKey:ORGMTrackNumber];
     track.track_path = [metadata objectForKey:ORGMTrackPath];
     track.genre = genre;
