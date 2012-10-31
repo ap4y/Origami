@@ -14,7 +14,7 @@
 
 #import "ORGMItunesImportManager.h"
 
-@interface ORGMTracksViewController () {
+@interface ORGMTracksViewController () <UITableViewDelegate> {
     BOOL _isLoading;    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableViewOutlet;
@@ -92,6 +92,11 @@
 }
 
 #pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [[ORGMPlayerController defaultPlayer] playTracks:_entities from:indexPath.row];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 //    if (_isLoading) return;
 //    NSArray *indexes = [_tableViewOutlet indexPathsForVisibleRows];
