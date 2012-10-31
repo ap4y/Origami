@@ -28,7 +28,8 @@ typedef enum : NSInteger {
 @property (weak, nonatomic) IBOutlet UILabel *rightDetailsLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *leftLastfmLogo;
 @property (weak, nonatomic) IBOutlet UIImageView *rightLastfmLogo;
-
+@property (strong, nonatomic) ORGMEntity *leftEntity;
+@property (strong, nonatomic) ORGMEntity *rightEntity;
 @end
 
 @implementation ORGMEntityWithCoverCell
@@ -43,6 +44,18 @@ typedef enum : NSInteger {
 @synthesize leftLastfmLogo;
 @synthesize rightLastfmLogo;
 
+- (void)awakeFromNib {
+    UITapGestureRecognizer *leftViewTapRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                action:@selector(leftViewTapped:)];
+    UITapGestureRecognizer *rightViewTapRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                action:@selector(rightViewTapped::)];
+
+    [leftAlbumView addGestureRecognizer:leftViewTapRecognizer];
+    [rigthAlbumView addGestureRecognizer:rightViewTapRecognizer];
+}
+
 #pragma mark - public
 - (void)setEntities:(NSArray *)entities {
     [leftAlbumView setHidden:YES];
@@ -50,24 +63,38 @@ typedef enum : NSInteger {
     
     if (entities.count > 0) {
         if ([[entities objectAtIndex:0] isKindOfClass:[ORGMEntity class]]) {
+            self.leftEntity = [entities objectAtIndex:0];
             [leftAlbumView setHidden:NO];
             [leftLastfmLogo setHidden:YES];
             [self refreshCellAtPosition:ORGMEntityCellViewPositionLeft
-                             withEntity:[entities objectAtIndex:0]];
+                             withEntity:_leftEntity];
         }
     }
     
     if (entities.count > 1) {
         if ([[entities objectAtIndex:1] isKindOfClass:[ORGMEntity class]]) {
+            self.rightEntity = [entities objectAtIndex:1];
             [rigthAlbumView setHidden:NO];
             [rightLastfmLogo setHidden:YES];
             [self refreshCellAtPosition:ORGMEntityCellViewPositionRight
-                             withEntity:[entities objectAtIndex:1]];
+                             withEntity:_rightEntity];
         }
     }
 }
 
 #pragma mark - private
+- (void)leftViewTapped:(id)sender {
+    if (_delegate) {
+        [_delegate coverCell:self didTapViewWithEntity:_leftEntity];
+    }
+}
+
+- (void)rightViewTapped:(id)sender {
+    if (_delegate) {
+        [_delegate coverCell:self didTapViewWithEntity:_rightEntity];
+    }
+}
+
 + (NSString *)pluralizedString:(NSString *)string forAmount:(int)amount {
     return [NSString stringWithFormat:@"%@%@", string, amount != 1 ? @"s" : @""];
 }
