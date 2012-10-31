@@ -56,6 +56,7 @@
 		959EB7F9163E960600CEC22C /* ORGMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7F8163E960500CEC22C /* ORGMArtist.m */; };
 		959EB7FC163E960800CEC22C /* ORGMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7FB163E960700CEC22C /* ORGMTrack.m */; };
 		959EB802163E991F00CEC22C /* ORGMGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB801163E991F00CEC22C /* ORGMGenre.m */; };
+		959EB81A1641218400CEC22C /* ORGMPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB8191641218300CEC22C /* ORGMPlayerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,8 @@
 		959EB7FB163E960700CEC22C /* ORGMTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTrack.m; path = Models/ORGMTrack.m; sourceTree = "<group>"; };
 		959EB800163E991E00CEC22C /* ORGMGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMGenre.h; path = Models/ORGMGenre.h; sourceTree = "<group>"; };
 		959EB801163E991F00CEC22C /* ORGMGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMGenre.m; path = Models/ORGMGenre.m; sourceTree = "<group>"; };
+		959EB8181641218300CEC22C /* ORGMPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMPlayerController.h; path = Common/ORGMPlayerController.h; sourceTree = "<group>"; };
+		959EB8191641218300CEC22C /* ORGMPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMPlayerController.m; path = Common/ORGMPlayerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +287,8 @@
 				95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */,
 				959EB7ED163E7D5D00CEC22C /* ORGMItunesImportManager.h */,
 				959EB7EE163E7D5D00CEC22C /* ORGMItunesImportManager.m */,
+				959EB8181641218300CEC22C /* ORGMPlayerController.h */,
+				959EB8191641218300CEC22C /* ORGMPlayerController.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 				959EB7F9163E960600CEC22C /* ORGMArtist.m in Sources */,
 				959EB7FC163E960800CEC22C /* ORGMTrack.m in Sources */,
 				959EB802163E991F00CEC22C /* ORGMGenre.m in Sources */,
+				959EB81A1641218400CEC22C /* ORGMPlayerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
