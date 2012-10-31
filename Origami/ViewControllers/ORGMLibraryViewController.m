@@ -11,16 +11,21 @@
 #import "ORGMEntityWithCoverCell.h"
 #import "ORGMCustomization.h"
 #import "ORGMPlayerView.h"
+#import "ORGMTracksViewController.h"
 
-@interface ORGMLibraryViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface ORGMLibraryViewController () <UITableViewDataSource, UITableViewDelegate,
+                                         ORGMEntityWithCoverCellDelegate> {
     BOOL _isLoading;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableViewOutlet;
 @property (strong, nonatomic) NSMutableArray *entities;
+@property (strong, nonatomic) ORGMEntity *segueEntity;
 @end
 
 @implementation ORGMLibraryViewController
 @synthesize tableViewOutlet = _tableViewOutlet;
+
+NSString * const tracksSegueName = @"entityTracksSegue";
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -79,6 +84,28 @@
     [super viewDidUnload];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:tracksSegueName]) {
+        ORGMTracksViewController *controller = [segue destinationViewController];
+        switch (_controllerType) {
+            case ORGMLibraryControllerAlbum:
+                controller.tracks = [((ORGMAlbum *)_segueEntity).tracks allObjects];
+                break;
+            case ORGMLibraryControllerGenre:
+                controller.tracks = [((ORGMGenre *)_segueEntity).tracks allObjects];
+                break;
+            case ORGMLibraryControllerArtist: {
+                ORGMArtist *artist = (ORGMArtist *)_segueEntity;
+                NSSet *tracks =
+                    [artist.albums valueForKeyPath:@"@distinctUnionOfSets.tracks"];
+                controller.tracks = [tracks allObjects];
+                break;
+            }
+        }
+        self.segueEntity = nil;
+    }
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
@@ -91,6 +118,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ORGMEntityWithCoverCell *cell =
         [tableView dequeueReusableCellWithIdentifier:@"coverCell"];
+    cell.delegate = self;
     NSInteger index = indexPath.row * 2;
     NSMutableArray *items = [NSMutableArray array];
     [items addObject:[_entities objectAtIndex:index]];
@@ -102,7 +130,7 @@
 }
 
 #pragma mark - UITableViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 //    if (_isLoading) return;
 //    NSArray *indexes = [_tableViewOutlet indexPathsForVisibleRows];
 //    NSIndexPath *lastIndex = [indexes objectAtIndex:indexes.count - 1];
@@ -110,5 +138,12 @@
 //                                              inSection:0]]) {
 //        [self loadNext];
 //    }
+//}
+
+#pragma mark - ORGMEntityWithCoverCellDelegate
+- (void)coverCell:(ORGMEntityWithCoverCell *)coverCell didTapViewWithEntity:(ORGMEntity *)entity {
+    self.segueEntity = entity;
+    [self performSegueWithIdentifier:tracksSegueName sender:self];
 }
+
 @end

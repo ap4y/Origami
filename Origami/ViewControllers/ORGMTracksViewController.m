@@ -33,8 +33,10 @@
 }
 
 - (void)reloadData {
-    NSArray *tracks = [ORGMTrack libraryTracks];
-    [_entities addObjectsFromArray:tracks];
+    if (!_tracks || _tracks.count <= 0) {
+        self.tracks = [ORGMTrack libraryTracks];
+    }
+    [_entities addObjectsFromArray:_tracks];
     [_tableViewOutlet reloadData];    
 }
 

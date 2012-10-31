@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ORGMTracksViewController : UIViewController
-
+@property (strong, nonatomic) NSArray *tracks;
 @end
