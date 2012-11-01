@@ -50,6 +50,7 @@ NSString * const tracksSegueName = @"entityTracksSegue";
             break;
     }
     
+    [_entities removeAllObjects];
     [_entities addObjectsFromArray:items];
     [_tableViewOutlet reloadData];
 }

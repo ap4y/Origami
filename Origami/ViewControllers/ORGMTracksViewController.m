@@ -12,8 +12,6 @@
 #import "ORGMCustomization.h"
 #import "ORGMPlayerView.h"
 
-#import "ORGMItunesImportManager.h"
-
 @interface ORGMTracksViewController () <UITableViewDelegate> {
     BOOL _isLoading;    
 }
@@ -33,11 +31,14 @@
 }
 
 - (void)reloadData {
+    [_entities removeAllObjects];
     if (!_tracks || _tracks.count <= 0) {
-        self.tracks = [ORGMTrack libraryTracks];
+        [_entities addObjectsFromArray:[ORGMTrack libraryTracks]];
+    } else {
+        [_entities addObjectsFromArray:_tracks];
     }
-    [_entities addObjectsFromArray:_tracks];
-    [_tableViewOutlet reloadData];    
+    
+    [_tableViewOutlet reloadData];
 }
 
 - (void)viewDidLoad {
@@ -65,12 +66,6 @@
     stripeView.backgroundColor =
         [ORGMCustomization colorForColoredEntityType:ORGMColoredEntitiesTypeTrack];
     [self.navigationController.navigationBar addSubview:stripeView];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [[ORGMItunesImportManager defaultManager] importFromDocumentsDirectoryWithSuccess:^{
-        NSLog(@"done");
-    }];
 }
 
 - (void)viewDidUnload {
