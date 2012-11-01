@@ -8,7 +8,6 @@
 
 #import "ORGMEntityWithCoverCell.h"
 
-#import "UIImageView+AFNetworking.h"
 #import "ORGMLastfmProxyClient.h"
 #import "ORGMCustomization.h"
 
@@ -50,7 +49,7 @@ typedef enum : NSInteger {
                                                 action:@selector(leftViewTapped:)];
     UITapGestureRecognizer *rightViewTapRecognizer =
         [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                action:@selector(rightViewTapped::)];
+                                                action:@selector(rightViewTapped:)];
 
     [leftAlbumView addGestureRecognizer:leftViewTapRecognizer];
     [rigthAlbumView addGestureRecognizer:rightViewTapRecognizer];
