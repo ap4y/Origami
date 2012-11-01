@@ -48,7 +48,9 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
     dispatch_async(self.import_queue, ^{
         [self process];
         if (success) {
-            success();
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success();
+            });
         }
     });
 }
@@ -58,6 +60,7 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
     if (![self documentsPath] || ![self shouldReSyncItems]) return;
     
     NSManagedObjectContext *context = [CoreDataHelper createManagedObjectContext];
+    [CoreDataHelper addMergeNotificationForMainContext:context];
     
     NSDictionary *localFiles = [self getLocalFiles];
     NSArray *savedTracks = [ORGMTrack requestResult:[ORGMTrack all]
