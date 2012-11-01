@@ -13,6 +13,7 @@
 #import "ORGMMenuDataSource.h"
 #import "ORGMLibraryViewController.h"
 #import "ORGMTracksViewController.h"
+#import "ORGMItunesImportManager.h"
 
 const CGFloat screenWidth = 320.0;
 const CGFloat resettedCenter = 160.0;
@@ -50,6 +51,8 @@ const CGFloat anchorRightPeekAmount = 100.0;
 
 #pragma mark - public
 - (void)anchorTopViewWithComplete:(void (^)())complete {
+    [self checkForNewLocalTracks];
+    
     CGFloat newCenter = screenWidth + resettedCenter - anchorRightPeekAmount;    
     [self topViewHorizontalCenterWillChange:newCenter];    
     [UIView animateWithDuration:0.25f animations:^{
@@ -77,23 +80,22 @@ const CGFloat anchorRightPeekAmount = 100.0;
 - (IBAction)didClickedMenuHeader:(id)sender {
     UIButton *button = sender;
     UIViewController *controller;
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard"
-                                                         bundle:nil];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     
     if (button.titleLabel.tag == 0) {
         controller =
             [storyBoard instantiateViewControllerWithIdentifier:@"trackController"];
-    } else {
+    } else if (button.titleLabel.tag < 4) {
         controller =
             [storyBoard instantiateViewControllerWithIdentifier:@"libraryController"];
-        ((ORGMLibraryViewController *)controller).controllerType =
-        button.titleLabel.tag;
+        ((ORGMLibraryViewController *)controller).controllerType = button.titleLabel.tag;
     }
     
-    UINavigationController *navController =
-    (UINavigationController *)_topViewController;
-    [navController setViewControllers:@[controller]];
-    [self resetTopViewWithComplete:nil];
+    if (controller) {
+        UINavigationController *navController = (UINavigationController *)_topViewController;
+        [navController setViewControllers:@[controller]];
+        [self resetTopViewWithComplete:nil];
+    }
 }
 
 - (void)viewDidLoad {
@@ -192,6 +194,22 @@ const CGFloat anchorRightPeekAmount = 100.0;
     if (newHorizontalCenter == resettedCenter) {
         _underLeftShowing   = NO;
     }
+}
+
+- (void)checkForNewLocalTracks {
+    [_menuDataSource toggleImportIndicator];
+    [[ORGMItunesImportManager defaultManager] importFromDocumentsDirectoryWithSuccess:^{
+        UINavigationController *navController = (UINavigationController *)_topViewController;
+        if (navController) {
+            UIViewController *visibleController = navController.visibleViewController;
+            [visibleController performSelector:@selector(reloadData)];
+            
+            [_menuDataSource reloadData];
+            [_tableViewOutlet reloadData];
+            
+            [_menuDataSource toggleImportIndicator];
+        }
+    }];
 }
 
 @end
