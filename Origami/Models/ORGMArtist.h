@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSSet *albums;
 
 + (NSArray *)libraryArtists;
++ (NSArray *)topArtists;
 @end
 
 @interface ORGMArtist (CoreDataGeneratedAccessors)

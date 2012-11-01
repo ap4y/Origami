@@ -17,4 +17,5 @@
 @property (strong, nonatomic) ORGMGenre *genre;
 
 + (NSArray *)libraryTracks;
++ (NSArray *)topTracks;
 @end

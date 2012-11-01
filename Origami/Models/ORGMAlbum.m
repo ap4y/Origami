@@ -21,6 +21,16 @@ NSString * const albumErrorDomain = @"com.origami.errors.album";
                managedObjectContext:mainThreadContext()];
 }
 
++ (NSArray *)topAlbums {
+    NSSortDescriptor *dateDiscriptor = [NSSortDescriptor sortDescriptorWithKey:@"updated_at"
+                                                                     ascending:NO];
+    NSFetchRequest *request = [[ORGMAlbum all] orderByDescriptors:dateDiscriptor, nil];
+    [request setFetchLimit:3];
+    
+    return [ORGMAlbum requestResult:request
+               managedObjectContext:mainThreadContext()];
+}
+
 - (BOOL)validateTitle:(id *)valueRef error:(NSError **)outError {
     NSString *title = *valueRef;
     if (!title || [title length] <= 0) {

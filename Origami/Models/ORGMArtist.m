@@ -20,6 +20,16 @@ NSString * const artistErrorDomain = @"com.origami.errors.artist";
                 managedObjectContext:mainThreadContext()];
 }
 
++ (NSArray *)topArtists {
+    NSSortDescriptor *dateDiscriptor = [NSSortDescriptor sortDescriptorWithKey:@"updated_at"
+                                                                     ascending:NO];
+    NSFetchRequest *request = [[ORGMArtist all] orderByDescriptors:dateDiscriptor, nil];
+    [request setFetchLimit:3];
+    
+    return [ORGMArtist requestResult:request
+                managedObjectContext:mainThreadContext()];
+}
+
 - (BOOL)validateTitle:(id *)valueRef error:(NSError **)outError {
     NSString *title = *valueRef;
     if (!title || [title length] <= 0) {

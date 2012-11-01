@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSSet *tracks;
 
 + (NSArray *)libraryGenres;
++ (NSArray *)topGenres;
 @end
 
 @interface ORGMGenre (CoreDataGeneratedAccessors)

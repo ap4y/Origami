@@ -23,6 +23,16 @@ NSString * const trackErrorDomain = @"com.origami.errors.track";
                managedObjectContext:mainThreadContext()];
 }
 
++ (NSArray *)topTracks {
+    NSSortDescriptor *dateDiscriptor = [NSSortDescriptor sortDescriptorWithKey:@"updated_at"
+                                                                     ascending:NO];
+    NSFetchRequest *request = [[ORGMTrack all] orderByDescriptors:dateDiscriptor, nil];
+    [request setFetchLimit:3];
+    
+    return [ORGMTrack requestResult:request
+               managedObjectContext:mainThreadContext()];
+}
+
 - (BOOL)validateTitle:(id *)valueRef error:(NSError **)outError {
     NSString *title = *valueRef;
     if (!title || [title length] <= 0) {

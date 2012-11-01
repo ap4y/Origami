@@ -20,6 +20,16 @@ NSString * const genreErrorDomain = @"com.origami.errors.genre";
                managedObjectContext:mainThreadContext()];
 }
 
++ (NSArray *)topGenres {
+    NSSortDescriptor *dateDiscriptor = [NSSortDescriptor sortDescriptorWithKey:@"updated_at"
+                                                                     ascending:NO];
+    NSFetchRequest *request = [[ORGMGenre all] orderByDescriptors:dateDiscriptor, nil];
+    [request setFetchLimit:3];
+    
+    return [ORGMGenre requestResult:request
+               managedObjectContext:mainThreadContext()];
+}
+
 - (BOOL)validateTitle:(id *)valueRef error:(NSError **)outError {
     NSString *title = *valueRef;
     if (!title || [title length] <= 0) {

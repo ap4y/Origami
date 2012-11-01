@@ -15,6 +15,7 @@
 @property (strong, nonatomic) ORGMArtist *artist;
 
 + (NSArray *)libraryAlbums;
++ (NSArray *)topAlbums;
 @end
 
 @interface ORGMAlbum (CoreDataGeneratedAccessors)
