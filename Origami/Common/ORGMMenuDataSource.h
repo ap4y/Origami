@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface ORGMMenuDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
-
+- (void)reloadData;
+- (void)toggleImportIndicator;
 @end

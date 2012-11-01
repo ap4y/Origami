@@ -7,12 +7,41 @@
 //
 
 #import "ORGMMenuDataSource.h"
+#import "ORGMCustomization.h"
+#import "ORGMLastfmProxyClient.h"
 
 @interface ORGMMenuDataSource ()
-
+@property (strong, nonatomic) NSArray *items;
+@property (strong, nonatomic) UIImage *placeholder;
+@property (strong, nonatomic) UIActivityIndicatorView *importIndicator;
 @end
 
 @implementation ORGMMenuDataSource
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        [self reloadData];
+        self.placeholder = [UIImage imageNamed:@"empty_placeholder"];
+    }
+    return self;
+}
+
+- (void)reloadData {
+    self.items = @[ [ORGMTrack topTracks],
+                    [ORGMArtist topArtists],
+                    [ORGMAlbum topAlbums],
+                    [ORGMGenre topGenres],
+                    @[ @"iTunes" ] ];
+}
+
+- (void)toggleImportIndicator {
+    if (_importIndicator.isAnimating) {
+        [_importIndicator stopAnimating];
+    } else {
+        [_importIndicator startAnimating];
+    }
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -20,7 +49,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    NSArray *subItems = [_items objectAtIndex:section];
+    return [subItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -28,6 +58,72 @@
     UIView *backView = [[UIView alloc] initWithFrame:cell.bounds];
     [backView setBackgroundColor:RGB(238, 238, 238)];
     [cell setBackgroundView:backView];
+    
+    UIColor *random = [ORGMCustomization colorForColoredEntityType:arc4random()%4];
+    [cell.imageView setBackgroundColor:random];
+    
+    ORGMLastfmProxyClient *imageProxy = [ORGMLastfmProxyClient sharedClient];
+    
+    NSArray *subItems = [_items objectAtIndex:indexPath.section];
+    switch (indexPath.section) {
+        case 0: {
+            ORGMTrack *track = [subItems objectAtIndex:indexPath.row];
+            cell.textLabel.text = track.title;
+            cell.detailTextLabel.text = track.album.title;
+            
+            NSURL *imageUrl = [imageProxy albumImageUrlForArtist:track.album.artist.title
+                                                      albumTitle:track.album.title];
+            [cell.imageView setImageWithURL:imageUrl placeholderImage:_placeholder];
+
+            break;
+        }
+        case 1: {
+            ORGMArtist *artist = [subItems objectAtIndex:indexPath.row];
+            cell.textLabel.text = artist.title;
+            cell.detailTextLabel.text = nil;
+            
+            NSURL *imageUrl = [imageProxy artistImageUrlForArtist:artist.title];
+            [cell.imageView setImageWithURL:imageUrl placeholderImage:_placeholder];
+            break;
+        }
+        case 2: {
+            ORGMAlbum *album = [subItems objectAtIndex:indexPath.row];
+            cell.textLabel.text = album.title;
+            cell.detailTextLabel.text = album.artist.title;
+            
+            NSURL *imageUrl = [imageProxy albumImageUrlForArtist:album.artist.title
+                                                      albumTitle:album.title];
+            [cell.imageView setImageWithURL:imageUrl placeholderImage:_placeholder];
+            break;
+        }
+        case 3: {
+            ORGMGenre *genre = [subItems objectAtIndex:indexPath.row];
+            cell.textLabel.text = genre.title;
+            cell.detailTextLabel.text = nil;
+            
+            NSURL *imageUrl = [imageProxy genreImageUrlForGenre:genre.title];
+            [cell.imageView setImageWithURL:imageUrl placeholderImage:_placeholder];
+            break;
+        }
+        case 4: {
+            NSString *source = [subItems objectAtIndex:indexPath.row];
+            cell.textLabel.text = source;
+            cell.detailTextLabel.text = nil;
+            cell.imageView.backgroundColor = [UIColor clearColor];
+            [cell.imageView setImage:[UIImage imageNamed:@"ic_itunes"]];
+            
+            self.importIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [_importIndicator setHidesWhenStopped:YES];
+            CGRect frame = _importIndicator.frame;
+            frame.origin = CGPointMake(180.0, 10.0);
+            _importIndicator.frame = frame;
+            [cell.contentView addSubview:_importIndicator];
+            break;
+        }
+        default:
+            break;
+    }
+    
     return cell;
 }
 
@@ -73,6 +169,7 @@
             titleLabel.text = NSLocalizedString(@"Sources", nil);
             stripeView.backgroundColor = RGB(204, 238, 0);
             tapButton.titleLabel.tag = 4;
+            cell.accessoryType = UITableViewCellAccessoryNone;
             break;
         }
         default:
