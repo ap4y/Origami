@@ -8,10 +8,9 @@
 
 #import "ORManagedObject.h"
 
-#import "ORGMHTTPClient.h"
-
 @interface ORGMEntity : ORManagedObject
 @property (nonatomic, retain) NSNumber *id;
+@property (nonatomic, retain) NSDate *updated_at;
 
 + (id)createOrFindByTitle:(NSString *)title
          inManagedContext:(NSManagedObjectContext*)context;

@@ -10,6 +10,7 @@
 
 @implementation ORGMEntity
 @dynamic id;
+@dynamic updated_at;
 
 + (NSString *)jsonRoot {
     return nil;
@@ -29,6 +30,13 @@
     }
     
     return entity;
+}
+
+- (void)willSave {
+    NSDate *now = [NSDate date];
+    if (self.updated_at == nil || [now timeIntervalSinceDate:self.updated_at] > 1.0) {
+        self.updated_at = now;
+    }
 }
 
 @end

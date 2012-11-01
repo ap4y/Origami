@@ -11,6 +11,7 @@
     </entity>
     <entity name="ORGMEntity" representedClassName="ORGMEntity" isAbstract="YES" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <entity name="ORGMGenre" representedClassName="ORGMGenre" parentEntity="ORGMEntity" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -26,7 +27,7 @@
     <elements>
         <element name="ORGMAlbum" positionX="0" positionY="0" width="128" height="90"/>
         <element name="ORGMArtist" positionX="0" positionY="0" width="128" height="75"/>
-        <element name="ORGMEntity" positionX="0" positionY="0" width="128" height="60"/>
+        <element name="ORGMEntity" positionX="0" positionY="0" width="128" height="75"/>
         <element name="ORGMGenre" positionX="0" positionY="0" width="128" height="75"/>
         <element name="ORGMTrack" positionX="0" positionY="0" width="128" height="120"/>
     </elements>
