@@ -7,6 +7,8 @@
 //
 
 #import "ORGMPlayerController.h"
+
+#import <AVFoundation/AVFoundation.h>
 #import "ORGMEngine.h"
 
 @interface ORGMPlayerController () <ORGMEngineDelegate>
@@ -29,6 +31,12 @@
     self = [super init];
     if (self) {
         self.engine = [[ORGMEngine alloc] init];
+        
+        AVAudioSession *session = [AVAudioSession sharedInstance];
+        NSError *sessionError = nil;
+        [session setCategory:AVAudioSessionCategoryPlayback error:&sessionError];
+        [session setActive:YES error:&sessionError];
+//        [session setDelegate:self];
     }
     return self;
 }
