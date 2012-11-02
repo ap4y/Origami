@@ -13,7 +13,6 @@
 @interface ORGMMenuDataSource ()
 @property (strong, nonatomic) NSArray *items;
 @property (strong, nonatomic) UIImage *placeholder;
-@property (strong, nonatomic) UIActivityIndicatorView *importIndicator;
 @end
 
 @implementation ORGMMenuDataSource
@@ -35,11 +34,17 @@
                     @[ @"iTunes" ] ];
 }
 
-- (void)toggleImportIndicator {
-    if (_importIndicator.isAnimating) {
-        [_importIndicator stopAnimating];
+- (void)toggleImportIndicatorForTableView:(UITableView *)tableView {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:4];
+    UITableViewCell *itunesImportCell = [tableView cellForRowAtIndexPath:indexPath];
+    if (!itunesImportCell) return;
+    
+    UIActivityIndicatorView *importIndicator =
+        (UIActivityIndicatorView *)[itunesImportCell.contentView viewWithTag:1];
+    if (importIndicator.isAnimating) {
+        [importIndicator stopAnimating];
     } else {
-        [_importIndicator startAnimating];
+        [importIndicator startAnimating];
     }
 }
 
@@ -112,12 +117,13 @@
             cell.imageView.backgroundColor = [UIColor clearColor];
             [cell.imageView setImage:[UIImage imageNamed:@"ic_itunes"]];
             
-            self.importIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-            [_importIndicator setHidesWhenStopped:YES];
-            CGRect frame = _importIndicator.frame;
+            UIActivityIndicatorView *importIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [importIndicator setTag:1];
+            [importIndicator setHidesWhenStopped:YES];
+            CGRect frame = importIndicator.frame;
             frame.origin = CGPointMake(180.0, 10.0);
-            _importIndicator.frame = frame;
-            [cell.contentView addSubview:_importIndicator];
+            importIndicator.frame = frame;
+            [cell.contentView addSubview:importIndicator];
             break;
         }
         default:

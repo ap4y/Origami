@@ -10,5 +10,5 @@
 
 @interface ORGMMenuDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 - (void)reloadData;
-- (void)toggleImportIndicator;
+- (void)toggleImportIndicatorForTableView:(UITableView *)tableView;
 @end
