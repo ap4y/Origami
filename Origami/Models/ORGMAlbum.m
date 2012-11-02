@@ -35,7 +35,7 @@ NSString * const albumErrorDomain = @"com.origami.errors.album";
     NSString *title = *valueRef;
     if (!title || [title length] <= 0) {
         if (outError != NULL) {
-            NSString *errorStr = NSLocalizedString(@"Invalid title", nil);
+            NSString *errorStr = NSLocalizedString(@"Invalid album title", nil);
             NSDictionary *userInfoDict = @{ NSLocalizedDescriptionKey: errorStr };
             *outError = [[NSError alloc] initWithDomain:albumErrorDomain
                                                    code:0

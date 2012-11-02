@@ -37,7 +37,7 @@ NSString * const trackErrorDomain = @"com.origami.errors.track";
     NSString *title = *valueRef;
     if (!title || [title length] <= 0) {
         if (outError != NULL) {
-            NSString *errorStr = NSLocalizedString(@"Invalid title", nil);
+            NSString *errorStr = NSLocalizedString(@"Invalid track title", nil);
             NSDictionary *userInfoDict = @{ NSLocalizedDescriptionKey: errorStr };
             *outError = [[NSError alloc] initWithDomain:trackErrorDomain
                                                    code:0
