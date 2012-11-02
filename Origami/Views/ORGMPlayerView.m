@@ -110,14 +110,6 @@ const CGFloat viewThreshold = -22.0;
     [[ORGMPlayerController defaultPlayer] seekToTime:seekSlider.value];
 }
 
-#pragma mark - private
-- (NSString *)formatSeconds:(double)seconds {
-    int minute = floor(seconds/60);
-    int second = round(seconds - minute * 60);
-    
-    return [NSString stringWithFormat:@"%i:%02d", minute, second];
-}
-
 - (void)setCurrentTrackInfo:(ORGMTrack *)track {
     _trackTitleLabel.text = track.title;
     _albumTitleLabel.text = track.album.title;
@@ -147,13 +139,21 @@ const CGFloat viewThreshold = -22.0;
     _albumTitleLabel.text = @"";
     _artistTitleLabel.text = @"";
     _shortTitleLabel.text = NSLocalizedString(@"Origami", nil);
-    _shortArtistLabel.text = @"";
+    _shortArtistLabel.text = NSLocalizedString(@"Waiting...", nil);
     
     _trackTimeLabel.text = @"0:00";
     _playedTimeLabel.text = @"0:00";
-
+    
     [_coverArtImageView setImage:[UIImage imageNamed:@"cover"]];
     [_shortCoverArtImageView setImage:[UIImage imageNamed:@"Icon"]];
+}
+
+#pragma mark - private
+- (NSString *)formatSeconds:(double)seconds {
+    int minute = floor(seconds/60);
+    int second = round(seconds - minute * 60);
+    
+    return [NSString stringWithFormat:@"%i:%02d", minute, second];
 }
 
 - (void)refreshUI {

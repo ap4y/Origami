@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableViewOutlet;
 @property (strong, nonatomic) NSMutableArray *entities;
 @property (strong, nonatomic) ORGMEntity *segueEntity;
+@property (strong, nonatomic) ORGMPlayerView *playerView;
 @end
 
 @implementation ORGMLibraryViewController
@@ -62,22 +63,32 @@ NSString * const tracksSegueName = @"entityTracksSegue";
     [_tableViewOutlet setBackgroundView:[ORGMCustomization backgroundImage]];
     [self reloadData];
     
-    ORGMPlayerView *playerView = [[ORGMPlayerView alloc] initWithFrame:CGRectNull];
-    [playerView addShortControlsForNavItem:self.navigationItem];
-    [playerView setViewStateChangeBlock:^(ORGMPlayerViewState newState) {
+    self.playerView = [[ORGMPlayerView alloc] initWithFrame:CGRectNull];
+    [_playerView addShortControlsForNavItem:self.navigationItem];
+    [_playerView setViewStateChangeBlock:^(ORGMPlayerViewState newState) {
         if (newState == ORGMPlayerViewStatePresented) {
             self.sideMenuController.panGesture.enabled = NO;
         } else {
             self.sideMenuController.panGesture.enabled = YES;
         }
     }];
-    [playerView presentInView:self.view
-                   uponNavBar:self.navigationController.navigationBar];
+    [_playerView presentInView:self.view
+                    uponNavBar:self.navigationController.navigationBar];
     
     UIView *stripeView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 2.0)];
     stripeView.backgroundColor =
         [ORGMCustomization colorForColoredEntityType:_controllerType];
     [self.navigationController.navigationBar addSubview:stripeView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    ORGMPlayerController *controller = [ORGMPlayerController defaultPlayer];    
+    if (controller.currentTrack) {
+        [_playerView setCurrentTrackInfo:controller.currentTrack];
+    } else {
+        [_playerView resetCurrentTrackInfo];
+    }
 }
 
 - (void)viewDidUnload {

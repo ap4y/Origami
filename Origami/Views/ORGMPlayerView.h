@@ -20,4 +20,6 @@ typedef void(^ViewStateChangeBlock)(ORGMPlayerViewState newState);
 
 - (void)presentInView:(UIView *)view uponNavBar:(UINavigationBar *)navBar;
 - (void)addShortControlsForNavItem:(UINavigationItem *)navItem;
+- (void)setCurrentTrackInfo:(ORGMTrack *)track;
+- (void)resetCurrentTrackInfo;
 @end
