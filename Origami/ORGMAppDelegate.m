@@ -25,6 +25,8 @@
     [menuController setTopViewController:navController];
     
     [ORGMCustomization prepareTheme];
+    
+    [application beginReceivingRemoteControlEvents];
     return YES;
 }
 
@@ -37,5 +39,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {}
 
 - (void)applicationWillTerminate:(UIApplication *)application {}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    if (event.type == UIEventTypeRemoteControl) {
+        [[ORGMPlayerController defaultPlayer] handleRemoteControlEvent:event];
+    }
+}
 
 @end

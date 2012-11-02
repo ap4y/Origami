@@ -13,6 +13,7 @@
 		953941B7164288FD001F6471 /* ic_itunes.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941B5164288FD001F6471 /* ic_itunes.png */; };
 		953941B8164288FD001F6471 /* ic_itunes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941B6164288FD001F6471 /* ic_itunes@2x.png */; };
 		953941BA164294A1001F6471 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953941B9164294A0001F6471 /* AVFoundation.framework */; };
+		953941BC1643E3F8001F6471 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953941BB1643E3F8001F6471 /* MediaPlayer.framework */; };
 		95522A0515DC40C2002CFB1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0415DC40C2002CFB1F /* UIKit.framework */; };
 		95522A0715DC40C2002CFB1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0615DC40C2002CFB1F /* Foundation.framework */; };
 		95522A0915DC40C2002CFB1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0815DC40C2002CFB1F /* CoreGraphics.framework */; };
@@ -82,6 +83,7 @@
 		953941B5164288FD001F6471 /* ic_itunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_itunes.png; sourceTree = "<group>"; };
 		953941B6164288FD001F6471 /* ic_itunes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_itunes@2x.png"; sourceTree = "<group>"; };
 		953941B9164294A0001F6471 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		953941BB1643E3F8001F6471 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		95522A0015DC40C2002CFB1F /* Origami.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Origami.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95522A0415DC40C2002CFB1F /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95522A0615DC40C2002CFB1F /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				953941BC1643E3F8001F6471 /* MediaPlayer.framework in Frameworks */,
 				953941BA164294A1001F6471 /* AVFoundation.framework in Frameworks */,
 				95522AA815DE9A35002CFB1F /* CoreData.framework in Frameworks */,
 				95522A0515DC40C2002CFB1F /* UIKit.framework in Frameworks */,
@@ -206,6 +209,7 @@
 		95522A0315DC40C2002CFB1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				953941BB1643E3F8001F6471 /* MediaPlayer.framework */,
 				953941B9164294A0001F6471 /* AVFoundation.framework */,
 				95522AA715DE9A35002CFB1F /* CoreData.framework */,
 				95522A0415DC40C2002CFB1F /* UIKit.framework */,
