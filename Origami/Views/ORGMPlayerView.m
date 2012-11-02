@@ -32,7 +32,6 @@ const CGFloat viewThreshold = -22.0;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 @property (strong, nonatomic) UINavigationBar *navBar;
 @property (assign, nonatomic) ORGMPlayerViewState viewState;
-@property (strong, nonatomic) UIImage *placeholder;
 @property (strong, nonatomic) NSTimer* refreshTimer;
 @property (nonatomic) BOOL isSeeking;
 @end
@@ -63,9 +62,13 @@ const CGFloat viewThreshold = -22.0;
         
         _viewState = ORGMPlayerViewStateHidden;
         
-        [ORGMPlayerController defaultPlayer].delegate = self;
-        self.placeholder = [UIImage imageNamed:@"cover"];
-        [self resetCurrentTrackInfo];
+        ORGMPlayerController *controller = [ORGMPlayerController defaultPlayer];
+        controller.delegate = self;        
+        if (controller.currentTrack) {
+            [self setCurrentTrackInfo:controller.currentTrack];
+        } else {
+            [self resetCurrentTrackInfo];
+        }
     }
     return self;
 }
@@ -129,8 +132,13 @@ const CGFloat viewThreshold = -22.0;
     seekSlider.maximumValue = trackTime;
     
     [controller currentCovertArtImage:^(UIImage *coverArt) {
-        [_coverArtImageView setImage:coverArt];
-        [_shortCoverArtImageView setImage:coverArt];
+        if (coverArt) {
+            [_coverArtImageView setImage:coverArt];
+            [_shortCoverArtImageView setImage:coverArt];
+        } else {
+            [_coverArtImageView setImage:[UIImage imageNamed:@"cover"]];
+            [_shortCoverArtImageView setImage:[UIImage imageNamed:@"Icon"]];
+        }
     }];
 }
 
@@ -144,8 +152,8 @@ const CGFloat viewThreshold = -22.0;
     _trackTimeLabel.text = @"0:00";
     _playedTimeLabel.text = @"0:00";
 
-    [_coverArtImageView setImage:_placeholder];
-    [_shortCoverArtImageView setImage:_placeholder];
+    [_coverArtImageView setImage:[UIImage imageNamed:@"cover"]];
+    [_shortCoverArtImageView setImage:[UIImage imageNamed:@"Icon"]];
 }
 
 - (void)refreshUI {
