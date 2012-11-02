@@ -16,7 +16,7 @@ NSString * const trackErrorDomain = @"com.origami.errors.track";
 @dynamic genre;
 
 + (NSArray *)libraryTracks {
-    NSFetchRequest *request = [[ORGMTrack all] orderBy:@"track_num", @"title", nil];
+    NSFetchRequest *request = [[ORGMTrack all] orderBy:@"title", nil];
     [request setFetchBatchSize:20];
     
     return [ORGMTrack requestResult:request
