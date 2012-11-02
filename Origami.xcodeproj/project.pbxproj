@@ -16,6 +16,8 @@
 		953941BC1643E3F8001F6471 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953941BB1643E3F8001F6471 /* MediaPlayer.framework */; };
 		953941BF1643FAA3001F6471 /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941BD1643FAA3001F6471 /* cover.png */; };
 		953941C01643FAA3001F6471 /* cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941BE1643FAA3001F6471 /* cover@2x.png */; };
+		953941C91644000C001F6471 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941C81644000C001F6471 /* Icon@2x.png */; };
+		953941CC16440010001F6471 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941CB1644000F001F6471 /* Icon.png */; };
 		95522A0515DC40C2002CFB1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0415DC40C2002CFB1F /* UIKit.framework */; };
 		95522A0715DC40C2002CFB1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0615DC40C2002CFB1F /* Foundation.framework */; };
 		95522A0915DC40C2002CFB1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0815DC40C2002CFB1F /* CoreGraphics.framework */; };
@@ -87,6 +89,8 @@
 		953941BB1643E3F8001F6471 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		953941BD1643FAA3001F6471 /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover.png; sourceTree = "<group>"; };
 		953941BE1643FAA3001F6471 /* cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cover@2x.png"; sourceTree = "<group>"; };
+		953941C81644000C001F6471 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		953941CB1644000F001F6471 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		95522A0015DC40C2002CFB1F /* Origami.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Origami.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95522A0415DC40C2002CFB1F /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		95522A0615DC40C2002CFB1F /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -191,6 +195,8 @@
 		955229F515DC40C2002CFB1F = {
 			isa = PBXGroup;
 			children = (
+				953941CB1644000F001F6471 /* Icon.png */,
+				953941C81644000C001F6471 /* Icon@2x.png */,
 				95522A0A15DC40C2002CFB1F /* Origami */,
 				95522A2215DC40C3002CFB1F /* OrigamiTests */,
 				95522A0315DC40C2002CFB1F /* Frameworks */,
@@ -468,6 +474,8 @@
 				953941B8164288FD001F6471 /* ic_itunes@2x.png in Resources */,
 				953941BF1643FAA3001F6471 /* cover.png in Resources */,
 				953941C01643FAA3001F6471 /* cover@2x.png in Resources */,
+				953941C91644000C001F6471 /* Icon@2x.png in Resources */,
+				953941CC16440010001F6471 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
