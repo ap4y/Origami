@@ -117,11 +117,15 @@
     return _engine.amountPlayed;
 }
 
-- (void)currentCovertArtImage:(void(^)(UIImage *coverArt))success {
+- (NSURL *)currentCovertArtUrl {
     ORGMTrack *track = [self currentTrack];
     ORGMLastfmProxyClient *client = [ORGMLastfmProxyClient sharedClient];
-    NSURL *imageUrl = [client albumImageUrlForArtist:track.album.artist.title
-                                          albumTitle:track.album.title];
+    return [client albumImageUrlForArtist:track.album.artist.title
+                               albumTitle:track.album.title];
+}
+
+- (void)currentCovertArtImage:(void(^)(UIImage *coverArt))success {
+    NSURL *imageUrl = [self currentCovertArtUrl];
     NSURLRequest *imageRequest = [NSURLRequest requestWithURL:imageUrl];
     AFImageRequestOperation *operation =
         [AFImageRequestOperation imageRequestOperationWithRequest:imageRequest
@@ -198,10 +202,16 @@
     switch (state) {
         case ORGMEngineStateStopped: {
             [self clearNowPlayingInfo];
+            if (_delegate) {
+                [_delegate playerController:self stoppedTrack:[self currentTrack]];
+            }
             break;
         }
         case ORGMEngineStatePlaying: {
             [self postNowPlayingInfo];
+            if (_delegate) {
+                [_delegate playerController:self startedTrack:[self currentTrack]];
+            }
             break;
         }
         default:
