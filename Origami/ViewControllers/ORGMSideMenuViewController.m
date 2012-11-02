@@ -199,15 +199,15 @@ const CGFloat anchorRightPeekAmount = 100.0;
 - (void)checkForNewLocalTracks {
     [_menuDataSource toggleImportIndicatorForTableView:_tableViewOutlet];
     [[ORGMItunesImportManager defaultManager] importFromDocumentsDirectoryWithSuccess:^{
+        [_menuDataSource toggleImportIndicatorForTableView:_tableViewOutlet];
+        
         UINavigationController *navController = (UINavigationController *)_topViewController;
         if (navController) {
             UIViewController *visibleController = navController.visibleViewController;
             [visibleController performSelector:@selector(reloadData)];
             
             [_menuDataSource reloadData];
-            [_tableViewOutlet reloadData];
-            
-            [_menuDataSource toggleImportIndicatorForTableView:_tableViewOutlet];
+            [_tableViewOutlet reloadData];            
         }
     }];
 }
