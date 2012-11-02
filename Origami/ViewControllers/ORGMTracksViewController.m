@@ -11,6 +11,7 @@
 #import "ORGMTrackCell.h"
 #import "ORGMCustomization.h"
 #import "ORGMPlayerView.h"
+#import "NSArray+orderBy.h"
 
 @interface ORGMTracksViewController () <UITableViewDelegate> {
     BOOL _isLoading;    
@@ -35,7 +36,7 @@
     if (!_tracks || _tracks.count <= 0) {
         [_entities addObjectsFromArray:[ORGMTrack libraryTracks]];
     } else {
-        [_entities addObjectsFromArray:_tracks];
+        [_entities addObjectsFromArray:[_tracks orderBy:@"track_num", nil]];
     }
     
     [_tableViewOutlet reloadData];
