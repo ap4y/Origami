@@ -70,7 +70,7 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
                                      [localFiles allKeys]];
     NSArray *removedTracks = [savedTracks filteredArrayUsingPredicate:removedPredicate];
     for (ORGMTrack *track in removedTracks) {
-        [context deleteObject:track.album.artist];
+        [self removeTrack:track inManagedContex:context];
     }
     
     NSArray *savedIds = [savedTracks valueForKeyPath:@"@distinctUnionOfObjects.id"];
@@ -208,10 +208,6 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
                       inManagedContext:context];
     album.artist = artist;
 
-    ORGMGenre *genre =
-        [ORGMGenre createOrFindByTitle:[metadata objectForKey:ORGMGenreTitle]
-                      inManagedContext:context];
-
     NSEntityDescription *description = [ORGMTrack enityDescriptionInContext:context];
     ORGMTrack *track = [[ORGMTrack alloc] initWithEntity:description
                           insertIntoManagedObjectContext:context];
@@ -219,8 +215,38 @@ NSString * const kSyncDateKey = @"ORGMItunesImportManagerSyncDate";
     track.title = [metadata objectForKey:ORGMTrackTitle];
     track.track_num = [metadata objectForKey:ORGMTrackNumber];
     track.track_path = [metadata objectForKey:ORGMTrackPath];
-    track.genre = genre;
     track.album = album;
+    
+    NSString *genreTitle = [metadata objectForKey:ORGMGenreTitle];
+    if (genreTitle && [genreTitle length] > 0) {
+        ORGMGenre *genre = [ORGMGenre createOrFindByTitle:genreTitle
+                                         inManagedContext:context];
+        track.genre = genre;
+    }
+    
+    [CoreDataHelper save:context];
+}
+
+- (void)removeTrack:(ORGMTrack *)track inManagedContex:(NSManagedObjectContext *)context {
+    ORGMAlbum *album = track.album;
+    if ([album.tracks count] == 1) {
+        ORGMArtist *artist = album.artist;
+        if ([artist.albums count] == 1) {
+            [context deleteObject:artist];
+        }
+        
+        [artist removeAlbumsObject:album];
+        [context deleteObject:album];
+    }
+    
+    ORGMGenre *genre = track.genre;
+    if ([genre.tracks count] == 1) {
+        [context deleteObject:genre];
+    }
+    
+    [album removeTracksObject:track];
+    [genre removeTracksObject:track];
+    [context deleteObject:track];
 }
 
 @end
