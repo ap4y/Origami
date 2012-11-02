@@ -80,7 +80,7 @@
                                                     <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="deviceRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="cover.jpg" id="DaJ-mP-tax">
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="cover.png" id="DaJ-mP-tax">
                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
@@ -375,7 +375,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cover.jpg" width="500" height="493"/>
+        <image name="cover.png" width="250" height="246"/>
         <image name="lastfm_red.png" width="72" height="22"/>
     </resources>
     <classes>
