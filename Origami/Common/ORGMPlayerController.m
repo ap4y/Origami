@@ -15,7 +15,7 @@
 @interface ORGMPlayerController () <ORGMEngineDelegate>
 @property (strong, nonatomic) ORGMEngine *engine;
 @property (strong, nonatomic) NSArray *playlist;
-@property (nonatomic) NSInteger curTrack;
+@property (nonatomic) NSInteger curIndex;
 @end
 
 @implementation ORGMPlayerController
@@ -39,7 +39,6 @@
         NSError *sessionError = nil;
         [session setCategory:AVAudioSessionCategoryPlayback error:&sessionError];
         [session setActive:YES error:&sessionError];
-//        [session setDelegate:self];
         
         AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange,
                                         audioRouteChangeListenerCallback,
@@ -51,24 +50,25 @@
 - (void)playTracks:(NSArray *)tracks from:(NSUInteger)index {
     if (!tracks || tracks.count <= index) return;
     self.playlist = tracks;
+    self.curIndex = index;
     
     [self playTrackAtIndex:index];
 }
 
 - (void)prev {
-    _curTrack--;
-    if (_curTrack < 0) {
-        _curTrack = _playlist.count - 1;
+    _curIndex--;
+    if (_curIndex < 0) {
+        _curIndex = _playlist.count - 1;
     }
-    [self playTrackAtIndex:_curTrack];
+    [self playTrackAtIndex:_curIndex];
 }
 
 - (void)next {
-    _curTrack++;
-    if (_curTrack >= _playlist.count) {
-        _curTrack = 0;
+    _curIndex++;
+    if (_curIndex >= _playlist.count) {
+        _curIndex = 0;
     }
-    [self playTrackAtIndex:_curTrack];
+    [self playTrackAtIndex:_curIndex];
 }
 
 - (void)seekToTime:(double)time {
@@ -151,7 +151,7 @@
 }
 
 - (ORGMTrack *)currentTrack {
-    return [_playlist objectAtIndex:_curTrack];
+    return [_playlist objectAtIndex:_curIndex];
 }
 
 - (void)postNowPlayingInfo {
@@ -186,14 +186,14 @@
 
 #pragma mark - ORGMEngineDelegate
 - (NSURL *)engineExpectsNextUrl:(ORGMEngine *)engine {
-    _curTrack++;
-    if (_curTrack >= _playlist.count) {
-        _curTrack = 0;
+    _curIndex++;
+    if (_curIndex >= _playlist.count) {
+        _curIndex = 0;
     }
     
-    if (!_playlist || _playlist.count <= _curTrack) return nil;
+    if (!_playlist || _playlist.count <= _curIndex) return nil;
     
-    ORGMTrack *track = [_playlist objectAtIndex:_curTrack];
+    ORGMTrack *track = [_playlist objectAtIndex:_curIndex];
     NSURL* url = [NSURL URLWithString:track.track_path];
     return url;
 }
