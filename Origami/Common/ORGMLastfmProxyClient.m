@@ -13,12 +13,16 @@
 
 @implementation ORGMLastfmProxyClient
 
-+ (ORGMLastfmProxyClient*)sharedClient {
-    static ORGMLastfmProxyClient* _sharedClient;
++ (ORGMLastfmProxyClient *)sharedClient {
+    static ORGMLastfmProxyClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSURL *baseURL = [NSURL URLWithString:kTTLastfmProxyBaseURLString];
-        _sharedClient = [[ORGMLastfmProxyClient alloc] initWithBaseURL:baseURL];
+        NSString *lastfmProxyPath =
+            [[NSBundle mainBundle] objectForInfoDictionaryKey:kTTLastfmProxyBaseURLString];
+        if (lastfmProxyPath && [lastfmProxyPath length] > 0) {
+            NSURL *baseURL = [NSURL URLWithString:lastfmProxyPath];
+            _sharedClient = [[ORGMLastfmProxyClient alloc] initWithBaseURL:baseURL];
+        }
     });
     
     return _sharedClient;

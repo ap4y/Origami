@@ -8,7 +8,7 @@
 
 #import "AFHTTPClient.h"
 
-#define kTTLastfmProxyBaseURLString @"http://lastfm-proxy.herokuapp.com/"
+#define kTTLastfmProxyBaseURLString @"ORGMLastfmProxyPath"
 
 @interface ORGMLastfmProxyClient : AFHTTPClient
 + (ORGMLastfmProxyClient*)sharedClient;
