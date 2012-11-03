@@ -42,10 +42,15 @@
     [[UINavigationBar appearance] setBackgroundImage:backImage
                                        forBarMetrics:UIBarMetricsDefault];
     
-    UIImage *barButton = [[UIImage imageNamed:@"clear_image"] resizableImageWithCapInsets:UIEdgeInsetsZero];
-    [[UIBarButtonItem appearance] setBackgroundImage:barButton
-                                            forState:UIControlStateNormal
-                                          barMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:RGB(238, 238, 238)];
+    
+    NSDictionary *textAttr = @{
+        UITextAttributeTextColor: RGB(60, 60, 60),
+        UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
+        UITextAttributeFont: [UIFont fontWithName:@"HelveticaNeue-Bold" size:12.0]
+    };
+    [[UIBarButtonItem appearance] setTitleTextAttributes:textAttr
+                                                forState:UIControlStateNormal];
 }
 
 @end
