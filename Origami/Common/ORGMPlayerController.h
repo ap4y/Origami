@@ -39,4 +39,5 @@
 @optional
 - (void)playerController:(ORGMPlayerController *)controller startedTrack:(ORGMTrack *)track;
 - (void)playerController:(ORGMPlayerController *)controller stoppedTrack:(ORGMTrack *)track;
+- (void)playerController:(ORGMPlayerController *)controller pausedTrack:(ORGMTrack *)track;
 @end

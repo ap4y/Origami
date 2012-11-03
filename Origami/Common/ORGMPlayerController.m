@@ -218,6 +218,11 @@
             }
             break;
         }
+        case ORGMEngineStatePaused:
+            if (_delegate) {
+                [_delegate playerController:self pausedTrack:[self currentTrack]];
+            }
+            break;
         default:
             break;
     }
