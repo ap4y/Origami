@@ -17,28 +17,17 @@
     BOOL _isLoading;    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableViewOutlet;
-@property (strong, nonatomic) NSMutableArray *entities;
-@property (strong, nonatomic) NSArray *savedTracks;
 @end
 
 @implementation ORGMTracksViewController
 NSUInteger const kMinSearchSymbols = 3;
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        self.entities = [[NSMutableArray alloc] init];
-        _isLoading = NO;
-    }
-    return self;
-}
-
 - (void)reloadData {
-    [_entities removeAllObjects];
+    [self.entities removeAllObjects];
     if (!_tracks || _tracks.count <= 0) {
-        [_entities addObjectsFromArray:[ORGMTrack libraryTracks]];
+        [self.entities addObjectsFromArray:[ORGMTrack libraryTracks]];
     } else {
-        [_entities addObjectsFromArray:[_tracks orderBy:@"track_num", nil]];
+        [self.entities addObjectsFromArray:[_tracks orderBy:@"track_num", nil]];
     }
     
     [_tableViewOutlet reloadData];
@@ -51,19 +40,7 @@ NSUInteger const kMinSearchSymbols = 3;
     UIImageView *backView = [ORGMCustomization backgroundImage];
     backView.frame = self.view.bounds;
     [self.view insertSubview:backView belowSubview:_tableViewOutlet];
-    [self reloadData];
-    
-    ORGMPlayerView *playerView = [[ORGMPlayerView alloc] initWithFrame:CGRectNull];
-    [playerView addShortControlsForNavItem:self.navigationItem];
-    [playerView setViewStateChangeBlock:^(ORGMPlayerViewState newState) {
-        if (newState == ORGMPlayerViewStatePresented) {
-            self.sideMenuController.panGesture.enabled = NO;
-        } else {
-            self.sideMenuController.panGesture.enabled = YES;
-        }
-    }];
-    [playerView presentInView:self.view
-                   uponNavBar:self.navigationController.navigationBar];
+    [self reloadData];    
     
     UIView *stripeView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 2.0)];
     stripeView.backgroundColor =
@@ -82,19 +59,19 @@ NSUInteger const kMinSearchSymbols = 3;
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _entities.count;
+    return self.entities.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ORGMTrackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"trackCell"];
-    [cell setTrack:[_entities objectAtIndex:indexPath.row]];
+    [cell setTrack:[self.entities objectAtIndex:indexPath.row]];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [[ORGMPlayerController defaultPlayer] playTracks:_entities from:indexPath.row];
+    [[ORGMPlayerController defaultPlayer] playTracks:self.entities from:indexPath.row];
 }
 
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -110,13 +87,10 @@ NSUInteger const kMinSearchSymbols = 3;
 #pragma mark - UISearchBarDelegate
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText.length >= kMinSearchSymbols) {
-        self.savedTracks = _entities;
         NSPredicate *searchPredicate =
             [NSPredicate predicateWithFormat:@"title contains[cd] %@ or album.title contains[cd] %@ or album.artist.title contains[cd] %@",
              searchText, searchText, searchText];
-        self.tracks = [_entities filteredArrayUsingPredicate:searchPredicate];
-    } else {
-        self.tracks = _savedTracks;
+        self.tracks = [self.entities filteredArrayUsingPredicate:searchPredicate];
     }
     
     [self reloadData];

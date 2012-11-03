@@ -6,7 +6,7 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import "ORGMWithControlsViewController.h"
 
 typedef enum : NSInteger {
     ORGMLibraryControllerArtist = 1,
@@ -14,6 +14,6 @@ typedef enum : NSInteger {
     ORGMLibraryControllerGenre
 } ORGMLibraryControllerType;
 
-@interface ORGMLibraryViewController : UIViewController
+@interface ORGMLibraryViewController : ORGMWithControlsViewController
 @property (assign, nonatomic) ORGMLibraryControllerType controllerType;
 @end

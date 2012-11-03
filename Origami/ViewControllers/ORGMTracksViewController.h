@@ -6,8 +6,8 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import "ORGMWithControlsViewController.h"
 
-@interface ORGMTracksViewController : UIViewController
+@interface ORGMTracksViewController : ORGMWithControlsViewController
 @property (strong, nonatomic) NSArray *tracks;
 @end
