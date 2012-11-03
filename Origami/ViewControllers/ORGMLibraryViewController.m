@@ -138,17 +138,6 @@ NSString * const tracksSegueName = @"entityTracksSegue";
     return cell;
 }
 
-#pragma mark - UITableViewDelegate
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if (_isLoading) return;
-//    NSArray *indexes = [_tableViewOutlet indexPathsForVisibleRows];
-//    NSIndexPath *lastIndex = [indexes objectAtIndex:indexes.count - 1];
-//    if ([lastIndex isEqual:[NSIndexPath indexPathForRow:(_entities.count/2 - 1)
-//                                              inSection:0]]) {
-//        [self loadNext];
-//    }
-//}
-
 #pragma mark - ORGMEntityWithCoverCellDelegate
 - (void)coverCell:(ORGMEntityWithCoverCell *)coverCell didTapViewWithEntity:(ORGMEntity *)entity {
     self.segueEntity = entity;

@@ -77,16 +77,6 @@
     [[ORGMPlayerController defaultPlayer] playTracks:self.entities from:indexPath.row];
 }
 
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if (_isLoading) return;
-//    NSArray *indexes = [_tableViewOutlet indexPathsForVisibleRows];
-//    NSIndexPath *lastIndex = [indexes objectAtIndex:indexes.count - 1];
-//    if ([lastIndex isEqual:[NSIndexPath indexPathForRow:(_entities.count - 2)
-//                                              inSection:0]]) {
-//        [self loadNext];
-//    }
-//}
-
 #pragma mark - UISearchBarDelegate
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText.length >= kMinSearchSymbols) {
