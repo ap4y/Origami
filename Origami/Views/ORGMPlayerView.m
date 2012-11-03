@@ -25,6 +25,7 @@ const CGFloat viewThreshold = -22.0;
 @property (weak, nonatomic) IBOutlet UILabel *shortTitleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *shortCoverArtImageView;
 @property (weak, nonatomic) IBOutlet UILabel *shortArtistLabel;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UISlider *seekSlider;
 @property (strong, nonatomic) IBOutlet UIView *playerView;
 @property (strong, nonatomic) IBOutlet UIView *controlsView;
@@ -94,7 +95,15 @@ const CGFloat viewThreshold = -22.0;
 }
 
 - (IBAction)toggle:(id)sender {
-    [[ORGMPlayerController defaultPlayer] toggle];
+    ORGMPlayerController *controller = [ORGMPlayerController defaultPlayer];
+    if (controller.currentState == ORGMEngineStateStopped) {
+        if (_startPlayRequestBlock) {
+            _startPlayRequestBlock();
+        }
+    } else {
+        [controller toggle];
+    }
+    [_playButton setSelected:controller.currentState == ORGMEngineStatePlaying];
 }
 
 - (IBAction)next:(id)sender {
@@ -132,6 +141,8 @@ const CGFloat viewThreshold = -22.0;
             [_shortCoverArtImageView setImage:[UIImage imageNamed:@"Icon"]];
         }
     }];
+    
+    [_playButton setSelected:controller.currentState == ORGMEngineStatePlaying];
 }
 
 - (void)resetCurrentTrackInfo {
@@ -146,6 +157,9 @@ const CGFloat viewThreshold = -22.0;
     
     [_coverArtImageView setImage:[UIImage imageNamed:@"cover"]];
     [_shortCoverArtImageView setImage:[UIImage imageNamed:@"Icon"]];
+    
+    ORGMPlayerController *controller = [ORGMPlayerController defaultPlayer];
+    [_playButton setSelected:controller.currentState == ORGMEngineStatePlaying];
 }
 
 #pragma mark - private
@@ -174,6 +188,9 @@ const CGFloat viewThreshold = -22.0;
 
 - (void)playerController:(ORGMPlayerController *)controller stoppedTrack:(ORGMTrack *)track {
     [self resetCurrentTrackInfo];
+}
+
+- (void)playerController:(ORGMPlayerController *)controller pausedTrack:(ORGMTrack *)track {
 }
 
 #pragma mark - UIPanGestureRecognizer

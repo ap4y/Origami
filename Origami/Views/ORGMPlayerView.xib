@@ -436,6 +436,10 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="1014737069"/>
+						<object class="NSCustomResource" key="IBUISelectedImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">btn_pause.png</string>
+						</object>
 						<object class="NSCustomResource" key="IBUINormalImage">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">btn_play.png</string>
@@ -591,6 +595,14 @@
 						<reference key="destination" ref="980479476"/>
 					</object>
 					<int key="connectionID">52</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">playButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="799907910"/>
+					</object>
+					<int key="connectionID">59</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -823,6 +835,7 @@
 				<reference key="35.IBUserGuides" ref="0"/>
 				<boolean value="NO" key="35.showNotes"/>
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<real value="2" key="36.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<reference key="36.IBUserGuides" ref="0"/>
 				<boolean value="NO" key="36.showNotes"/>
 				<string key="37.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -835,7 +848,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">58</int>
+			<int key="maxID">59</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -848,6 +861,7 @@
 						<string key="backImageView">UIImageView</string>
 						<string key="controlsView">UIView</string>
 						<string key="coverArtImageView">UIImageView</string>
+						<string key="playButton">UIButton</string>
 						<string key="playedTimeLabel">UILabel</string>
 						<string key="playerView">UIView</string>
 						<string key="seekSlider">UISlider</string>
@@ -878,6 +892,10 @@
 						<object class="IBToOneOutletInfo" key="coverArtImageView">
 							<string key="name">coverArtImageView</string>
 							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="playButton">
+							<string key="name">playButton</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="playedTimeLabel">
 							<string key="name">playedTimeLabel</string>
@@ -933,6 +951,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="btn_next.png">{19, 15}</string>
+			<string key="btn_pause.png">{12, 14}</string>
 			<string key="btn_play.png">{11, 15}</string>
 			<string key="btn_prev.png">{19, 15}</string>
 			<string key="cover.png">{300, 300}</string>
