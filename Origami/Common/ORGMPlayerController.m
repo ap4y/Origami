@@ -55,6 +55,10 @@
     [self playTrackAtIndex:index];
 }
 
+- (void)play {
+    [self playTrackAtIndex:_curIndex];
+}
+
 - (void)prev {
     _curIndex--;
     if (_curIndex < 0) {
@@ -93,7 +97,7 @@
             [self prev];
             break;
         case UIEventSubtypeRemoteControlPlay:
-            [self playTrackAtIndex:0];
+            [self play];
             break;
         case UIEventSubtypeRemoteControlNextTrack:
             [self next];

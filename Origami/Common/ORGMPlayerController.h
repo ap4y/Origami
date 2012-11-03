@@ -19,6 +19,7 @@
 + (ORGMPlayerController *)defaultPlayer;
 
 - (void)playTracks:(NSArray *)tracks from:(NSUInteger)index;
+- (void)play;
 - (void)prev;
 - (void)next;
 - (void)seekToTime:(double)time;
