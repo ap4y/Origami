@@ -1,0 +1,20 @@
+
+PODS:
+- AEHelpers/REST (0.0.4):
+  - AFNetworking (= 0.10.0)
+  - JSONKit (~> 1.4)
+- AFNetworking (0.10.0)
+- JSONKit (1.5pre)
+- OrigamiEngine (1.0.3)
+
+DEPENDENCIES:
+- AEHelpers/REST
+- OrigamiEngine
+
+SPEC CHECKSUMS:
+  AEHelpers/REST: 494bddbfa534bea03dc9e4fc48638dbe7b759d30
+  AFNetworking: 1a49460856f478b7c78b211db6b969dfa4007e00
+  JSONKit: a01a22c75f27eae76b4badd55a91c20fe6e86477
+  OrigamiEngine: 1b25b381eee2adce5dc64e73491001afe09cb261
+
+COCOAPODS: 0.14.0

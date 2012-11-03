@@ -1,0 +1,761 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88E694BD744B476AA888F999 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 721561863FD544D59576037B /* libPods.a */; };
+		953941B21642753E001F6471 /* empty_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941B01642753E001F6471 /* empty_placeholder.png */; };
+		953941B31642753E001F6471 /* empty_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941B11642753E001F6471 /* empty_placeholder@2x.png */; };
+		953941B7164288FD001F6471 /* ic_itunes.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941B5164288FD001F6471 /* ic_itunes.png */; };
+		953941B8164288FD001F6471 /* ic_itunes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941B6164288FD001F6471 /* ic_itunes@2x.png */; };
+		953941BA164294A1001F6471 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953941B9164294A0001F6471 /* AVFoundation.framework */; };
+		953941BC1643E3F8001F6471 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953941BB1643E3F8001F6471 /* MediaPlayer.framework */; };
+		953941BF1643FAA3001F6471 /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941BD1643FAA3001F6471 /* cover.png */; };
+		953941C01643FAA3001F6471 /* cover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941BE1643FAA3001F6471 /* cover@2x.png */; };
+		953941C91644000C001F6471 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941C81644000C001F6471 /* Icon@2x.png */; };
+		953941CC16440010001F6471 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941CB1644000F001F6471 /* Icon.png */; };
+		953941D616450E57001F6471 /* ORGMWithControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953941D516450E56001F6471 /* ORGMWithControlsViewController.m */; };
+		953941DA164516A6001F6471 /* btn_pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941D8164516A6001F6471 /* btn_pause.png */; };
+		953941DB164516A6001F6471 /* btn_pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941D9164516A6001F6471 /* btn_pause@2x.png */; };
+		953941DE16452802001F6471 /* UIImageView+Origami.m in Sources */ = {isa = PBXBuildFile; fileRef = 953941DD16452802001F6471 /* UIImageView+Origami.m */; };
+		95522A0515DC40C2002CFB1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0415DC40C2002CFB1F /* UIKit.framework */; };
+		95522A0715DC40C2002CFB1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0615DC40C2002CFB1F /* Foundation.framework */; };
+		95522A0915DC40C2002CFB1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0815DC40C2002CFB1F /* CoreGraphics.framework */; };
+		95522A0F15DC40C2002CFB1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95522A0D15DC40C2002CFB1F /* InfoPlist.strings */; };
+		95522A1115DC40C2002CFB1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A1015DC40C2002CFB1F /* main.m */; };
+		95522A1515DC40C2002CFB1F /* ORGMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A1415DC40C2002CFB1F /* ORGMAppDelegate.m */; };
+		95522A1D15DC40C3002CFB1F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A1C15DC40C3002CFB1F /* SenTestingKit.framework */; };
+		95522A1E15DC40C3002CFB1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0415DC40C2002CFB1F /* UIKit.framework */; };
+		95522A1F15DC40C3002CFB1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522A0615DC40C2002CFB1F /* Foundation.framework */; };
+		95522A2715DC40C3002CFB1F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95522A2515DC40C3002CFB1F /* InfoPlist.strings */; };
+		95522A2A15DC40C3002CFB1F /* OrigamiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A2915DC40C3002CFB1F /* OrigamiTests.m */; };
+		95522A6215DD667A002CFB1F /* ORGMSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A6115DD667A002CFB1F /* ORGMSideMenuViewController.m */; };
+		95522A6515DD66A0002CFB1F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95522A6415DD66A0002CFB1F /* MainStoryboard.storyboard */; };
+		95522A6C15DD6E33002CFB1F /* ORGMLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */; };
+		95522A7215DE5495002CFB1F /* ORGMCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522A7115DE5495002CFB1F /* ORGMCustomization.m */; };
+		95522A7515DE5500002CFB1F /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A7415DE5500002CFB1F /* back@2x.png */; };
+		95522A7715DE5547002CFB1F /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A7615DE5547002CFB1F /* back.png */; };
+		95522A7A15DE598D002CFB1F /* nav_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A7815DE598D002CFB1F /* nav_back.png */; };
+		95522A7B15DE598D002CFB1F /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A7915DE598D002CFB1F /* nav_back@2x.png */; };
+		95522A8615DE6BD5002CFB1F /* btn_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A8515DE6BD5002CFB1F /* btn_play@2x.png */; };
+		95522A8815DE6C14002CFB1F /* btn_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A8715DE6C14002CFB1F /* btn_play.png */; };
+		95522A8D15DE75B8002CFB1F /* btn_prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A8B15DE75B8002CFB1F /* btn_prev.png */; };
+		95522A8E15DE75B8002CFB1F /* btn_prev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A8C15DE75B8002CFB1F /* btn_prev@2x.png */; };
+		95522A9115DE764C002CFB1F /* btn_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A8F15DE764C002CFB1F /* btn_next.png */; };
+		95522A9215DE764C002CFB1F /* btn_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A9015DE764C002CFB1F /* btn_next@2x.png */; };
+		95522A9515DE76F7002CFB1F /* btn_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A9315DE76F7002CFB1F /* btn_add.png */; };
+		95522A9615DE76F7002CFB1F /* btn_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A9415DE76F7002CFB1F /* btn_add@2x.png */; };
+		95522A9B15DE971E002CFB1F /* clear_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A9915DE971E002CFB1F /* clear_image.png */; };
+		95522A9C15DE971E002CFB1F /* clear_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522A9A15DE971E002CFB1F /* clear_image@2x.png */; };
+		95522AA815DE9A35002CFB1F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95522AA715DE9A35002CFB1F /* CoreData.framework */; };
+		95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95522AAA15DE9A9C002CFB1F /* DataModel.xcdatamodeld */; };
+		95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB515DE9C68002CFB1F /* ORGMEntity.m */; };
+		95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */; };
+		95522AC415DEA57A002CFB1F /* ORGMEntityWithCoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC315DEA57A002CFB1F /* ORGMEntityWithCoverCell.m */; };
+		95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */; };
+		95522ACA15DF9A3A002CFB1F /* lastfm_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC815DF9A3A002CFB1F /* lastfm_red.png */; };
+		95522ACB15DF9A3A002CFB1F /* lastfm_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */; };
+		95522AD215DFC047002CFB1F /* ORGMMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */; };
+		95522AF915E12C76002CFB1F /* ORGMTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AF815E12C76002CFB1F /* ORGMTrackCell.m */; };
+		95522AFD15E12F2F002CFB1F /* ORGMTracksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522AFC15E12F2F002CFB1F /* ORGMTracksViewController.m */; };
+		95522B0315E13FEB002CFB1F /* ORGMPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95522B0215E13FEB002CFB1F /* ORGMPlayerView.xib */; };
+		95522B0615E14AB9002CFB1F /* ORGMPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95522B0515E14AB8002CFB1F /* ORGMPlayerView.m */; };
+		959EB7EF163E7D5D00CEC22C /* ORGMItunesImportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7EE163E7D5D00CEC22C /* ORGMItunesImportManager.m */; };
+		959EB7F6163E960200CEC22C /* ORGMAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7F5163E960200CEC22C /* ORGMAlbum.m */; };
+		959EB7F9163E960600CEC22C /* ORGMArtist.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7F8163E960500CEC22C /* ORGMArtist.m */; };
+		959EB7FC163E960800CEC22C /* ORGMTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB7FB163E960700CEC22C /* ORGMTrack.m */; };
+		959EB802163E991F00CEC22C /* ORGMGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB801163E991F00CEC22C /* ORGMGenre.m */; };
+		959EB81A1641218400CEC22C /* ORGMPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959EB8191641218300CEC22C /* ORGMPlayerController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95522A2015DC40C3002CFB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 955229F715DC40C2002CFB1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 955229FF15DC40C2002CFB1F;
+			remoteInfo = Origami;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65065F9E54B24817809E1FA3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		721561863FD544D59576037B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		953941B01642753E001F6471 /* empty_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_placeholder.png; sourceTree = "<group>"; };
+		953941B11642753E001F6471 /* empty_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty_placeholder@2x.png"; sourceTree = "<group>"; };
+		953941B5164288FD001F6471 /* ic_itunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_itunes.png; sourceTree = "<group>"; };
+		953941B6164288FD001F6471 /* ic_itunes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_itunes@2x.png"; sourceTree = "<group>"; };
+		953941B9164294A0001F6471 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		953941BB1643E3F8001F6471 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		953941BD1643FAA3001F6471 /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cover.png; sourceTree = "<group>"; };
+		953941BE1643FAA3001F6471 /* cover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cover@2x.png"; sourceTree = "<group>"; };
+		953941C81644000C001F6471 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		953941CB1644000F001F6471 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		953941D416450E56001F6471 /* ORGMWithControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMWithControlsViewController.h; path = ViewControllers/ORGMWithControlsViewController.h; sourceTree = "<group>"; };
+		953941D516450E56001F6471 /* ORGMWithControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMWithControlsViewController.m; path = ViewControllers/ORGMWithControlsViewController.m; sourceTree = "<group>"; };
+		953941D8164516A6001F6471 /* btn_pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_pause.png; sourceTree = "<group>"; };
+		953941D9164516A6001F6471 /* btn_pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_pause@2x.png"; sourceTree = "<group>"; };
+		953941DC16452801001F6471 /* UIImageView+Origami.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+Origami.h"; path = "Common/UIImageView+Origami.h"; sourceTree = "<group>"; };
+		953941DD16452802001F6471 /* UIImageView+Origami.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+Origami.m"; path = "Common/UIImageView+Origami.m"; sourceTree = "<group>"; };
+		95522A0015DC40C2002CFB1F /* Origami.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Origami.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95522A0415DC40C2002CFB1F /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		95522A0615DC40C2002CFB1F /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		95522A0815DC40C2002CFB1F /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		95522A0C15DC40C2002CFB1F /* Origami-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Origami-Info.plist"; sourceTree = "<group>"; };
+		95522A0E15DC40C2002CFB1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95522A1015DC40C2002CFB1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		95522A1215DC40C2002CFB1F /* Origami-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Origami-Prefix.pch"; sourceTree = "<group>"; };
+		95522A1315DC40C2002CFB1F /* ORGMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORGMAppDelegate.h; sourceTree = "<group>"; };
+		95522A1415DC40C2002CFB1F /* ORGMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORGMAppDelegate.m; sourceTree = "<group>"; };
+		95522A1B15DC40C3002CFB1F /* OrigamiTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrigamiTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95522A1C15DC40C3002CFB1F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		95522A2415DC40C3002CFB1F /* OrigamiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrigamiTests-Info.plist"; sourceTree = "<group>"; };
+		95522A2615DC40C3002CFB1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95522A2815DC40C3002CFB1F /* OrigamiTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrigamiTests.h; sourceTree = "<group>"; };
+		95522A2915DC40C3002CFB1F /* OrigamiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrigamiTests.m; sourceTree = "<group>"; };
+		95522A6015DD667A002CFB1F /* ORGMSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMSideMenuViewController.h; path = ViewControllers/ORGMSideMenuViewController.h; sourceTree = "<group>"; };
+		95522A6115DD667A002CFB1F /* ORGMSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMSideMenuViewController.m; path = ViewControllers/ORGMSideMenuViewController.m; sourceTree = "<group>"; };
+		95522A6415DD66A0002CFB1F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = Storyboards/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		95522A6A15DD6E33002CFB1F /* ORGMLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMLibraryViewController.h; path = ViewControllers/ORGMLibraryViewController.h; sourceTree = "<group>"; };
+		95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMLibraryViewController.m; path = ViewControllers/ORGMLibraryViewController.m; sourceTree = "<group>"; };
+		95522A7015DE5495002CFB1F /* ORGMCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMCustomization.h; path = Common/ORGMCustomization.h; sourceTree = "<group>"; };
+		95522A7115DE5495002CFB1F /* ORGMCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMCustomization.m; path = Common/ORGMCustomization.m; sourceTree = "<group>"; };
+		95522A7415DE5500002CFB1F /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		95522A7615DE5547002CFB1F /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		95522A7815DE598D002CFB1F /* nav_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_back.png; sourceTree = "<group>"; };
+		95522A7915DE598D002CFB1F /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		95522A8515DE6BD5002CFB1F /* btn_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_play@2x.png"; sourceTree = "<group>"; };
+		95522A8715DE6C14002CFB1F /* btn_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_play.png; sourceTree = "<group>"; };
+		95522A8B15DE75B8002CFB1F /* btn_prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_prev.png; sourceTree = "<group>"; };
+		95522A8C15DE75B8002CFB1F /* btn_prev@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_prev@2x.png"; sourceTree = "<group>"; };
+		95522A8F15DE764C002CFB1F /* btn_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_next.png; sourceTree = "<group>"; };
+		95522A9015DE764C002CFB1F /* btn_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_next@2x.png"; sourceTree = "<group>"; };
+		95522A9315DE76F7002CFB1F /* btn_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_add.png; sourceTree = "<group>"; };
+		95522A9415DE76F7002CFB1F /* btn_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_add@2x.png"; sourceTree = "<group>"; };
+		95522A9915DE971E002CFB1F /* clear_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_image.png; sourceTree = "<group>"; };
+		95522A9A15DE971E002CFB1F /* clear_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear_image@2x.png"; sourceTree = "<group>"; };
+		95522AA715DE9A35002CFB1F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		95522AAB15DE9A9C002CFB1F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		95522AB415DE9C68002CFB1F /* ORGMEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMEntity.h; path = Models/ORGMEntity.h; sourceTree = "<group>"; };
+		95522AB515DE9C68002CFB1F /* ORGMEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMEntity.m; path = Models/ORGMEntity.m; sourceTree = "<group>"; };
+		95522AB715DE9E13002CFB1F /* ORGMHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMHTTPClient.h; path = Common/ORGMHTTPClient.h; sourceTree = "<group>"; };
+		95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMHTTPClient.m; path = Common/ORGMHTTPClient.m; sourceTree = "<group>"; };
+		95522AC215DEA57A002CFB1F /* ORGMEntityWithCoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMEntityWithCoverCell.h; path = Views/ORGMEntityWithCoverCell.h; sourceTree = "<group>"; };
+		95522AC315DEA57A002CFB1F /* ORGMEntityWithCoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMEntityWithCoverCell.m; path = Views/ORGMEntityWithCoverCell.m; sourceTree = "<group>"; };
+		95522AC515DF924D002CFB1F /* ORGMLastfmProxyClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMLastfmProxyClient.h; path = Common/ORGMLastfmProxyClient.h; sourceTree = "<group>"; };
+		95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMLastfmProxyClient.m; path = Common/ORGMLastfmProxyClient.m; sourceTree = "<group>"; };
+		95522AC815DF9A3A002CFB1F /* lastfm_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lastfm_red.png; sourceTree = "<group>"; };
+		95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lastfm_red@2x.png"; sourceTree = "<group>"; };
+		95522AD015DFC046002CFB1F /* ORGMMenuDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMMenuDataSource.h; path = Common/ORGMMenuDataSource.h; sourceTree = "<group>"; };
+		95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMMenuDataSource.m; path = Common/ORGMMenuDataSource.m; sourceTree = "<group>"; };
+		95522AF715E12C76002CFB1F /* ORGMTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMTrackCell.h; path = Views/ORGMTrackCell.h; sourceTree = "<group>"; };
+		95522AF815E12C76002CFB1F /* ORGMTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTrackCell.m; path = Views/ORGMTrackCell.m; sourceTree = "<group>"; };
+		95522AFB15E12F2F002CFB1F /* ORGMTracksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMTracksViewController.h; path = ViewControllers/ORGMTracksViewController.h; sourceTree = "<group>"; };
+		95522AFC15E12F2F002CFB1F /* ORGMTracksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTracksViewController.m; path = ViewControllers/ORGMTracksViewController.m; sourceTree = "<group>"; };
+		95522B0215E13FEB002CFB1F /* ORGMPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ORGMPlayerView.xib; path = Views/ORGMPlayerView.xib; sourceTree = "<group>"; };
+		95522B0415E14AB8002CFB1F /* ORGMPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMPlayerView.h; path = Views/ORGMPlayerView.h; sourceTree = "<group>"; };
+		95522B0515E14AB8002CFB1F /* ORGMPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMPlayerView.m; path = Views/ORGMPlayerView.m; sourceTree = "<group>"; };
+		959EB7ED163E7D5D00CEC22C /* ORGMItunesImportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMItunesImportManager.h; path = Common/ORGMItunesImportManager.h; sourceTree = "<group>"; };
+		959EB7EE163E7D5D00CEC22C /* ORGMItunesImportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMItunesImportManager.m; path = Common/ORGMItunesImportManager.m; sourceTree = "<group>"; };
+		959EB7F0163E824000CEC22C /* ORGMModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMModels.h; path = Models/ORGMModels.h; sourceTree = "<group>"; };
+		959EB7F4163E960200CEC22C /* ORGMAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMAlbum.h; path = Models/ORGMAlbum.h; sourceTree = "<group>"; };
+		959EB7F5163E960200CEC22C /* ORGMAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMAlbum.m; path = Models/ORGMAlbum.m; sourceTree = "<group>"; };
+		959EB7F7163E960400CEC22C /* ORGMArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMArtist.h; path = Models/ORGMArtist.h; sourceTree = "<group>"; };
+		959EB7F8163E960500CEC22C /* ORGMArtist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMArtist.m; path = Models/ORGMArtist.m; sourceTree = "<group>"; };
+		959EB7FA163E960700CEC22C /* ORGMTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMTrack.h; path = Models/ORGMTrack.h; sourceTree = "<group>"; };
+		959EB7FB163E960700CEC22C /* ORGMTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMTrack.m; path = Models/ORGMTrack.m; sourceTree = "<group>"; };
+		959EB800163E991E00CEC22C /* ORGMGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMGenre.h; path = Models/ORGMGenre.h; sourceTree = "<group>"; };
+		959EB801163E991F00CEC22C /* ORGMGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMGenre.m; path = Models/ORGMGenre.m; sourceTree = "<group>"; };
+		959EB8181641218300CEC22C /* ORGMPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORGMPlayerController.h; path = Common/ORGMPlayerController.h; sourceTree = "<group>"; };
+		959EB8191641218300CEC22C /* ORGMPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORGMPlayerController.m; path = Common/ORGMPlayerController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		955229FD15DC40C2002CFB1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953941BC1643E3F8001F6471 /* MediaPlayer.framework in Frameworks */,
+				953941BA164294A1001F6471 /* AVFoundation.framework in Frameworks */,
+				95522AA815DE9A35002CFB1F /* CoreData.framework in Frameworks */,
+				95522A0515DC40C2002CFB1F /* UIKit.framework in Frameworks */,
+				95522A0715DC40C2002CFB1F /* Foundation.framework in Frameworks */,
+				95522A0915DC40C2002CFB1F /* CoreGraphics.framework in Frameworks */,
+				88E694BD744B476AA888F999 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95522A1715DC40C3002CFB1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95522A1D15DC40C3002CFB1F /* SenTestingKit.framework in Frameworks */,
+				95522A1E15DC40C3002CFB1F /* UIKit.framework in Frameworks */,
+				95522A1F15DC40C3002CFB1F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		955229F515DC40C2002CFB1F = {
+			isa = PBXGroup;
+			children = (
+				953941CB1644000F001F6471 /* Icon.png */,
+				953941C81644000C001F6471 /* Icon@2x.png */,
+				95522A0A15DC40C2002CFB1F /* Origami */,
+				95522A2215DC40C3002CFB1F /* OrigamiTests */,
+				95522A0315DC40C2002CFB1F /* Frameworks */,
+				95522A0115DC40C2002CFB1F /* Products */,
+				65065F9E54B24817809E1FA3 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		95522A0115DC40C2002CFB1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95522A0015DC40C2002CFB1F /* Origami.app */,
+				95522A1B15DC40C3002CFB1F /* OrigamiTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95522A0315DC40C2002CFB1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				953941BB1643E3F8001F6471 /* MediaPlayer.framework */,
+				953941B9164294A0001F6471 /* AVFoundation.framework */,
+				95522AA715DE9A35002CFB1F /* CoreData.framework */,
+				95522A0415DC40C2002CFB1F /* UIKit.framework */,
+				95522A0615DC40C2002CFB1F /* Foundation.framework */,
+				95522A0815DC40C2002CFB1F /* CoreGraphics.framework */,
+				95522A1C15DC40C3002CFB1F /* SenTestingKit.framework */,
+				721561863FD544D59576037B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95522A0A15DC40C2002CFB1F /* Origami */ = {
+			isa = PBXGroup;
+			children = (
+				95522AC115DEA53F002CFB1F /* Views */,
+				95522AAD15DE9B70002CFB1F /* Models */,
+				95522A6F15DE547B002CFB1F /* Common */,
+				95522A6315DD6684002CFB1F /* ViewControllers */,
+				95522A5E15DD664C002CFB1F /* StoryBoards */,
+				95522A1315DC40C2002CFB1F /* ORGMAppDelegate.h */,
+				95522A1415DC40C2002CFB1F /* ORGMAppDelegate.m */,
+				95522AAA15DE9A9C002CFB1F /* DataModel.xcdatamodeld */,
+				95522A0B15DC40C2002CFB1F /* Supporting Files */,
+			);
+			path = Origami;
+			sourceTree = "<group>";
+		};
+		95522A0B15DC40C2002CFB1F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95522A7315DE5500002CFB1F /* images */,
+				95522A0C15DC40C2002CFB1F /* Origami-Info.plist */,
+				95522A0D15DC40C2002CFB1F /* InfoPlist.strings */,
+				95522A1015DC40C2002CFB1F /* main.m */,
+				95522A1215DC40C2002CFB1F /* Origami-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95522A2215DC40C3002CFB1F /* OrigamiTests */ = {
+			isa = PBXGroup;
+			children = (
+				95522A2815DC40C3002CFB1F /* OrigamiTests.h */,
+				95522A2915DC40C3002CFB1F /* OrigamiTests.m */,
+				95522A2315DC40C3002CFB1F /* Supporting Files */,
+			);
+			path = OrigamiTests;
+			sourceTree = "<group>";
+		};
+		95522A2315DC40C3002CFB1F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95522A2415DC40C3002CFB1F /* OrigamiTests-Info.plist */,
+				95522A2515DC40C3002CFB1F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95522A5E15DD664C002CFB1F /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				95522A6415DD66A0002CFB1F /* MainStoryboard.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		95522A6315DD6684002CFB1F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				95522A6015DD667A002CFB1F /* ORGMSideMenuViewController.h */,
+				95522A6115DD667A002CFB1F /* ORGMSideMenuViewController.m */,
+				95522A6A15DD6E33002CFB1F /* ORGMLibraryViewController.h */,
+				95522A6B15DD6E33002CFB1F /* ORGMLibraryViewController.m */,
+				95522AFB15E12F2F002CFB1F /* ORGMTracksViewController.h */,
+				95522AFC15E12F2F002CFB1F /* ORGMTracksViewController.m */,
+				953941D416450E56001F6471 /* ORGMWithControlsViewController.h */,
+				953941D516450E56001F6471 /* ORGMWithControlsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		95522A6F15DE547B002CFB1F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				95522A7015DE5495002CFB1F /* ORGMCustomization.h */,
+				95522A7115DE5495002CFB1F /* ORGMCustomization.m */,
+				95522AB715DE9E13002CFB1F /* ORGMHTTPClient.h */,
+				95522AB815DE9E13002CFB1F /* ORGMHTTPClient.m */,
+				95522AC515DF924D002CFB1F /* ORGMLastfmProxyClient.h */,
+				95522AC615DF924D002CFB1F /* ORGMLastfmProxyClient.m */,
+				95522AD015DFC046002CFB1F /* ORGMMenuDataSource.h */,
+				95522AD115DFC046002CFB1F /* ORGMMenuDataSource.m */,
+				959EB7ED163E7D5D00CEC22C /* ORGMItunesImportManager.h */,
+				959EB7EE163E7D5D00CEC22C /* ORGMItunesImportManager.m */,
+				959EB8181641218300CEC22C /* ORGMPlayerController.h */,
+				959EB8191641218300CEC22C /* ORGMPlayerController.m */,
+				953941DC16452801001F6471 /* UIImageView+Origami.h */,
+				953941DD16452802001F6471 /* UIImageView+Origami.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		95522A7315DE5500002CFB1F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				953941D8164516A6001F6471 /* btn_pause.png */,
+				953941D9164516A6001F6471 /* btn_pause@2x.png */,
+				953941BD1643FAA3001F6471 /* cover.png */,
+				953941BE1643FAA3001F6471 /* cover@2x.png */,
+				953941B5164288FD001F6471 /* ic_itunes.png */,
+				953941B6164288FD001F6471 /* ic_itunes@2x.png */,
+				953941B01642753E001F6471 /* empty_placeholder.png */,
+				953941B11642753E001F6471 /* empty_placeholder@2x.png */,
+				95522AC815DF9A3A002CFB1F /* lastfm_red.png */,
+				95522AC915DF9A3A002CFB1F /* lastfm_red@2x.png */,
+				95522A9915DE971E002CFB1F /* clear_image.png */,
+				95522A9A15DE971E002CFB1F /* clear_image@2x.png */,
+				95522A9315DE76F7002CFB1F /* btn_add.png */,
+				95522A9415DE76F7002CFB1F /* btn_add@2x.png */,
+				95522A8F15DE764C002CFB1F /* btn_next.png */,
+				95522A9015DE764C002CFB1F /* btn_next@2x.png */,
+				95522A8B15DE75B8002CFB1F /* btn_prev.png */,
+				95522A8C15DE75B8002CFB1F /* btn_prev@2x.png */,
+				95522A8715DE6C14002CFB1F /* btn_play.png */,
+				95522A8515DE6BD5002CFB1F /* btn_play@2x.png */,
+				95522A7815DE598D002CFB1F /* nav_back.png */,
+				95522A7915DE598D002CFB1F /* nav_back@2x.png */,
+				95522A7615DE5547002CFB1F /* back.png */,
+				95522A7415DE5500002CFB1F /* back@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		95522AAD15DE9B70002CFB1F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				959EB7F0163E824000CEC22C /* ORGMModels.h */,
+				95522AB415DE9C68002CFB1F /* ORGMEntity.h */,
+				95522AB515DE9C68002CFB1F /* ORGMEntity.m */,
+				959EB7F4163E960200CEC22C /* ORGMAlbum.h */,
+				959EB7F5163E960200CEC22C /* ORGMAlbum.m */,
+				959EB7F7163E960400CEC22C /* ORGMArtist.h */,
+				959EB7F8163E960500CEC22C /* ORGMArtist.m */,
+				959EB7FA163E960700CEC22C /* ORGMTrack.h */,
+				959EB7FB163E960700CEC22C /* ORGMTrack.m */,
+				959EB800163E991E00CEC22C /* ORGMGenre.h */,
+				959EB801163E991F00CEC22C /* ORGMGenre.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		95522AC115DEA53F002CFB1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95522AC215DEA57A002CFB1F /* ORGMEntityWithCoverCell.h */,
+				95522AC315DEA57A002CFB1F /* ORGMEntityWithCoverCell.m */,
+				95522AF715E12C76002CFB1F /* ORGMTrackCell.h */,
+				95522AF815E12C76002CFB1F /* ORGMTrackCell.m */,
+				95522B0215E13FEB002CFB1F /* ORGMPlayerView.xib */,
+				95522B0415E14AB8002CFB1F /* ORGMPlayerView.h */,
+				95522B0515E14AB8002CFB1F /* ORGMPlayerView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		955229FF15DC40C2002CFB1F /* Origami */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95522A2D15DC40C3002CFB1F /* Build configuration list for PBXNativeTarget "Origami" */;
+			buildPhases = (
+				955229FC15DC40C2002CFB1F /* Sources */,
+				955229FD15DC40C2002CFB1F /* Frameworks */,
+				955229FE15DC40C2002CFB1F /* Resources */,
+				6819E2A4387D482BA784A8BD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Origami;
+			productName = Origami;
+			productReference = 95522A0015DC40C2002CFB1F /* Origami.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95522A1A15DC40C3002CFB1F /* OrigamiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95522A3015DC40C3002CFB1F /* Build configuration list for PBXNativeTarget "OrigamiTests" */;
+			buildPhases = (
+				95522A1615DC40C3002CFB1F /* Sources */,
+				95522A1715DC40C3002CFB1F /* Frameworks */,
+				95522A1815DC40C3002CFB1F /* Resources */,
+				95522A1915DC40C3002CFB1F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95522A2115DC40C3002CFB1F /* PBXTargetDependency */,
+			);
+			name = OrigamiTests;
+			productName = OrigamiTests;
+			productReference = 95522A1B15DC40C3002CFB1F /* OrigamiTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		955229F715DC40C2002CFB1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ORGM;
+				LastUpgradeCheck = 0440;
+			};
+			buildConfigurationList = 955229FA15DC40C2002CFB1F /* Build configuration list for PBXProject "Origami" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 955229F515DC40C2002CFB1F;
+			productRefGroup = 95522A0115DC40C2002CFB1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				955229FF15DC40C2002CFB1F /* Origami */,
+				95522A1A15DC40C3002CFB1F /* OrigamiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		955229FE15DC40C2002CFB1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95522A0F15DC40C2002CFB1F /* InfoPlist.strings in Resources */,
+				95522A6515DD66A0002CFB1F /* MainStoryboard.storyboard in Resources */,
+				95522A7515DE5500002CFB1F /* back@2x.png in Resources */,
+				95522A7715DE5547002CFB1F /* back.png in Resources */,
+				95522A7A15DE598D002CFB1F /* nav_back.png in Resources */,
+				95522A7B15DE598D002CFB1F /* nav_back@2x.png in Resources */,
+				95522A8615DE6BD5002CFB1F /* btn_play@2x.png in Resources */,
+				95522A8815DE6C14002CFB1F /* btn_play.png in Resources */,
+				95522A8D15DE75B8002CFB1F /* btn_prev.png in Resources */,
+				95522A8E15DE75B8002CFB1F /* btn_prev@2x.png in Resources */,
+				95522A9115DE764C002CFB1F /* btn_next.png in Resources */,
+				95522A9215DE764C002CFB1F /* btn_next@2x.png in Resources */,
+				95522A9515DE76F7002CFB1F /* btn_add.png in Resources */,
+				95522A9615DE76F7002CFB1F /* btn_add@2x.png in Resources */,
+				95522A9B15DE971E002CFB1F /* clear_image.png in Resources */,
+				95522A9C15DE971E002CFB1F /* clear_image@2x.png in Resources */,
+				95522ACA15DF9A3A002CFB1F /* lastfm_red.png in Resources */,
+				95522ACB15DF9A3A002CFB1F /* lastfm_red@2x.png in Resources */,
+				95522B0315E13FEB002CFB1F /* ORGMPlayerView.xib in Resources */,
+				953941B21642753E001F6471 /* empty_placeholder.png in Resources */,
+				953941B31642753E001F6471 /* empty_placeholder@2x.png in Resources */,
+				953941B7164288FD001F6471 /* ic_itunes.png in Resources */,
+				953941B8164288FD001F6471 /* ic_itunes@2x.png in Resources */,
+				953941BF1643FAA3001F6471 /* cover.png in Resources */,
+				953941C01643FAA3001F6471 /* cover@2x.png in Resources */,
+				953941C91644000C001F6471 /* Icon@2x.png in Resources */,
+				953941CC16440010001F6471 /* Icon.png in Resources */,
+				953941DA164516A6001F6471 /* btn_pause.png in Resources */,
+				953941DB164516A6001F6471 /* btn_pause@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95522A1815DC40C3002CFB1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95522A2715DC40C3002CFB1F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6819E2A4387D482BA784A8BD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		95522A1915DC40C3002CFB1F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		955229FC15DC40C2002CFB1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95522A1115DC40C2002CFB1F /* main.m in Sources */,
+				95522A1515DC40C2002CFB1F /* ORGMAppDelegate.m in Sources */,
+				95522A6215DD667A002CFB1F /* ORGMSideMenuViewController.m in Sources */,
+				95522A6C15DD6E33002CFB1F /* ORGMLibraryViewController.m in Sources */,
+				95522A7215DE5495002CFB1F /* ORGMCustomization.m in Sources */,
+				95522AAC15DE9A9C002CFB1F /* DataModel.xcdatamodeld in Sources */,
+				95522AB615DE9C68002CFB1F /* ORGMEntity.m in Sources */,
+				95522AB915DE9E13002CFB1F /* ORGMHTTPClient.m in Sources */,
+				95522AC415DEA57A002CFB1F /* ORGMEntityWithCoverCell.m in Sources */,
+				95522AC715DF924D002CFB1F /* ORGMLastfmProxyClient.m in Sources */,
+				95522AD215DFC047002CFB1F /* ORGMMenuDataSource.m in Sources */,
+				95522AF915E12C76002CFB1F /* ORGMTrackCell.m in Sources */,
+				95522AFD15E12F2F002CFB1F /* ORGMTracksViewController.m in Sources */,
+				95522B0615E14AB9002CFB1F /* ORGMPlayerView.m in Sources */,
+				959EB7EF163E7D5D00CEC22C /* ORGMItunesImportManager.m in Sources */,
+				959EB7F6163E960200CEC22C /* ORGMAlbum.m in Sources */,
+				959EB7F9163E960600CEC22C /* ORGMArtist.m in Sources */,
+				959EB7FC163E960800CEC22C /* ORGMTrack.m in Sources */,
+				959EB802163E991F00CEC22C /* ORGMGenre.m in Sources */,
+				959EB81A1641218400CEC22C /* ORGMPlayerController.m in Sources */,
+				953941D616450E57001F6471 /* ORGMWithControlsViewController.m in Sources */,
+				953941DE16452802001F6471 /* UIImageView+Origami.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95522A1615DC40C3002CFB1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95522A2A15DC40C3002CFB1F /* OrigamiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95522A2115DC40C3002CFB1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 955229FF15DC40C2002CFB1F /* Origami */;
+			targetProxy = 95522A2015DC40C3002CFB1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		95522A0D15DC40C2002CFB1F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95522A0E15DC40C2002CFB1F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		95522A2515DC40C3002CFB1F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95522A2615DC40C3002CFB1F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95522A2B15DC40C3002CFB1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		95522A2C15DC40C3002CFB1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95522A2E15DC40C3002CFB1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65065F9E54B24817809E1FA3 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Origami/Origami-Prefix.pch";
+				INFOPLIST_FILE = "Origami/Origami-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		95522A2F15DC40C3002CFB1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65065F9E54B24817809E1FA3 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Origami/Origami-Prefix.pch";
+				INFOPLIST_FILE = "Origami/Origami-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		95522A3115DC40C3002CFB1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Origami.app/Origami";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Origami/Origami-Prefix.pch";
+				INFOPLIST_FILE = "OrigamiTests/OrigamiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		95522A3215DC40C3002CFB1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Origami.app/Origami";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Origami/Origami-Prefix.pch";
+				INFOPLIST_FILE = "OrigamiTests/OrigamiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		955229FA15DC40C2002CFB1F /* Build configuration list for PBXProject "Origami" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95522A2B15DC40C3002CFB1F /* Debug */,
+				95522A2C15DC40C3002CFB1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95522A2D15DC40C3002CFB1F /* Build configuration list for PBXNativeTarget "Origami" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95522A2E15DC40C3002CFB1F /* Debug */,
+				95522A2F15DC40C3002CFB1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95522A3015DC40C3002CFB1F /* Build configuration list for PBXNativeTarget "OrigamiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95522A3115DC40C3002CFB1F /* Debug */,
+				95522A3215DC40C3002CFB1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		95522AAA15DE9A9C002CFB1F /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				95522AAB15DE9A9C002CFB1F /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 95522AAB15DE9A9C002CFB1F /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 955229F715DC40C2002CFB1F /* Project object */;
+}

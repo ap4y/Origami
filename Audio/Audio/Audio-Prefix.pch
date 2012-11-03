@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'Audio' target in the 'Audio' project
-//
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif
