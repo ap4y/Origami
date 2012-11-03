@@ -26,7 +26,6 @@
 @synthesize tableViewOutlet = _tableViewOutlet;
 
 NSString * const tracksSegueName = @"entityTracksSegue";
-NSUInteger const kMinSearchSymbols = 3;
 
 - (void)reloadData {
     [self reloadDataWithData:nil];

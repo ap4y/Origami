@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ORGMPlayerView.h"
 
+#define kMinSearchSymbols 3
+
 @interface ORGMWithControlsViewController : UIViewController
 @end
 

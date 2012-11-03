@@ -20,7 +20,6 @@
 @end
 
 @implementation ORGMTracksViewController
-NSUInteger const kMinSearchSymbols = 3;
 
 - (void)reloadData {
     [self.entities removeAllObjects];
