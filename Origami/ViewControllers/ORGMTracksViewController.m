@@ -46,6 +46,10 @@ NSUInteger const kMinSearchSymbols = 3;
     stripeView.backgroundColor =
         [ORGMCustomization colorForColoredEntityType:ORGMColoredEntitiesTypeTrack];
     [self.navigationController.navigationBar addSubview:stripeView];
+    
+    [self.playerView setStartPlayRequestBlock:^{
+        [[ORGMPlayerController defaultPlayer] playTracks:self.entities from:0];
+    }];
 }
 
 - (void)viewDidUnload {

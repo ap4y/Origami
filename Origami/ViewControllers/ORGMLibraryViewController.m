@@ -43,6 +43,15 @@ NSUInteger const kMinSearchSymbols = 3;
     stripeView.backgroundColor =
         [ORGMCustomization colorForColoredEntityType:_controllerType];
     [self.navigationController.navigationBar addSubview:stripeView];
+    
+    __weak ORGMLibraryViewController *weakSelf = self;
+    [self.playerView setStartPlayRequestBlock:^{
+        NSMutableArray *tracks = [NSMutableArray array];
+        [self.entities enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [tracks addObjectsFromArray:[weakSelf entityTracksForEntity:obj]];
+        }];
+        [[ORGMPlayerController defaultPlayer] playTracks:tracks from:0];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,21 +72,7 @@ NSUInteger const kMinSearchSymbols = 3;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:tracksSegueName]) {
         ORGMTracksViewController *controller = [segue destinationViewController];
-        switch (_controllerType) {
-            case ORGMLibraryControllerAlbum:
-                controller.tracks = [((ORGMAlbum *)_segueEntity).tracks allObjects];
-                break;
-            case ORGMLibraryControllerGenre:
-                controller.tracks = [((ORGMGenre *)_segueEntity).tracks allObjects];
-                break;
-            case ORGMLibraryControllerArtist: {
-                ORGMArtist *artist = (ORGMArtist *)_segueEntity;
-                NSSet *tracks =
-                    [artist.albums valueForKeyPath:@"@distinctUnionOfSets.tracks"];
-                controller.tracks = [tracks allObjects];
-                break;
-            }
-        }
+        controller.tracks = [self entityTracksForEntity:_segueEntity];
         self.segueEntity = nil;
     }
 }
@@ -108,6 +103,21 @@ NSUInteger const kMinSearchSymbols = 3;
     [self.entities removeAllObjects];
     [self.entities addObjectsFromArray:items];
     [_tableViewOutlet reloadData];
+}
+
+- (NSArray *)entityTracksForEntity:(ORGMEntity *)entity {
+    switch (_controllerType) {
+        case ORGMLibraryControllerAlbum:
+            return [((ORGMAlbum *)entity).tracks allObjects];
+        case ORGMLibraryControllerGenre:
+            return [((ORGMGenre *)entity).tracks allObjects];
+        case ORGMLibraryControllerArtist: {
+            ORGMArtist *artist = (ORGMArtist *)entity;
+            NSSet *tracks =
+                [artist.albums valueForKeyPath:@"@distinctUnionOfSets.tracks"];
+            return [tracks allObjects];
+        }
+    }
 }
 
 #pragma mark - UITableViewDataSource
