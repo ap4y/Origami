@@ -14,19 +14,22 @@
 #import "ORGMTracksViewController.h"
 
 @interface ORGMLibraryViewController () <UITableViewDataSource, UITableViewDelegate,
-                                         ORGMEntityWithCoverCellDelegate> {
+                                         ORGMEntityWithCoverCellDelegate,
+                                         UISearchBarDelegate> {
     BOOL _isLoading;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableViewOutlet;
 @property (strong, nonatomic) NSMutableArray *entities;
 @property (strong, nonatomic) ORGMEntity *segueEntity;
 @property (strong, nonatomic) ORGMPlayerView *playerView;
+@property (strong, nonatomic) NSArray *savedTracks;
 @end
 
 @implementation ORGMLibraryViewController
 @synthesize tableViewOutlet = _tableViewOutlet;
 
 NSString * const tracksSegueName = @"entityTracksSegue";
+NSUInteger const kMinSearchSymbols = 3;
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
@@ -38,22 +41,7 @@ NSString * const tracksSegueName = @"entityTracksSegue";
 }
 
 - (void)reloadData {
-    NSArray *items = nil;
-    switch (_controllerType) {
-        case ORGMLibraryControllerArtist:
-            items = [ORGMArtist libraryArtists];
-            break;
-        case ORGMLibraryControllerAlbum:
-            items = [ORGMAlbum libraryAlbums];
-            break;
-        case ORGMLibraryControllerGenre:
-            items = [ORGMGenre libraryGenres];
-            break;
-    }
-    
-    [_entities removeAllObjects];
-    [_entities addObjectsFromArray:items];
-    [_tableViewOutlet reloadData];
+    [self reloadDataWithData:nil];
 }
 
 - (void)viewDidLoad {
@@ -122,6 +110,30 @@ NSString * const tracksSegueName = @"entityTracksSegue";
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - private
+- (void)reloadDataWithData:(NSArray *)data {
+    NSArray *items = nil;
+    if (data && [data count] > 0) {
+        items = data;
+    } else {
+        switch (_controllerType) {
+            case ORGMLibraryControllerArtist:
+                items = [ORGMArtist libraryArtists];
+                break;
+            case ORGMLibraryControllerAlbum:
+                items = [ORGMAlbum libraryAlbums];
+                break;
+            case ORGMLibraryControllerGenre:
+                items = [ORGMGenre libraryGenres];
+                break;
+        }
+    }
+    
+    [_entities removeAllObjects];
+    [_entities addObjectsFromArray:items];
+    [_tableViewOutlet reloadData];
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return round(_entities.count/2.0f);
@@ -156,6 +168,40 @@ NSString * const tracksSegueName = @"entityTracksSegue";
 - (void)coverCell:(ORGMEntityWithCoverCell *)coverCell didTapViewWithEntity:(ORGMEntity *)entity {
     self.segueEntity = entity;
     [self performSegueWithIdentifier:tracksSegueName sender:self];
+}
+
+#pragma mark - UISearchBarDelegate
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    NSArray *items = nil;
+    if (searchText.length >= kMinSearchSymbols) {
+        self.savedTracks = _entities;
+        NSPredicate *searchPredicate =
+            [NSPredicate predicateWithFormat:@"title contains[cd] %@", searchText];
+        if (_controllerType == ORGMLibraryControllerAlbum) {
+            searchPredicate =
+                [NSPredicate predicateWithFormat:@"title contains[cd] %@ or artist.title",
+                 searchText, searchText];
+        }
+        items = [_entities filteredArrayUsingPredicate:searchPredicate];
+    }
+
+    [self reloadDataWithData:items];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:NO animated:YES];
 }
 
 @end
