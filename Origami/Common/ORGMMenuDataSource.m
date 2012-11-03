@@ -78,7 +78,7 @@
             
             NSURL *imageUrl = [imageProxy albumImageUrlForArtist:track.album.artist.title
                                                       albumTitle:track.album.title];
-            [cell.imageView setImageWithURL:imageUrl placeholderImage:_placeholder];
+            [cell.imageView setRemoteImageWithURL:imageUrl placeholderImage:_placeholder];
 
             break;
         }
@@ -88,7 +88,7 @@
             cell.detailTextLabel.text = nil;
             
             NSURL *imageUrl = [imageProxy artistImageUrlForArtist:artist.title];
-            [cell.imageView setImageWithURL:imageUrl placeholderImage:_placeholder];
+            [cell.imageView setRemoteImageWithURL:imageUrl placeholderImage:_placeholder];
             break;
         }
         case 2: {
@@ -98,7 +98,7 @@
             
             NSURL *imageUrl = [imageProxy albumImageUrlForArtist:album.artist.title
                                                       albumTitle:album.title];
-            [cell.imageView setImageWithURL:imageUrl placeholderImage:_placeholder];
+            [cell.imageView setRemoteImageWithURL:imageUrl placeholderImage:_placeholder];
             break;
         }
         case 3: {
@@ -107,7 +107,7 @@
             cell.detailTextLabel.text = nil;
             
             NSURL *imageUrl = [imageProxy genreImageUrlForGenre:genre.title];
-            [cell.imageView setImageWithURL:imageUrl placeholderImage:_placeholder];
+            [cell.imageView setRemoteImageWithURL:imageUrl placeholderImage:_placeholder];
             break;
         }
         case 4: {

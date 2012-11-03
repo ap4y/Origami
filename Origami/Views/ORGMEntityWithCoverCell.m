@@ -212,15 +212,15 @@ typedef enum : NSInteger {
     [imageView setBackgroundColor:random];
     
     if (url) {
-        [imageView setImageWithURL:url];
+        [imageView setRemoteImageWithURL:url];
     } else {
-        [imageView setImageWithURLRequest:[NSURLRequest requestWithURL:lastfmUrl]
-                         placeholderImage:nil
-                                  success:^(NSURLRequest *request,
-                                            NSHTTPURLResponse *response,
-                                            UIImage *image) {
-                                      [lastfmBadge setHidden:NO];
-                                  } failure:nil];
+        [imageView setRemoteImageWithURLRequest:[NSURLRequest requestWithURL:lastfmUrl]
+                               placeholderImage:nil
+                                        success:^(NSURLRequest *request,
+                                                  NSHTTPURLResponse *response,
+                                                  UIImage *image) {
+                                            [lastfmBadge setHidden:NO];
+                                        } failure:nil];
     }
 }
 @end
