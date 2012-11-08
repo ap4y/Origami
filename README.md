@@ -16,6 +16,16 @@ Features
 - Last.fm integration via [Last.fm-proxy](https://github.com/ap4y/Last.fm-proxy)(currently for coverart).
 - Remote control and background play
 
+Dependencies
+-------
+
+Project uses [CocoaPods](https://github.com/CocoaPods/CocoaPods) dependency manager. Compilation manual:
+
+  1. Install [CocoaPods](https://github.com/CocoaPods/CocoaPods)
+  2. `$ pod install`
+  3. Open generated workspace
+
+
 TODO
 -------
 
