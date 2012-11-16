@@ -6,6 +6,8 @@
 //
 //
 
+#import "ORGMLastfmProxyClient.h"
+
 NSString * const trackErrorDomain = @"com.origami.errors.track";
 
 @implementation ORGMTrack
@@ -61,6 +63,30 @@ NSString * const trackErrorDomain = @"com.origami.errors.track";
         return NO;
     }
     return YES;
+}
+
+#pragma mark - ORGMPlayerTrackDelegate
+
+- (NSURL *)trackURL {
+    return [NSURL URLWithString:self.track_path];
+}
+
+- (NSURL *)trackCoverArtImageURL {
+    ORGMLastfmProxyClient *client = [ORGMLastfmProxyClient sharedClient];
+    return [client albumImageUrlForArtist:self.album.artist.title
+                               albumTitle:self.album.title];
+}
+
+- (NSString *)trackAlbumTitle {
+    return self.album.title;
+}
+
+- (NSString *)trackArtistTitle {
+    return self.album.artist.title;
+}
+
+- (NSString *)trackTitle {
+    return self.title;
 }
 
 @end
