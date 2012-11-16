@@ -10,24 +10,24 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import "ORGMLastfmProxyClient.h"
 
 @interface ORGMPlayerController () <ORGMEngineDelegate>
+
 @property (strong, nonatomic) ORGMEngine *engine;
 @property (strong, nonatomic) NSArray *playlist;
 @property (nonatomic) NSInteger curIndex;
+
+- (void)playTrackAtIndex:(NSUInteger)index;
+
+- (void)postNowPlayingInfo;
+- (void)clearNowPlayingInfo;
+
+- (NSDictionary *)nowPlayingInfoWithImage:(UIImage *)image;
+- (NSDictionary *)nowPlayingInfo;
+
 @end
 
 @implementation ORGMPlayerController
-
-+ (ORGMPlayerController *)defaultPlayer {
-    static ORGMPlayerController *defaultPlayer = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        defaultPlayer = [[ORGMPlayerController alloc] init];
-    });
-    return defaultPlayer;
-}
 
 - (id)init {
     self = [super init];
@@ -46,6 +46,8 @@
     }
     return self;
 }
+
+#pragma mark - Actions
 
 - (void)playTracks:(NSArray *)tracks from:(NSUInteger)index {
     if (!tracks || tracks.count <= index) return;
@@ -113,6 +115,8 @@
     }
 }
 
+#pragma mark - Info
+
 - (double)trackTime {
     return _engine.trackTime;
 }
@@ -122,10 +126,7 @@
 }
 
 - (NSURL *)currentCovertArtUrl {
-    ORGMTrack *track = [self currentTrack];
-    ORGMLastfmProxyClient *client = [ORGMLastfmProxyClient sharedClient];
-    return [client albumImageUrlForArtist:track.album.artist.title
-                               albumTitle:track.album.title];
+    return [[self currentTrack] trackCoverArtImageURL];
 }
 
 - (void)currentCovertArtImage:(void(^)(UIImage *coverArt))success {
@@ -137,19 +138,6 @@
     [operation start];
 }
 
-#pragma mark - private
-- (void)playTrackAtIndex:(NSUInteger)index {
-    if (!_playlist || _playlist.count <= index) return;
-    
-    ORGMTrack *track = [_playlist objectAtIndex:index];
-    NSURL* url = [NSURL URLWithString:track.track_path];
-    if (_engine.currentState != ORGMEngineStatePlaying) {
-        [_engine playUrl:url];
-    } else {
-        [_engine setNextUrl:url withDataFlush:YES];
-    }
-}
-
 - (ORGMEngineState)currentState {
     return _engine.currentState;
 }
@@ -158,37 +146,58 @@
     return [_playlist objectAtIndex:_curIndex];
 }
 
+#pragma mark - Helpers
+
+- (void)playTrackAtIndex:(NSUInteger)index {
+    if (!_playlist || _playlist.count <= index) return;
+    
+    id<ORGMPlayerTrackDelegate> track = [_playlist objectAtIndex:index];
+    NSURL* url = [track trackURL];
+    if (_engine.currentState != ORGMEngineStatePlaying) {
+        [_engine playUrl:url];
+    } else {
+        [_engine setNextUrl:url withDataFlush:YES];
+    }
+}
+
 - (void)postNowPlayingInfo {
-    ORGMTrack *track = self.currentTrack;
-    
     [self currentCovertArtImage:^(UIImage *coverArt) {
-        MPMediaItemArtwork* albumArt = [[MPMediaItemArtwork alloc] initWithImage:coverArt];
-        
-        NSDictionary *currentlyPlayingTrackInfo = @{
-            MPMediaItemPropertyTitle: track.title,
-            MPMediaItemPropertyAlbumTitle: track.album.title,
-            MPMediaItemPropertyArtist: track.album.artist.title,
-            MPMediaItemPropertyPlaybackDuration: @([self trackTime]),
-            MPMediaItemPropertyArtwork: albumArt
-        };
-        
-        [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = currentlyPlayingTrackInfo;
+        [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = [self nowPlayingInfoWithImage:coverArt];
     }];
-    
-    NSDictionary *currentlyPlayingTrackInfo = @{
-        MPMediaItemPropertyTitle: track.title,
-        MPMediaItemPropertyAlbumTitle: track.album.title,
-        MPMediaItemPropertyArtist: track.album.artist.title,
-        MPMediaItemPropertyPlaybackDuration: @([self trackTime])
-    };    
-    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = currentlyPlayingTrackInfo;
+    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = [self nowPlayingInfo];
 }
 
 - (void)clearNowPlayingInfo {
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nil;
 }
 
+- (NSDictionary *)nowPlayingInfoWithImage:(UIImage *)image {
+    id<ORGMPlayerTrackDelegate> track = self.currentTrack;
+    NSMutableDictionary *d = [NSMutableDictionary new];
+    if ([track trackTitle])
+        [d setObject:[track trackTitle]
+              forKey:MPMediaItemPropertyTitle];
+    if ([track trackAlbumTitle])
+        [d setObject:[track trackAlbumTitle]
+              forKey:MPMediaItemPropertyAlbumTitle];
+    if ([track trackArtistTitle])
+        [d setObject:[track trackArtistTitle]
+              forKey:MPMediaItemPropertyArtist];
+    if (image)
+        [d setObject:[[MPMediaItemArtwork alloc] initWithImage:image]
+              forKey:MPMediaItemPropertyArtwork];
+    [d setObject:[NSNumber numberWithDouble:[self trackTime]]
+          forKey:MPMediaItemPropertyPlaybackDuration];
+    
+    return d;
+}
+
+- (NSDictionary *)nowPlayingInfo {
+    return [self nowPlayingInfoWithImage:nil];
+}
+
 #pragma mark - ORGMEngineDelegate
+
 - (NSURL *)engineExpectsNextUrl:(ORGMEngine *)engine {
     _curIndex++;
     if (_curIndex >= _playlist.count) {
@@ -197,9 +206,8 @@
     
     if (!_playlist || _playlist.count <= _curIndex) return nil;
     
-    ORGMTrack *track = [_playlist objectAtIndex:_curIndex];
-    NSURL* url = [NSURL URLWithString:track.track_path];
-    return url;
+    id<ORGMPlayerTrackDelegate> track = [_playlist objectAtIndex:_curIndex];
+    return [track trackURL];
 }
 
 - (void)engine:(ORGMEngine *)engine didChangeState:(ORGMEngineState)state {
@@ -228,7 +236,19 @@
     }
 }
 
-#pragma mark - route change callback
+#pragma mark - Singleton
+
++ (ORGMPlayerController *)defaultPlayer {
+    static ORGMPlayerController *defaultPlayer = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        defaultPlayer = [[ORGMPlayerController alloc] init];
+    });
+    return defaultPlayer;
+}
+
+#pragma mark - Route change callback
+
 void audioRouteChangeListenerCallback(void                   *inUserData,
                                       AudioSessionPropertyID inPropertyID,
                                       UInt32                 inPropertyValueSize,

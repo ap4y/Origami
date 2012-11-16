@@ -7,9 +7,10 @@
 //
 
 #import "ORGMEntity.h"
+#import "ORGMPlayerController.h"
 
 @class ORGMAlbum, ORGMGenre;
-@interface ORGMTrack : ORGMEntity
+@interface ORGMTrack : ORGMEntity <ORGMPlayerTrackDelegate>
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSNumber *track_num;
 @property (strong, nonatomic) NSString *track_path;

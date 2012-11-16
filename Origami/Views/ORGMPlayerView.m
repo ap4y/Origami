@@ -119,12 +119,12 @@ const CGFloat viewThreshold = -22.0;
     [[ORGMPlayerController defaultPlayer] seekToTime:seekSlider.value];
 }
 
-- (void)setCurrentTrackInfo:(ORGMTrack *)track {
-    _trackTitleLabel.text = track.title;
-    _albumTitleLabel.text = track.album.title;
-    _artistTitleLabel.text = track.album.artist.title;
-    _shortTitleLabel.text = track.title;
-    _shortArtistLabel.text = track.album.artist.title;
+- (void)setCurrentTrackInfo:(id<ORGMPlayerTrackDelegate>)track {
+    _trackTitleLabel.text = [track trackTitle];
+    _albumTitleLabel.text = [track trackAlbumTitle];
+    _artistTitleLabel.text = [track trackArtistTitle];
+    _shortTitleLabel.text = [track trackTitle];
+    _shortArtistLabel.text = [track trackArtistTitle];
     
     ORGMPlayerController *controller = [ORGMPlayerController defaultPlayer];
     double trackTime = [controller trackTime];
@@ -182,15 +182,15 @@ const CGFloat viewThreshold = -22.0;
 }
 
 #pragma mark - ORGMPlayerControllerDelegate
-- (void)playerController:(ORGMPlayerController *)controller startedTrack:(ORGMTrack *)track {
+- (void)playerController:(ORGMPlayerController *)controller startedTrack:(id<ORGMPlayerTrackDelegate>)track {
     [self setCurrentTrackInfo:track];
 }
 
-- (void)playerController:(ORGMPlayerController *)controller stoppedTrack:(ORGMTrack *)track {
+- (void)playerController:(ORGMPlayerController *)controller stoppedTrack:(id<ORGMPlayerTrackDelegate>)track {
     [self resetCurrentTrackInfo];
 }
 
-- (void)playerController:(ORGMPlayerController *)controller pausedTrack:(ORGMTrack *)track {
+- (void)playerController:(ORGMPlayerController *)controller pausedTrack:(id<ORGMPlayerTrackDelegate>)track {
 }
 
 #pragma mark - UIPanGestureRecognizer

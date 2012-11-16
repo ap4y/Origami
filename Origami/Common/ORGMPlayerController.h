@@ -10,13 +10,14 @@
 #import "ORGMEngine.h"
 
 @protocol ORGMPlayerControllerDelegate;
+@protocol ORGMPlayerTrackDelegate;
+
 @interface ORGMPlayerController : NSObject
+
 @property (assign, nonatomic, readonly) ORGMEngineState currentState;
 @property (strong, nonatomic, readonly) NSArray *playlist;
-@property (strong, nonatomic, readonly) ORGMTrack *currentTrack;
+@property (strong, nonatomic, readonly) id<ORGMPlayerTrackDelegate> currentTrack;
 @property (weak, nonatomic) id<ORGMPlayerControllerDelegate> delegate;
-
-+ (ORGMPlayerController *)defaultPlayer;
 
 - (void)playTracks:(NSArray *)tracks from:(NSUInteger)index;
 - (void)play;
@@ -33,11 +34,23 @@
 
 - (NSURL *)currentCovertArtUrl;
 - (void)currentCovertArtImage:(void(^)(UIImage *coverArt))success;
+
++ (ORGMPlayerController *)defaultPlayer;
+
+@end
+
+@protocol ORGMPlayerTrackDelegate <NSObject>
+@required
+- (NSURL *)trackURL;
+- (NSURL *)trackCoverArtImageURL;
+- (NSString *)trackTitle;
+- (NSString *)trackAlbumTitle;
+- (NSString *)trackArtistTitle;
 @end
 
 @protocol ORGMPlayerControllerDelegate <NSObject>
 @optional
-- (void)playerController:(ORGMPlayerController *)controller startedTrack:(ORGMTrack *)track;
-- (void)playerController:(ORGMPlayerController *)controller stoppedTrack:(ORGMTrack *)track;
-- (void)playerController:(ORGMPlayerController *)controller pausedTrack:(ORGMTrack *)track;
+- (void)playerController:(ORGMPlayerController *)controller startedTrack:(id<ORGMPlayerTrackDelegate>)track;
+- (void)playerController:(ORGMPlayerController *)controller stoppedTrack:(id<ORGMPlayerTrackDelegate>)track;
+- (void)playerController:(ORGMPlayerController *)controller pausedTrack:(id<ORGMPlayerTrackDelegate>)track;
 @end
