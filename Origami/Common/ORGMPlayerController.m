@@ -10,7 +10,6 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import "ORGMLastfmProxyClient.h"
 
 @interface ORGMPlayerController () <ORGMEngineDelegate>
 
@@ -22,6 +21,9 @@
 
 - (void)postNowPlayingInfo;
 - (void)clearNowPlayingInfo;
+
+- (NSDictionary *)nowPlayingInfoWithImage:(UIImage *)image;
+- (NSDictionary *)nowPlayingInfo;
 
 @end
 
@@ -124,10 +126,7 @@
 }
 
 - (NSURL *)currentCovertArtUrl {
-    ORGMTrack *track = [self currentTrack];
-    ORGMLastfmProxyClient *client = [ORGMLastfmProxyClient sharedClient];
-    return [client albumImageUrlForArtist:track.album.artist.title
-                               albumTitle:track.album.title];
+    return [[self currentTrack] trackCoverArtImageURL];
 }
 
 - (void)currentCovertArtImage:(void(^)(UIImage *coverArt))success {
@@ -152,8 +151,8 @@
 - (void)playTrackAtIndex:(NSUInteger)index {
     if (!_playlist || _playlist.count <= index) return;
     
-    ORGMTrack *track = [_playlist objectAtIndex:index];
-    NSURL* url = [NSURL URLWithString:track.track_path];
+    id<ORGMPlayerTrackDelegate> track = [_playlist objectAtIndex:index];
+    NSURL* url = [track trackURL];
     if (_engine.currentState != ORGMEngineStatePlaying) {
         [_engine playUrl:url];
     } else {
@@ -162,33 +161,39 @@
 }
 
 - (void)postNowPlayingInfo {
-    ORGMTrack *track = self.currentTrack;
-    
     [self currentCovertArtImage:^(UIImage *coverArt) {
-        MPMediaItemArtwork* albumArt = [[MPMediaItemArtwork alloc] initWithImage:coverArt];
-        
-        NSDictionary *currentlyPlayingTrackInfo = @{
-            MPMediaItemPropertyTitle: track.title,
-            MPMediaItemPropertyAlbumTitle: track.album.title,
-            MPMediaItemPropertyArtist: track.album.artist.title,
-            MPMediaItemPropertyPlaybackDuration: @([self trackTime]),
-            MPMediaItemPropertyArtwork: albumArt
-        };
-        
-        [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = currentlyPlayingTrackInfo;
+        [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = [self nowPlayingInfoWithImage:coverArt];
     }];
-    
-    NSDictionary *currentlyPlayingTrackInfo = @{
-        MPMediaItemPropertyTitle: track.title,
-        MPMediaItemPropertyAlbumTitle: track.album.title,
-        MPMediaItemPropertyArtist: track.album.artist.title,
-        MPMediaItemPropertyPlaybackDuration: @([self trackTime])
-    };    
-    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = currentlyPlayingTrackInfo;
+    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = [self nowPlayingInfo];
 }
 
 - (void)clearNowPlayingInfo {
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nil;
+}
+
+- (NSDictionary *)nowPlayingInfoWithImage:(UIImage *)image {
+    id<ORGMPlayerTrackDelegate> track = self.currentTrack;
+    NSMutableDictionary *d = [NSMutableDictionary new];
+    if ([track trackTitle])
+        [d setObject:[track trackTitle]
+              forKey:MPMediaItemPropertyTitle];
+    if ([track trackAlbumTitle])
+        [d setObject:[track trackAlbumTitle]
+              forKey:MPMediaItemPropertyAlbumTitle];
+    if ([track trackArtistTitle])
+        [d setObject:[track trackArtistTitle]
+              forKey:MPMediaItemPropertyArtist];
+    if (image)
+        [d setObject:[[MPMediaItemArtwork alloc] initWithImage:image]
+              forKey:MPMediaItemPropertyArtwork];
+    [d setObject:[NSNumber numberWithDouble:[self trackTime]]
+          forKey:MPMediaItemPropertyPlaybackDuration];
+    
+    return d;
+}
+
+- (NSDictionary *)nowPlayingInfo {
+    return [self nowPlayingInfoWithImage:nil];
 }
 
 #pragma mark - ORGMEngineDelegate
@@ -201,9 +206,8 @@
     
     if (!_playlist || _playlist.count <= _curIndex) return nil;
     
-    ORGMTrack *track = [_playlist objectAtIndex:_curIndex];
-    NSURL* url = [NSURL URLWithString:track.track_path];
-    return url;
+    id<ORGMPlayerTrackDelegate> track = [_playlist objectAtIndex:_curIndex];
+    return [track trackURL];
 }
 
 - (void)engine:(ORGMEngine *)engine didChangeState:(ORGMEngineState)state {
