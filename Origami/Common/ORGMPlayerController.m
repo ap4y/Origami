@@ -13,21 +13,19 @@
 #import "ORGMLastfmProxyClient.h"
 
 @interface ORGMPlayerController () <ORGMEngineDelegate>
+
 @property (strong, nonatomic) ORGMEngine *engine;
 @property (strong, nonatomic) NSArray *playlist;
 @property (nonatomic) NSInteger curIndex;
+
+- (void)playTrackAtIndex:(NSUInteger)index;
+
+- (void)postNowPlayingInfo;
+- (void)clearNowPlayingInfo;
+
 @end
 
 @implementation ORGMPlayerController
-
-+ (ORGMPlayerController *)defaultPlayer {
-    static ORGMPlayerController *defaultPlayer = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        defaultPlayer = [[ORGMPlayerController alloc] init];
-    });
-    return defaultPlayer;
-}
 
 - (id)init {
     self = [super init];
@@ -46,6 +44,8 @@
     }
     return self;
 }
+
+#pragma mark - Actions
 
 - (void)playTracks:(NSArray *)tracks from:(NSUInteger)index {
     if (!tracks || tracks.count <= index) return;
@@ -113,6 +113,8 @@
     }
 }
 
+#pragma mark - Info
+
 - (double)trackTime {
     return _engine.trackTime;
 }
@@ -137,7 +139,16 @@
     [operation start];
 }
 
-#pragma mark - private
+- (ORGMEngineState)currentState {
+    return _engine.currentState;
+}
+
+- (ORGMTrack *)currentTrack {
+    return [_playlist objectAtIndex:_curIndex];
+}
+
+#pragma mark - Helpers
+
 - (void)playTrackAtIndex:(NSUInteger)index {
     if (!_playlist || _playlist.count <= index) return;
     
@@ -148,14 +159,6 @@
     } else {
         [_engine setNextUrl:url withDataFlush:YES];
     }
-}
-
-- (ORGMEngineState)currentState {
-    return _engine.currentState;
-}
-
-- (ORGMTrack *)currentTrack {
-    return [_playlist objectAtIndex:_curIndex];
 }
 
 - (void)postNowPlayingInfo {
@@ -189,6 +192,7 @@
 }
 
 #pragma mark - ORGMEngineDelegate
+
 - (NSURL *)engineExpectsNextUrl:(ORGMEngine *)engine {
     _curIndex++;
     if (_curIndex >= _playlist.count) {
@@ -228,7 +232,19 @@
     }
 }
 
-#pragma mark - route change callback
+#pragma mark - Singleton
+
++ (ORGMPlayerController *)defaultPlayer {
+    static ORGMPlayerController *defaultPlayer = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        defaultPlayer = [[ORGMPlayerController alloc] init];
+    });
+    return defaultPlayer;
+}
+
+#pragma mark - Route change callback
+
 void audioRouteChangeListenerCallback(void                   *inUserData,
                                       AudioSessionPropertyID inPropertyID,
                                       UInt32                 inPropertyValueSize,

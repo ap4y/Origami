@@ -10,13 +10,13 @@
 #import "ORGMEngine.h"
 
 @protocol ORGMPlayerControllerDelegate;
+
 @interface ORGMPlayerController : NSObject
+
 @property (assign, nonatomic, readonly) ORGMEngineState currentState;
 @property (strong, nonatomic, readonly) NSArray *playlist;
 @property (strong, nonatomic, readonly) ORGMTrack *currentTrack;
 @property (weak, nonatomic) id<ORGMPlayerControllerDelegate> delegate;
-
-+ (ORGMPlayerController *)defaultPlayer;
 
 - (void)playTracks:(NSArray *)tracks from:(NSUInteger)index;
 - (void)play;
@@ -33,6 +33,9 @@
 
 - (NSURL *)currentCovertArtUrl;
 - (void)currentCovertArtImage:(void(^)(UIImage *coverArt))success;
+
++ (ORGMPlayerController *)defaultPlayer;
+
 @end
 
 @protocol ORGMPlayerControllerDelegate <NSObject>
