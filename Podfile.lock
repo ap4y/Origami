@@ -5,22 +5,22 @@ PODS:
   - JSONKit (~> 1.4)
 - AFNetworking (0.10.0)
 - JSONKit (1.5pre)
-- OrigamiEngine (1.0.4)
+- OrigamiEngine (1.0.5)
 
 DEPENDENCIES:
-- AEHelpers/REST (from `https://github.com/ap4y/cocoa_helpers.git')
+- AEHelpers/REST (from `https://raw.github.com/ap4y/CustomPods/master/AEHelpers/0.0.4/AEHelpers.podspec')
 - OrigamiEngine (from `https://raw.github.com/ap4y/OrigamiEngine/master/OrigamiEngine.podspec')
 
 EXTERNAL SOURCES:
   AEHelpers/REST:
-    :git: https://github.com/ap4y/cocoa_helpers.git
+    :podspec: https://raw.github.com/ap4y/CustomPods/master/AEHelpers/0.0.4/AEHelpers.podspec
   OrigamiEngine:
     :podspec: https://raw.github.com/ap4y/OrigamiEngine/master/OrigamiEngine.podspec
 
 SPEC CHECKSUMS:
   AEHelpers/REST: 494bddbfa534bea03dc9e4fc48638dbe7b759d30
   AFNetworking: 1a49460856f478b7c78b211db6b969dfa4007e00
-  JSONKit: a01a22c75f27eae76b4badd55a91c20fe6e86477
-  OrigamiEngine: 9362f030d9b05e1d134bef59ae2d67f95c17300c
+  JSONKit: 3d4708953ea7ae399a49777372d8b060a43ddd27
+  OrigamiEngine: fed4d343706394ad7ec95e16a707be85ea875ca9
 
-COCOAPODS: 0.14.0
+COCOAPODS: 0.16.2
