@@ -46,8 +46,9 @@
         [ORGMCustomization colorForColoredEntityType:ORGMColoredEntitiesTypeTrack];
     [self.navigationController.navigationBar addSubview:stripeView];
     
+    NSArray *entities = self.entities;
     [self.playerView setStartPlayRequestBlock:^{
-        [[ORGMPlayerController defaultPlayer] playTracks:self.entities from:0];
+        [[ORGMPlayerController defaultPlayer] playTracks:entities from:0];
     }];
 }
 

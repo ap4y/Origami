@@ -28,11 +28,12 @@
     
     self.playerView = [[ORGMPlayerView alloc] initWithFrame:CGRectNull];
     [self.playerView addShortControlsForNavItem:self.navigationItem];
+    __weak ORGMWithControlsViewController *weakSelf = self;
     [self.playerView setViewStateChangeBlock:^(ORGMPlayerViewState newState) {
         if (newState == ORGMPlayerViewStatePresented) {
-            self.sideMenuController.panGesture.enabled = NO;
+            weakSelf.sideMenuController.panGesture.enabled = NO;
         } else {
-            self.sideMenuController.panGesture.enabled = YES;
+            weakSelf.sideMenuController.panGesture.enabled = YES;
         }
     }];
     [self.playerView presentInView:self.view

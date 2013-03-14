@@ -46,7 +46,7 @@ NSString * const tracksSegueName = @"entityTracksSegue";
     __weak ORGMLibraryViewController *weakSelf = self;
     [self.playerView setStartPlayRequestBlock:^{
         NSMutableArray *tracks = [NSMutableArray array];
-        [self.entities enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [weakSelf.entities enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [tracks addObjectsFromArray:[weakSelf entityTracksForEntity:obj]];
         }];
         [[ORGMPlayerController defaultPlayer] playTracks:tracks from:0];
