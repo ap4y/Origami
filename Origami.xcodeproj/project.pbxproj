@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88E694BD744B476AA888F999 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 721561863FD544D59576037B /* libPods.a */; };
+		9532F03816F26EC200618950 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9532F03716F26EC200618950 /* Default-568h@2x.png */; };
 		953941B21642753E001F6471 /* empty_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941B01642753E001F6471 /* empty_placeholder.png */; };
 		953941B31642753E001F6471 /* empty_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941B11642753E001F6471 /* empty_placeholder@2x.png */; };
 		953941B7164288FD001F6471 /* ic_itunes.png in Resources */ = {isa = PBXBuildFile; fileRef = 953941B5164288FD001F6471 /* ic_itunes.png */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		65065F9E54B24817809E1FA3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		721561863FD544D59576037B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9532F03716F26EC200618950 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		953941B01642753E001F6471 /* empty_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty_placeholder.png; sourceTree = "<group>"; };
 		953941B11642753E001F6471 /* empty_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "empty_placeholder@2x.png"; sourceTree = "<group>"; };
 		953941B5164288FD001F6471 /* ic_itunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_itunes.png; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		955229F515DC40C2002CFB1F = {
 			isa = PBXGroup;
 			children = (
+				9532F03716F26EC200618950 /* Default-568h@2x.png */,
 				953941CB1644000F001F6471 /* Icon.png */,
 				953941C81644000C001F6471 /* Icon@2x.png */,
 				95522A0A15DC40C2002CFB1F /* Origami */,
@@ -440,7 +443,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ORGM;
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 955229FA15DC40C2002CFB1F /* Build configuration list for PBXProject "Origami" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -494,6 +497,7 @@
 				953941CC16440010001F6471 /* Icon.png in Resources */,
 				953941DA164516A6001F6471 /* btn_pause.png in Resources */,
 				953941DB164516A6001F6471 /* btn_pause@2x.png in Resources */,
+				9532F03816F26EC200618950 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +616,9 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -639,6 +646,9 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
